@@ -1,4 +1,4 @@
-package com.coderpwh.leetcode;
+ package com.coderpwh.leetcode;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -71,6 +71,16 @@ public class CreateTargetArray {
     }
 
 
+    /***
+     *    解题思路:
+     *      1: 采用顺序表方式移动数组元素（主要是insert 方法）
+     *      2：时间复杂度为O(N)
+     *      3: 空间复杂度为O(N)
+     *
+     * @param nums
+     * @param index
+     * @return
+     */
     public int[] createTargetArray(int[] nums, int[] index) {
 
         int result[] = new int[index.length];
