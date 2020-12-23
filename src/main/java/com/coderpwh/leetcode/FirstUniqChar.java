@@ -47,9 +47,17 @@ public class FirstUniqChar {
     }
 
 
-
-
-     public int  test2(String s){
+    /*****
+     *     思路:
+     *      1.:也不是最高效解法
+     *      2:时间复杂度为O(N) 对数组遍历2次
+     *      3:时间复杂度为O(1)
+     *   
+     *   
+     * @param s
+     * @return
+     */
+    public int  test2(String s){
 
        Map<Character,Integer> map = new HashMap<>();
 
@@ -66,8 +74,6 @@ public class FirstUniqChar {
        }
 
        return -1;
-
-
      }
 
 
