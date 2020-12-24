@@ -1,4 +1,4 @@
-package com.coderpwh.leetcode;
+ package com.coderpwh.leetcode;
 
 /****
  *
@@ -68,9 +68,12 @@ public class Candy {
 
 
     /****
-     *
-     *
-     *
+     *     思路:
+     *      1 采用左右原则分别给数组从左或者右赋值
+     *        然后比较左右数组的大小，保证手中获取的是最大的
+     *      2 时间复杂度为O(N)，遍历数组，数组大小为N,未知
+     *      3 空间复杂度为O(N)
+     *      4 主要是如何用左右原则来正确统计，不易想当。
      * @param ratings
      * @return
      */
