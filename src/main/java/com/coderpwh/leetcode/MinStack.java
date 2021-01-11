@@ -45,6 +45,13 @@ public class MinStack {
 
     /**
      * initialize your data structure here.
+     *
+     *     思路:
+     *       1:栈的删除与新增的时间复杂度为O(1)
+     *       2:栈的空间复杂度为O(N)
+     *       3:题意比较绕。实现简单 Deque 已经把栈的地层实现给封装了
+     *
+     *
      */
     public MinStack() {
         xStack = new LinkedList<Integer>();
