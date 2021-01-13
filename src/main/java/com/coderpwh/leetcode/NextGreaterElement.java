@@ -1,11 +1,13 @@
 package com.coderpwh.leetcode;
 
 import java.util.Deque;
+import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Stack;
 
 /***
  * 496. 下一个更大元素 I
- * 
+ *
  *给定两个 没有重复元素 的数组 nums1 和 nums2 ，其中nums1 是 nums2 的子集。找到 nums1 中每个元素在 nums2 中的下一个比其大的值。
  *
  * nums1 中数字 x 的下一个更大元素是指 x 在 nums2 中对应位置的右边的第一个比 x 大的元素。如果不存在，对应位置输出 -1 。
@@ -38,12 +40,12 @@ public class NextGreaterElement {
         // -1 3 -1
 
 
-//        int[] nums1 = {2,4};
-//        int[] nums2 = {1, 2,3,4};
+        int[] nums1 = {2,4};
+        int[] nums2 = {1, 2,3,4};
 
 
-        int[] nums1 = {1, 3, 5, 2, 4};
-        int[] nums2 = {6, 5, 4, 3, 2, 1, 7};
+//        int[] nums1 = {1, 3, 5, 2, 4};
+//        int[] nums2 = {6, 5, 4, 3, 2, 1, 7};
 //       [7,7,7,7,7]
 
 //        [1,3,5,2,4]
@@ -52,8 +54,49 @@ public class NextGreaterElement {
 
         //  -1 3 -1
         NextGreaterElement next = new NextGreaterElement();
-        next.nextGreaterElement(nums1, nums2);
+//        next.nextGreaterElement(nums1, nums2);
 
+        next.test(nums1, nums2);
+    }
+
+    /****
+     *       思路:
+     *        1：时间复杂度为O(M+N) 分别为数组num1,nums2的长度
+     *        2: 空间复杂度为O(N) 创建了一个长度为N的数组
+     *        3: 采用栈Stack 对数组nums2遍历，分别找出右边第一个最大的元素，用map存储起来
+     *           然后遍历nums1与map。
+     *
+     *
+     * @param nums1
+     * @param nums2
+     * @return
+     */
+    public int[] test(int[] nums1, int[] nums2) {
+        Stack<Integer> stack = new Stack<>();
+        HashMap<Integer, Integer> map = new HashMap<>();
+        int arr[] = new int[nums1.length];
+
+
+        for (int i = 0; i < nums2.length; i++) {
+            while (!stack.isEmpty()&&nums2[i]>stack.peek()) {
+                map.put(stack.pop(), nums2[i]);
+            }
+            stack.push(nums2[i]);
+        }
+
+        while (!stack.isEmpty()) {
+            map.put(stack.pop(), -1);
+        }
+
+        for (int i = 0; i < nums1.length; i++) {
+            arr[i] = map.get(nums1[i]);
+        }
+
+        for(int i=0;i<arr.length;i++){
+            System.out.print(arr[i]+" ");
+        }
+
+        return arr;
     }
 
 
@@ -84,7 +127,7 @@ public class NextGreaterElement {
 
             int b = -1;
             for (int j = 0; j < nums2.length; j++) {
-                if (nums2[j]==a) {
+                if (nums2[j] == a) {
                     b = j;
                 }
             }
@@ -96,7 +139,7 @@ public class NextGreaterElement {
                     break;
                 }
                 if (j == nums2.length - 1) {
-                    arr[i]=-1;
+                    arr[i] = -1;
                     deque.pop();
                 }
             }
@@ -111,9 +154,6 @@ public class NextGreaterElement {
 
         return arr;
     }
-
-
-
 
 
 }
