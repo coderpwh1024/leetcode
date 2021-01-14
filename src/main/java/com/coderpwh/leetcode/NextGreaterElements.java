@@ -32,6 +32,14 @@ public class NextGreaterElements {
     }
 
 
+    /****
+     *   思路:
+     *     1：
+     * 
+     * 
+     * @param nums
+     * @return
+     */
     public int[] test(int[] nums) {
         int[] arr = new int[nums.length];
 
@@ -51,6 +59,16 @@ public class NextGreaterElements {
     }
 
 
+    /****
+     *   思路:
+     *      1:时间复杂度为O(N^2)
+     *      2: 空间复杂度为O(N)
+     *      3：未通过测试用例,未处理好数组的小标
+     *
+     *
+     * @param nums
+     * @return
+     */
     public int[] nextGreaterElements(int[] nums) {
         int arr[] = new int[nums.length];
         Stack<Integer> stack = new Stack<>();
