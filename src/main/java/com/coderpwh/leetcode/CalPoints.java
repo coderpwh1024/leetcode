@@ -21,6 +21,18 @@ public class CalPoints {
     }
 
 
+    /****
+     *      思路:
+     *        1: 时间复杂度为O(N)
+     *        2：空进复杂度为O(1)
+     *        3：主要借助栈Stack 来存储其中的数字元素
+     *
+     *
+     *
+     *
+     * @param ops
+     * @return
+     */
     public int calPoints(String[] ops) {
 
         Stack<Integer> stack = new Stack<>();
