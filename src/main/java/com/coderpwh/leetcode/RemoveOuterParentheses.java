@@ -62,6 +62,16 @@ public class RemoveOuterParentheses {
     }
 
 
+    /****
+     *      思路:
+     *         1：时间复杂度为O(N)
+     *         2: 空间复杂度为O(N)
+     *         3: 主要是利用数组下标方式实现
+     *
+     *
+     * @param S
+     * @return
+     */
     public String test(String S) {
         StringBuilder sb = new StringBuilder();
         int level = 0;
@@ -82,6 +92,15 @@ public class RemoveOuterParentheses {
     }
 
 
+    /****
+     *       思路:
+     *          1：时间复杂度为O(N)
+     *          2: 空间复杂度为O(N+M) 一个StringBuild与已栈Deque
+     *          3: 主要用栈方式和数组遍历实现
+     *
+     * @param S
+     * @return
+     */
     public String removeOuterParentheses(String S) {
         StringBuilder sb = new StringBuilder();
         Deque<Character> deque = new LinkedList<>();
