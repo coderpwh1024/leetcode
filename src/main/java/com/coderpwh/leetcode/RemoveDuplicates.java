@@ -1,4 +1,4 @@
-package com.coderpwh.leetcode;
+ package com.coderpwh.leetcode;
 
 import java.util.Deque;
 import java.util.LinkedList;
@@ -25,10 +25,7 @@ public class RemoveDuplicates {
      *     思路:
      *       1：时间复杂度O(N) 主要遍历字符串S的长度
      *       2: 空间复杂度为O(N) 创建StringBuilder来拼接
-     *       3: 还是利用栈的方式来实现
-     *       
-     *
-     *
+     *       3: 利用栈的方式来实现
      * @param S
      * @return
      */
@@ -52,3 +49,4 @@ public class RemoveDuplicates {
     }
 
 }
+
