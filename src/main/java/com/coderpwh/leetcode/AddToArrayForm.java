@@ -5,8 +5,8 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- *  989. 数组形式的整数加法
- *
+ * 989. 数组形式的整数加法
+ * <p>
  * 对于非负整数 X 而言，X 的数组形式是每位数字按从左到右的顺序形成的数组。例如，如果 X = 1231，那么其数组形式为 [1,2,3,1]。
  * <p>
  * 给定非负整数 X 的数组形式 A，返回整数 X+K 的数组形式。
@@ -53,6 +53,16 @@ public class AddToArrayForm {
         add.test(arr, k);
     }
 
+    /****
+     *       思路:
+     *          1.时间复杂度为O(MAX(N,logK))
+     *          2. 空间复杂度为O(MAX(N,logk))
+     *          3. 主要是用余数来进行相加并对进位部分进行处理
+     *
+     * @param A
+     * @param K
+     * @return
+     */
     public List<Integer> test(int[] A, int K) {
         List<Integer> res = new ArrayList<>();
 
@@ -69,7 +79,6 @@ public class AddToArrayForm {
         }
         Collections.reverse(res);
 
-
         for (int i = 0; i < res.size(); i++) {
             System.out.print(res.get(i));
         }
@@ -79,6 +88,16 @@ public class AddToArrayForm {
     }
 
 
+    /*****
+     *       思路:
+     *         1. 时间复杂度为O(N)
+     *         2. 空间复杂度为O(N)
+     *         3. 用字符串String 转Integer，方法行不通，超过Integer的范围则不行
+     *
+     * @param A
+     * @param K
+     * @return
+     */
     public List<Integer> addToArrayFormaddToArrayForm(int[] A, int K) {
 
         List<Integer> list = new ArrayList<>();
@@ -102,4 +121,5 @@ public class AddToArrayForm {
 
 
 }
+
 
