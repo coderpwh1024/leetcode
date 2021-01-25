@@ -19,6 +19,17 @@ public class MakeGood {
     }
 
 
+    /**** 
+     *      思路:  
+     *        1. 时间复杂度为O(N)
+     *        2. 空间复杂度为O(N)
+     *        3. 新建临时变量 index 来统计StringBuilder里面拼接字符的位置
+     *        4. 不满足的条件则删除该字符的位置等，满足条件的则拼接起来
+     *
+     *
+     * @param s
+     * @return
+     */
     public String test(String s) {
         StringBuilder sb = new StringBuilder();
 
@@ -43,9 +54,10 @@ public class MakeGood {
 
 
     /****
-     * 
-     *
-     *
+     *    思路: 
+     *      1:时间复杂度为O(N^2)
+     *      2. 空间复杂度为O(N)
+     *      3. 利用栈实现未通过测试用例,未考虑到过滤出来的字符串StringBuild 里面的字符
      *
      * @param s
      * @return
