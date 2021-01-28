@@ -11,16 +11,65 @@ public class DecodeString {
     public static void main(String[] args) {
 
         // accaccacc
-//        String str = "3[a2[c]]";
+        String str = "3[a2[c]]";
 
-        String str = "2[abc]3[cd]ef";
+//        String str = "2[abc]3[cd]ef";
 
 
         DecodeString decodeString = new DecodeString();
-        decodeString.docdeString(str);
+//        decodeString.docdeString(str);
 
         System.out.println(decodeString.test(str));
 
+        System.out.println(decodeString.test2(str));
+
+    }
+
+
+    /**** 
+     *     辅助炸的做法
+     *     思路:
+     *        1.时间复杂度为O(N)
+     *        2.空间复杂度为O(N)
+     *        3. 分别建2个栈用来存储数字和字母
+     *         1）遍历字符时如果是数字，先赋值临时变量multi
+     *         2)如果是是【 号，则将multi 与StringBuilder 分别入栈
+     *         然后将临时变量multi与sb 分别重新赋新值
+     *         3) 如果是 ] 号 则出栈，存放数字的栈知己出栈
+     *            循环遍历 拼接之前的字符StringBuilder ，然后字符栈出栈拼接临时字符
+     *            重新赋值给StringBuiler
+     * @param s
+     * @return
+     */
+    public String test2(String s) {
+        StringBuilder sb = new StringBuilder();
+        int multi = 0;
+
+        Deque<Integer> stack_multi = new LinkedList<>();
+        Deque<String> stack = new LinkedList<>();
+
+        for (Character c : s.toCharArray()) {
+            if (Character.isDigit(c)) {
+                multi = multi * 10 + Integer.valueOf(c + "");
+            } else if (c == '[') {
+                stack_multi.addLast(multi);
+                stack.addLast(sb.toString());
+                multi = 0;
+                sb = new StringBuilder();
+            } else if (c == ']') {
+                StringBuilder temp = new StringBuilder();
+                int cur_multi = stack_multi.removeLast();
+
+                for (int i = 0; i < cur_multi; i++) {
+                    temp.append(sb);
+                }
+                sb = new StringBuilder(stack.removeLast() + temp);
+            } else {
+                sb.append(c);
+            }
+
+        }
+        return sb.toString();
     }
 
 
@@ -30,10 +79,11 @@ public class DecodeString {
         ptr = 0;
         while (ptr < s.length()) {
             char cur = s.charAt(ptr);
-
+            //  如果当前字符是数字则放入栈中
             if (Character.isDigit(cur)) {
                 String digits = getDigits(s);
                 stk.addLast(digits);
+                // 如果当前字符是字母或者是左 [ 放入栈中
             } else if (Character.isLetter(cur) || cur == '[') {
                 stk.addLast(String.valueOf(s.charAt(ptr++)));
             } else {
@@ -113,3 +163,4 @@ public class DecodeString {
     }
 
 }
+
