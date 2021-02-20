@@ -1,4 +1,4 @@
-package com.coderpwh.leetcode;
+ package com.coderpwh.leetcode;
 
 public class DominantIndex {
 
@@ -14,6 +14,15 @@ public class DominantIndex {
     }
 
 
+    /***
+     *   思路:
+     *      1. 时间复杂度为O(N)
+     *      2. 空间复杂度为O(1)
+     *      
+     * 
+     * @param nums
+     * @return
+     */
     public int dominantIndex(int[] nums) {
         int maxIndex = 0;
 
@@ -34,3 +43,4 @@ public class DominantIndex {
 
 
 }
+
