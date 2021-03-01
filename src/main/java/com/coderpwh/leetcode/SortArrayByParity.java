@@ -19,12 +19,51 @@ public class SortArrayByParity {
 //        sort.sortArrayByParity(arr);
 //        System.out.println(sort.sortArrayByParity(arr));
 
+//        sort.test(arr);
         sort.test(arr);
 
     }
 
-    
-    
+
+    /***
+     *    思路:
+     *      1：时间复杂度为O(N)
+     *      2: 空间复杂度为O(1)
+     *
+     *
+     *
+     *
+     * @param A
+     */
+    public void test1(int[] A) {
+        int i = 0;
+        int j = A.length - 1;
+
+        while (i < j) {
+
+            if (A[i] % 2 > A[j] % 2) {
+                int temp = A[i];
+                A[i] = A[j];
+                A[j] = temp;
+
+            }
+
+            if (A[i] % 2 == 0) {
+                i++;
+            }
+            if (A[i] % 2 == 1) {
+                j--;
+            }
+        }
+
+
+        for (int m = 0; m < A.length; m++) {
+            System.out.print(A[m] + " ");
+        }
+
+
+    }
+
 
     /****
      *    思路:
