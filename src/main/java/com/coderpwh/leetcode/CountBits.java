@@ -15,6 +15,7 @@ package com.coderpwh.leetcode;
  *
  */
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,9 +29,21 @@ public class CountBits {
          * [0,1,1]
          */
         CountBits bit = new CountBits();
-        bit.countBits(5);
+//        bit.countBits(5);
+
+        bit.test(5);
 
     }
+
+    public void test(int num) {
+
+        for (int i = 0; i <= num; i++) {
+            BigInteger big = new BigInteger(i + "");
+
+            System.out.println(big.toString(2));
+        }
+    }
+
 
     /****
      *     思路:
