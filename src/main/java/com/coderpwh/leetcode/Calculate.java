@@ -16,52 +16,19 @@ public class Calculate {
 
         Calculate cal = new Calculate();
         cal.calculate(str);
-        System.out.println(cal.test(str));
     }
 
 
-    public int test(String s) {
-
-        Deque<Integer> deque = new LinkedList<>();
-        int n = s.length();
-        char seqstr = '+';
-        int num = 0;
-
-        for (int i = 0; i < n; i++) {
-
-            if (Character.isDigit(s.charAt(i))) {
-                num = num * 10 + s.charAt(i) - '0';
-            }
-            if (!Character.isDigit(s.charAt(i)) && s.charAt(i) != ' ' || i == n - 1) {
-                switch (seqstr) {
-                    case '+':
-                        deque.push(num);
-                        break;
-                    case '-':
-                        deque.push(-num);
-                        break;
-                    case '*':
-                        deque.push(deque.pop() * num);
-                        break;
-                    case '/':
-                        deque.push(deque.pop() / num);
-                        break;
-                }
-                seqstr = s.charAt(i);
-                num = 0;
-            }
-
-        }
-        int ans = 0;
-        while (!deque.isEmpty()) {
-            ans += deque.pop();
-        }
-        return ans;
-
-
-    }
-
-
+    /***
+     *     思路:
+     *        1:时间复杂度为O(n)
+     *        2：空间复杂度为O(N) 创建Deque 集合
+     *        3：注意用到了栈，重点是把 +,-,*,/ 分割开来计算
+     *
+     *
+     * @param s
+     * @return
+     */
     public int calculate(String s) {
 
         Deque<Integer> stack = new LinkedList<>();
@@ -102,3 +69,4 @@ public class Calculate {
     }
 
 }
+
