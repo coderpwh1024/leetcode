@@ -41,6 +41,16 @@ public class ThreeSum {
     }
 
 
+    /****
+     *   思路:
+     *      1:时间复杂度为O(N^2)
+     *      2：空间复杂度为O(logN)
+     *
+     *
+     *
+     * @param nums
+     * @return
+     */
     public List<List<Integer>> threeSum(int[] nums) {
         int n = nums.length;
         Arrays.sort(nums);
