@@ -27,7 +27,6 @@ package com.coderpwh.leetcode;
  * 在 Java 中，编译器使用二进制补码记法来表示有符号整数。因此，在上面的 示例 2 中，输入表示有符号整数 -3，输出表示有符号整数 -1073741825。
  *  
  *
-
  *
  *
  */
@@ -35,15 +34,30 @@ public class ReverseBits {
 
     public static void main(String[] args) {
 
-        ReverseBits  bits = new ReverseBits();
-        System.out.println(bits.reverseBits(00000000000000000000000010000001));
+        ReverseBits bits = new ReverseBits();
+        System.out.println(bits.reverseBits(00110011));
+
+        /***
+         *   输入: 43261596
+         *   输出: 964176192
+         *
+         *
+         *
+         */
+
 
     }
 
 
-    public int reverseBits(int n){
+    public int reverseBits(int n) {
 
-        return  0;
+        int rev = 0;
+
+        for (int i = 0; i < 32 && n != 0; ++i) {
+            rev |= (n & 1) << (31 - i);
+            n >>>= 1;
+        }
+        return rev;
     }
 
 
