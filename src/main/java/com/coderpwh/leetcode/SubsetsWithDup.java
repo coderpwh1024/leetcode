@@ -46,6 +46,16 @@ public class SubsetsWithDup {
     }
 
 
+    /***
+     *    思路:
+     *      1: 时间复杂度为O(N^2)
+     *      2: 空间复杂度为O(N)
+     *      3: 主要采用递归方式实现
+     *
+     *
+     * @param nums
+     * @return
+     */
     public List<List<Integer>> subsetsWithDup(int[] nums) {
 
         Arrays.sort(nums);
@@ -74,3 +84,4 @@ public class SubsetsWithDup {
 
 
 }
+
