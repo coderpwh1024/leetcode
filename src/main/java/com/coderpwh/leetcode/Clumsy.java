@@ -44,8 +44,17 @@ public class Clumsy {
 
     }
 
-
-   
+    /***
+     *   思路:
+     *      1: 时间复杂度为O(N)
+     *      2: 空间复杂度为O(1),由于创建的是栈，存储的是常熟
+     *      3: 主要是怎么区分 * / + - 号，什么时候用* / - +
+     *         主要是4种运算符，定义下标循环使用！
+     *
+     *
+     * @param N
+     * @return
+     */
     public int clumsy(int N) {
 
         Deque<Integer> stack = new LinkedList<>();
@@ -76,4 +85,5 @@ public class Clumsy {
     }
 
 }
+
 
