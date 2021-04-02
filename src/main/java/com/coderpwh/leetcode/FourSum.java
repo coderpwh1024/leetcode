@@ -1,3 +1,4 @@
+ 
 package com.coderpwh.leetcode;
 
 import java.util.*;
@@ -24,91 +25,68 @@ import java.util.*;
  */
 public class FourSum {
 
+    public static void main(String[] args) {
 
-    /****
-     *   简单暴力方法
-     *   nums[] 如果长度为n,则整个方法的时间复杂度为O(n^4)
+
+        int nums[] = {1, 0, -1, 0, -2, 2};
+        int target = 0;
+
+
+        FourSum fourSum = new FourSum();
+        List<List<Integer>> list = fourSum.fourSum(nums, target);
+
+
+        for (List<Integer> li : list) {
+            System.out.println(li);
+        }
+
+
+    }
+
+
+    /***
      *
+     *  方式一: 暴力求解，容易重复，时间复杂度为O(N^4)还有去重操作，方式未通过
+     *  方式二:  双指针
      *
      * @param nums
      * @param target
      * @return
      */
-    public static List<List<Integer>> fourSum(int nums[], int target) {
+    public List<List<Integer>> fourSum(int[] nums, int target) {
 
+
+        HashSet<List<Integer>> set = new HashSet<>();
         List<List<Integer>> date = new ArrayList<>();
 
-        if (nums == null || nums.length < 4) {
-            return date;
-        }
-        Set<Integer> first = new HashSet<>();
-        Set<Integer> second = new HashSet<>();
-        Set<Integer> third = new HashSet<>();
 
+        for (int i = 0; i < nums.length; i++) {
 
-        for (int a = 0; a < nums.length - 3; a++) {
+            for (int j = 0; j < nums.length; j++) {
+                for (int m = 0; m < nums.length; m++) {
 
-            if (!first.contains(nums[a])) {
-                first.add(nums[a]);
-                for (int b = a + 1; b < nums.length - 2; b++) {
-                    if (!second.contains(nums[b])) {
-                        second.contains(nums[b]);
+                    for (int n = 0; n < nums.length; n++) {
 
-                        for (int c = b + 1; c < nums.length - 1; c++) {
-                            if (!third.contains(c)) {
-                                third.add(nums[c]);
-                                int sum = nums[a] + nums[b] + nums[c];
+                        if (nums[i] + nums[j] + nums[m] + nums[n] == target) {
+                            List<Integer> list = new ArrayList<>();
+                            list.add(nums[i]);
+                            list.add(nums[j]);
+                            list.add(nums[m]);
+                            list.add(nums[n]);
 
-                                for (int d = c + 1; d < nums.length; d++) {
-
-                                    if (sum + nums[d] == target) {
-                                        List<Integer> list = new ArrayList<>(4);
-                                        list.add(nums[a]);
-                                        list.add(nums[b]);
-                                        list.add(nums[c]);
-                                        list.add(nums[d]);
-                                        date.add(list);
-                                        break;
-
-                                    }
-                                }
+                            list.sort(Comparator.reverseOrder());
+                            if (!date.contains(list)) {
+                                date.add(list);
                             }
 
-
                         }
-
                     }
-
                 }
 
             }
 
-
         }
-
-
-        for (List<Integer> ilist : date) {
-            System.out.println(ilist);
-        }
-
-
         return date;
-    }
-
-
-    public List<List<Integer>> test(int nums[], int target) {
-        return null;
-    }
-
-
-    public static void main(String[] args) {
-
-        int nums[] = {1, 0, -1, 0, -2, 2};
-
-        int target = 0;
-
-        fourSum(nums, target);
-
     }
 
 
