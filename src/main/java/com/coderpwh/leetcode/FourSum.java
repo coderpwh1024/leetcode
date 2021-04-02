@@ -90,7 +90,15 @@ public class FourSum {
     }
 
 
-
+    /***
+     *    思路:
+     *       1. 时间复杂度为O(N^3)
+     *       2. 空间复杂度为O(logn)对长度为N的数组进行排序
+     *       3. 主要用排序+双指针方式求解
+     * @param nums
+     * @param target
+     * @return
+     */
     public List<List<Integer>> test(int[] nums, int target) {
 
         List<List<Integer>> quadruplets = new ArrayList<>();
@@ -158,4 +166,3 @@ public class FourSum {
 
 
 }
-
