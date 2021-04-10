@@ -5,7 +5,7 @@ import java.util.List;
 
 /***
  *
- * 263 丑数 
+ * 263 丑数
  *
  * 给你一个整数 n ，请你判断 n 是否为 丑数 。如果是，返回 true ；否则，返回 false 。
  *
@@ -50,6 +50,16 @@ public class IsUgly {
     }
 
 
+    /***
+     *    思路:
+     *        1.时间复杂度为O(logN) 外循环是数组大小为3，内循环每次遍历都除以数组元素
+     *        2. 空间复杂度为O(1)
+     *        3. 主要是用除法与求余来实现的。
+     *
+     *
+     * @param n
+     * @return
+     */
     public boolean test(Integer n) {
 
         if (n <= 0) {
@@ -67,6 +77,16 @@ public class IsUgly {
     }
 
 
+    /***
+     *      思路:
+     *         1.时间复杂度为O(NlogN),
+     *         2. 空间复杂度为O(N) 创建了list集合
+     *         3. 遍历过多，N过大时，则容易超时 
+     *
+     *
+     * @param n
+     * @return
+     */
     public boolean isUgly(Integer n) {
         List<Integer> list = new ArrayList<>();
 
@@ -109,4 +129,5 @@ public class IsUgly {
     }
 
 }
+
 
