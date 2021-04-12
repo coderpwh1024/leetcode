@@ -18,13 +18,25 @@ public class LargestNumber {
 
         LargestNumber number = new LargestNumber();
         number.largestNumber(nums);
-        System.out.println(number.largestNumber(nums));
+        System.out.println(number.largestNumber(nums)); 
 
 
     }
 
 
-
+    /***
+     *    先要按照最高位数从大到小的顺序排列，然后拼接
+     *
+     *     思路:
+     *        1. 时间复杂度为O(N^2)
+     *        2. 空间复杂度为O(N),创建了一个StringBuilder，可以扩容的字符串
+     *        3. 主要是对数组里的数字按最高位及次高位排序，采用先字符拼接后转成Long比较，排序整个数组，最后拼接
+     *           整体算法效率不够高
+     *
+     *
+     * @param nums
+     * @return
+     */
     public String largestNumber(int[] nums) {
         StringBuilder sb = new StringBuilder();
 
