@@ -49,6 +49,16 @@ public class Rob {
     }
 
 
+    /***
+     *    思路:
+     *     1. 时间复杂度为O(N)
+     *     2. 空间复杂度为O(1)
+     *
+     *
+     *
+     * @param nums
+     * @return
+     */
     public int test(int[] nums) {
 
         int length = nums.length;
@@ -60,10 +70,25 @@ public class Rob {
             return Math.max(nums[0], nums[1]);
         }
 
+
         return Math.max(robRange(nums, 0, length - 2), robRange(nums, 1, length - 1));
     }
 
 
+    /****
+     *
+     *   {1,3,1,3,100}  长度为5
+     *
+     *    结果为 103
+     *
+     *     nums , 0 , 3     -----  nums ,1 4
+     *
+     *
+     * @param nums
+     * @param start
+     * @param end
+     * @return
+     */
     public int robRange(int[] nums, int start, int end) {
 
         int first = nums[start];
@@ -77,8 +102,10 @@ public class Rob {
         }
         return second;
     }
-
-
+    
+    
+    
+    
     /***
      *     思路:
      *       1. 时间复杂度为O(N)
