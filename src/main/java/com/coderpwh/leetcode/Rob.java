@@ -46,6 +46,12 @@ public class Rob {
 
         System.out.println(rob.test(nums));
 
+
+//        int nums[] = {2, 7, 9, 3, 1};
+
+//        System.out.println(rob.rob2(nums));
+
+
     }
 
 
@@ -53,7 +59,13 @@ public class Rob {
      *    思路:
      *     1. 时间复杂度为O(N)
      *     2. 空间复杂度为O(1)
-     *
+     *     3. 主要利用动态规划来实现，由于首尾不能偷，中间要间隔一家
+     *       就会存在[0, n-2] [1,n-1] ,n为数组的长度大小
+     *       如果只有一家，则是n[0]
+     *       如果有两家，则需要比较大小，Math.max(n[0],n[1])
+     *       对于房间数大于2的，则会
+     *       dp[i]=max(dp[i−2]+nums[i],dp[i−1])
+     
      *
      *
      * @param nums
@@ -93,19 +105,45 @@ public class Rob {
 
         int first = nums[start];
 
-        int second = Math.max(nums[start], nums[start + 1]);
+        int sencod = Math.max(nums[start], nums[start + 1]);
 
         for (int i = start + 2; i <= end; i++) {
-            int temp = second;
-            second = Math.max(first + nums[i], second);
+            int temp = sencod;
+            sencod = Math.max(first + nums[i], sencod);
             first = temp;
         }
-        return second;
+        return sencod;
+
+
     }
-    
-    
-    
-    
+
+
+    public int rob2(int nums[]) {
+
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+
+        int length = nums.length;
+
+        if (length == 1) {
+            return nums[0];
+        }
+
+        int first = nums[0];
+        int sencod = Math.max(nums[0], nums[1]);
+
+        for (int i = 2; i < length; i++) {
+
+            int temp = sencod;
+            sencod = Math.max(first + nums[i], sencod);
+            first = temp;
+
+        }
+        return sencod;
+    }
+
+
     /***
      *     思路:
      *       1. 时间复杂度为O(N)
@@ -149,3 +187,4 @@ public class Rob {
 
 
 }
+
