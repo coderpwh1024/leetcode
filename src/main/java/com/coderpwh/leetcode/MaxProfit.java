@@ -3,7 +3,7 @@ package com.coderpwh.leetcode;
 
 /**
  * 121 买卖股票的最佳时机
- * 
+ *
  * <p>
  * 给定一个数组 prices ，它的第 i 个元素 prices[i] 表示一支给定股票第 i 天的价格。
  * <p>
@@ -64,6 +64,16 @@ public class MaxProfit {
     }
 
 
+    /***
+     *
+     *    思路: 
+     *        1.时间复杂度为O(N^2)
+     *        2.空间复杂度为O(1)
+     *        3. 暴力求解，运行超时，二层for循环，执行效率略低
+     *
+     * @param prices
+     * @return
+     */
     public int maxProfit(int[] prices) {
 
         int sum = 0;
