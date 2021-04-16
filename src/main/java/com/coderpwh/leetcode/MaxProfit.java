@@ -46,6 +46,16 @@ public class MaxProfit {
     }
 
 
+    /***
+     *    思路: 
+     *       1. 时间复杂度为O(N)
+     *       2. 空间复杂度为O(1)
+     *
+     *
+     *
+     * @param prices
+     * @return
+     */
     public int test(int[] prices) {
 
         int minprice = Integer.MAX_VALUE;
@@ -66,7 +76,7 @@ public class MaxProfit {
 
     /***
      *
-     *    思路: 
+     *    思路:
      *        1.时间复杂度为O(N^2)
      *        2.空间复杂度为O(1)
      *        3. 暴力求解，运行超时，二层for循环，执行效率略低
