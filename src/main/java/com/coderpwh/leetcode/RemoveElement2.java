@@ -21,6 +21,16 @@ public class RemoveElement2 {
     }
 
 
+    /***
+     *
+     *      思路:
+     *          1. 时间复杂度为O(N)
+     *          2. 空间复杂度为O(1)
+     *          3. 利用数组的双指针来解决
+     * @param nums
+     * @param val
+     * @return
+     */
     public int removeElement(int[] nums, int val) {
 
         int left = 0;
