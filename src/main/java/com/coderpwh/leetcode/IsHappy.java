@@ -47,6 +47,16 @@ public class IsHappy {
     }
 
 
+    /***
+     *    思路:
+     *       1. 时间复杂度为O(logN)
+     *       2. 空间复杂度为O(logN)
+     *       3. 主要是利用hash方式来实现的
+     *
+     *
+     * @param n
+     * @return
+     */
     public boolean isHappy(int n) {
 
         Set<Integer> set = new HashSet<>();
