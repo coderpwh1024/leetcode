@@ -102,6 +102,16 @@ public class MissingNumber {
 
     }
 
+
+    /***
+     *    思路:
+     *       1. 时间复杂度为O(N)
+     *       2. 空间复杂度为O(N)
+     *       3. 利用hash方式排序
+     *
+     * @param nums
+     * @return
+     */
     public int test(int nums[]) {
 
         Set<Integer> numSet = new HashSet<>();
