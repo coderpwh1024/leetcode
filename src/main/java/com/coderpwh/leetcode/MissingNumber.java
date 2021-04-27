@@ -63,6 +63,17 @@ public class MissingNumber {
     }
 
 
+    /***
+     *   思路:
+     *       1.时间复杂度为O(nlogn)
+     *       2.空间复杂度为O(1)
+     *       3. 主要是利用排序的方式实现
+     *
+     *
+     *
+     * @param nums
+     * @return
+     */
     public int missingNumber(int[] nums) {
 
 
@@ -91,4 +102,3 @@ public class MissingNumber {
 
 
 }
-
