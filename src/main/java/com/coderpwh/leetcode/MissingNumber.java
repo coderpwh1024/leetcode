@@ -1,6 +1,8 @@
 package com.coderpwh.leetcode;
 
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 
 /***
@@ -98,6 +100,25 @@ public class MissingNumber {
 
         return count;
 
+    }
+
+    public int test(int nums[]) {
+
+        Set<Integer> numSet = new HashSet<>();
+
+        for (int num : nums) {
+            numSet.add(num);
+        }
+
+        int length = nums.length + 1;
+
+        for (int i = 0; i < length; i++) {
+            if (!numSet.contains(i)) {
+                return i;
+            }
+        }
+
+        return -1;
     }
 
 
