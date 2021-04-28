@@ -91,6 +91,21 @@ public class JudgeSquareSum {
     }
 
 
+    /***
+     *
+     *    思路:
+     *       1. 时间复杂度为O(c开根号)
+     *       2. 空间富足度为O(1)
+     *       3. 利用双指针方式实现
+     *       如果满足 a^2+b^2=c 必然有a<=b
+     *       a^2+b^2=c 则满足条件，返回true
+     *       a^2+b^2<c 则a+1
+     *       a^2+b^2>c 则b-1
+     *
+     *
+     * @param c
+     * @return
+     */
     public boolean test2(int c) {
         int left = 0;
 
@@ -113,3 +128,4 @@ public class JudgeSquareSum {
 
 
 }
+
