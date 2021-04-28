@@ -2,6 +2,7 @@ package com.coderpwh.leetcode;
 
 /**
  * 633 平方数之和
+ *
  * <p>
  * 给定一个非负整数 c ，你要判断是否存在两个整数 a 和 b，使得 a2 + b2 = c 。
  * <p>
@@ -42,6 +43,7 @@ public class JudgeSquareSum {
 //        sum.judgeSquareSum(num);
         System.out.println(sum.judgeSquareSum(num));
         System.out.println(sum.test(num));
+        System.out.println(sum.test2(num));
     }
 
 
@@ -83,6 +85,27 @@ public class JudgeSquareSum {
             double b = Math.sqrt(c - a * a);
             if (b == (int) b) {
                 return true;
+            }
+        }
+        return false;
+    }
+
+
+    public boolean test2(int c) {
+        int left = 0;
+
+        int right = (int) Math.sqrt(c);
+
+        while (left <= right) {
+
+            int sum = left * left + right * right;
+
+            if (sum == c) {
+                return true;
+            } else if (sum > c) {
+                right--;
+            } else {
+                left++;
             }
         }
         return false;
