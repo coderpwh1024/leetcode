@@ -43,6 +43,16 @@ public class RunningSum {
     }
 
 
+    /***
+     *    思路:
+     *        1.时间复杂度为O(N)
+     *        2. 空间复杂度为O(N)
+     *        3. 利用数组遍历
+     *
+     *
+     * @param nums
+     * @return
+     */
     public int[] runningSum(int[] nums) {
 
         int[] arr = new int[nums.length];
@@ -67,4 +77,3 @@ public class RunningSum {
     }
 
 }
-
