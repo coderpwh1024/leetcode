@@ -51,6 +51,16 @@ public class XorOperation {
     }
 
 
+    /***
+     *      思路:
+     *         1. 时间复杂度为O(N)
+     *         2. 空间复杂度为O(1)
+     *         3. for循环既可以实现
+     *
+     * @param n
+     * @param start
+     * @return
+     */
     public int xorOperation(int n, int start) {
 
 
@@ -69,4 +79,5 @@ public class XorOperation {
 
 
 }
+
 
