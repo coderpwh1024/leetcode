@@ -34,6 +34,16 @@ public class Transpose {
     }
 
 
+    /***
+     *
+     *      思路：
+     *         1. 时间复杂度为O(MN)，数组的长度为M,N
+     *         2. 空间复杂度为O(1)
+     *         3. 主要是数组对角线，交换位置即可
+     *
+     * @param matrix
+     * @return
+     */
     public int[][] transpose(int[][] matrix) {
 
         int m = matrix.length;
