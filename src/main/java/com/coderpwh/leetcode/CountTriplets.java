@@ -55,6 +55,16 @@ public class CountTriplets {
     }
 
 
+    /***
+     *   思路:
+     *      1. 时间复杂度为O(N^3)
+     *      2. 空间复杂度为O(N) 创建了长度为N的数组长度
+     *      3. 
+     *
+     *
+     * @param arr
+     * @return
+     */
     public int countTriplets(int[] arr) {
 
 
@@ -83,4 +93,5 @@ public class CountTriplets {
 
 
 }
+
 
