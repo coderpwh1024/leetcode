@@ -107,6 +107,17 @@ public class RelativeSortArray {
         return arr;
     }
 
+
+    /***
+     *     思路:
+     *        1. 时间复杂度为O(N)
+     *        2. 空间复杂度为为O(M) 创建了map集合与list集合
+     *
+     *
+     * @param arr1
+     * @param arr2
+     * @return
+     */
     public int[] test(int[] arr1, int[] arr2) {
 
         Map<Integer, Integer> map = new HashMap<>();
