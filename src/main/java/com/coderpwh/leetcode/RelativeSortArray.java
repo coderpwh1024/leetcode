@@ -17,6 +17,7 @@ package com.coderpwh.leetcode;
  * 输入：arr1 = [2,3,1,3,2,4,6,7,9,2,19], arr2 = [2,1,4,3,9,6]
  * 输出：[2,2,2,1,4,3,3,9,6,7,19]
  */
+
 import java.util.*;
 
 /**
@@ -46,13 +47,26 @@ public class RelativeSortArray {
 
 
         RelativeSortArray array = new RelativeSortArray();
-//        array.relativeSortArray(arr1, arr2);
-        array.test(arr1,arr2);
+        array.relativeSortArray(arr1, arr2);
+        array.test(arr1, arr2);
 
 
     }
 
 
+    /***
+     *
+     *     思路:
+     *        1. 时间富足度为O(MN)  双重for循环
+     *        2. 空间复杂度为O(N) 创建了大小为N的集合
+     *        3. 测试用例部分不通过
+     *
+     *
+     *
+     * @param arr1
+     * @param arr2
+     * @return
+     */
     public int[] relativeSortArray(int[] arr1, int[] arr2) {
 
 
