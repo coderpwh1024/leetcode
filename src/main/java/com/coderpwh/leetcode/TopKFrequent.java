@@ -85,6 +85,17 @@ public class TopKFrequent {
         return list;
     }
 
+
+    /***
+     *    思路:
+     *       1. 时间复杂度为O(l*n+l*mlogm)
+     *       2. 空间复杂度为O(l*m)
+     *       3。 利用哈希排序实现
+     *
+     * @param words
+     * @param k
+     * @return
+     */
     public List<String> test(String[] words, int k) {
 
         Map<String, Integer> cnt = new HashMap<>();
