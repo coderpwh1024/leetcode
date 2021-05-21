@@ -21,11 +21,22 @@ public class SortedSquares {
 
     }
 
+
+    /***
+     *     思路:
+     *        1. 时间复杂度为O(NlogN),对数组长度为N进行遍历，并进行排序
+     *        2. 空间复杂度为O(N),创建了大小为N的集合
+     *        3. 数组遍历+排序
+     *
+     *
+     * @param nums
+     * @return
+     */
     public int[] sortedSquares(int[] nums) {
 
         int[] arrr = new int[nums.length];
 
-        List<Integer> list = new ArrayList<>();
+        List<Integer> list = new ArrayList<>(nums.length);
 
 
         for (int i = 0; i < nums.length; i++) {
