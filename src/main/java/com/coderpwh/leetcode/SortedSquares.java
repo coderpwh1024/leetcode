@@ -40,6 +40,8 @@ public class SortedSquares {
         // {0,1,9,16,100}
         SortedSquares sort = new SortedSquares();
         sort.sortedSquares(nums);
+        System.out.println();
+        sort.test(nums);
 
 
     }
@@ -50,8 +52,6 @@ public class SortedSquares {
      *        1. 时间复杂度为O(NlogN),对数组长度为N进行遍历，并进行排序
      *        2. 空间复杂度为O(N),创建了大小为N的集合
      *        3. 数组遍历+排序
-     *
-     *
      * @param nums
      * @return
      */
@@ -76,6 +76,39 @@ public class SortedSquares {
 
         return arrr;
 
+    }
+
+
+    /***
+     *     思路:
+     *        1. 时间复杂度为O(N)
+     *        2.  空间复杂度为O(1)
+     *        3.  利用双指针方式实现
+     *
+     *
+     * @param nums
+     * @return
+     */
+    public int[] test(int[] nums) {
+
+        int n = nums.length;
+
+        int[] ans = new int[nums.length];
+
+
+        for (int i = 0, j = n - 1, pos = n - 1; i <= j; ) {
+
+            if (nums[i] * nums[i] > nums[j] * nums[j]) {
+                ans[pos] = nums[i] * nums[i];
+                ++i;
+            } else {
+                ans[pos] = nums[j] * nums[j];
+                --j;
+            }
+            --pos;
+
+        }
+        return ans;
     }
 
 
