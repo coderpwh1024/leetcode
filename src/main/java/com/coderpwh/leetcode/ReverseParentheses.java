@@ -38,7 +38,10 @@ public class ReverseParentheses {
 
 
         //  leetcode
-        String str = "(ed(et(oc))el)";
+//        String str = "(ed(et(oc))el)";
+
+        String str = "(u(love)i)";
+
 
         ReverseParentheses rever = new ReverseParentheses();
 
@@ -49,6 +52,15 @@ public class ReverseParentheses {
     }
 
 
+    /***
+     *
+     *    思路:
+     *       1. 时间复杂度为O(N),对长度为N的字符串进行遍历
+     *       2. 空间复杂度为O(N) 创建了集合
+     *       3. 主要利用栈方式实现
+     * @param s
+     * @return
+     */
     public String reverseParentheses(String s) {
 
         Deque<String> stack = new LinkedList<>();
