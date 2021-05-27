@@ -35,6 +35,9 @@ public class HammingDistance {
 
         Integer count = hammingDistance.hammingDistance(x, y);
         System.out.println(count);
+
+        Integer num = hammingDistance.test(x, y);
+        System.out.println(num);
     }
 
 
@@ -57,6 +60,18 @@ public class HammingDistance {
     public int hammingDistance(int x, int y) {
 
         return Integer.bitCount(x ^ y);
+    }
+
+
+    public int test(int x, int y) {
+        int s = x ^ y;
+        int ret = 0;
+        while (s != 0) {
+            ret += s & 1;
+            s >>= 1;
+        }
+        return ret;
+
     }
 
 
