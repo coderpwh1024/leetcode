@@ -35,14 +35,20 @@ public class HammingDistance {
 
         Integer count = hammingDistance.hammingDistance(x, y);
         System.out.println(count);
-
-
     }
 
 
-    /**
-     * 0 0 0 1
-     * 0 1 0 0
+    /***
+     *   思路:
+     *      1. 时间复杂度为O(1)
+     *      2. 空间复杂度为O(1)
+     *
+     *     9 =    1  0  0  1
+     *    12 =    1  1  0  0
+     *  9^12 =    0  1  0  1
+     *   用异或运算，相同的则返回为0 ，不同的则返回1
+     *    然后统计1的个数
+     *
      *
      * @param x
      * @param y
