@@ -19,7 +19,7 @@ package com.coderpwh.leetcode;
  *
  * 输入：n = 1
  * 输出：true
- ** 
+ **
  *
  *
  */
@@ -37,6 +37,16 @@ public class IsPowerOfFour {
 
     }
 
+
+    /***
+     *       思路:
+     *          1. 时间复杂度为(logN)
+     *          2. 空间复杂的为O(1)
+     *          3. 主要利用循环的方式实现
+     *
+     * @param n
+     * @return
+     */
     public boolean isPowerOfFour(int n) {
 
         if (n <= 0) {
@@ -58,3 +68,4 @@ public class IsPowerOfFour {
 
 
 }
+
