@@ -27,13 +27,15 @@ public class IsPowerOfFour {
 
     public static void main(String[] args) {
 
-        int n = 0;
+        int n = 1;
 
 
         IsPowerOfFour power = new IsPowerOfFour();
 //        power.isPowerOfFour(n);
 
         System.out.println(power.isPowerOfFour(n));
+
+        System.out.println(power.test(n));
 
     }
 
@@ -67,5 +69,23 @@ public class IsPowerOfFour {
     }
 
 
+    /***
+     *
+     *    思路:
+     *       1. 时间复杂度为O(1)
+     *       2. 空间复杂度为O(1)
+     *       3. 利用取模方式，能被4整除，余数必为1
+     *
+     *
+     *
+     * @param n
+     * @return
+     */
+    public boolean test(int n) {
+        return n > 0 && (n & (n - 1)) == 0 && n % 3 == 1;
+    }
+
+
 }
+
 
