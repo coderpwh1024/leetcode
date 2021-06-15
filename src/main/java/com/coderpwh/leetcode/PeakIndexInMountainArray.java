@@ -82,6 +82,17 @@ public class PeakIndexInMountainArray {
     }
 
 
+    /***
+     *
+     *   思路: 
+     *       1.时间复杂度为O(logn)
+     *       2. 空间复杂度为O(1)
+     *       3.采用二分查找
+     *
+     *
+     * @param arr
+     * @return
+     */
     public int test(int arr[]) {
 
         int n = arr.length;
