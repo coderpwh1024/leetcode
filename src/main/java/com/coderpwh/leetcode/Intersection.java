@@ -21,6 +21,18 @@ public class Intersection {
 
     }
 
+
+    /***
+     *    思路: 
+     *        1.时间复杂度为O(N^2)
+     *        2. 空间复杂度为O(N)
+     *        3. for循环遍历
+     *
+     *
+     * @param nums1
+     * @param nums2
+     * @return
+     */
     public int[] intersection(int[] nums1, int[] nums2) {
 
         Set<Integer> set = new HashSet<>();
@@ -36,7 +48,7 @@ public class Intersection {
         }
 
 
-         int [] arr = new int[set.size()];
+        int[] arr = new int[set.size()];
 
         int i = 0;
         for (Integer count : set) {
@@ -49,3 +61,4 @@ public class Intersection {
     }
 
 }
+
