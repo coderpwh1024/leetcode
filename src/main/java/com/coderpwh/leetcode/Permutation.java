@@ -2,6 +2,25 @@ package com.coderpwh.leetcode;
 
 import java.util.*;
 
+/***
+ *  剑指 Offer 38. 字符串的排列
+ *
+ *输入一个字符串，打印出该字符串中字符的所有排列。
+ *
+ *  
+ *
+ * 你可以以任意顺序返回这个字符串数组，但里面不能有重复元素。
+ *
+ *  
+ *
+ * 示例:
+ *
+ * 输入：s = "abc"
+ * 输出：["abc","acb","bac","bca","cab","cba"]
+ *
+ *
+ *
+ */
 public class Permutation {
 
 
@@ -13,11 +32,11 @@ public class Permutation {
         String str = "abc";
 
         Permutation per = new Permutation();
-         String arr[] =  per.permutation(str);
+        String arr[] = per.permutation(str);
 
-         for(int i=0;i<arr.length;i++){
-             System.out.println(arr[i]);
-         }
+        for (int i = 0; i < arr.length; i++) {
+            System.out.println(arr[i]);
+        }
     }
 
 
@@ -61,3 +80,4 @@ public class Permutation {
 
 
 }
+
