@@ -83,6 +83,18 @@ public class SortArrayByParityII {
     }
 
 
+    /***
+     *
+     *    思路:
+     *        1. 时间复杂度为O(N)
+     *        2. 空间复杂度为O(1)
+     *        3. 利用双指针方式，主要是奇数位置上的数进行交换
+     *
+     *
+     *
+     * @param nums
+     * @return
+     */
     public int[] test(int nums[]) {
 
         int n = nums.length;
