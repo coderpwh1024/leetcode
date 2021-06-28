@@ -10,7 +10,7 @@ import java.util.List;
  * 对数组进行排序，以便当 A[i] 为奇数时，i 也是奇数；当 A[i] 为偶数时， i 也是偶数。
  *
  * 你可以返回任何满足上述条件的数组作为答案。
- * 
+ *
  示例：
 
  输入：[4,2,5,7]
@@ -27,11 +27,13 @@ public class SortArrayByParityII {
 
 
         //  4 ，5 ，2，7
-//        int nums[] = {4, 2, 5, 7};
+        int nums[] = {4, 2, 5, 7};
 
-        int nums[] = {4, 1, 2, 1};
+//        int nums[] = {4, 1, 2, 1};
         SortArrayByParityII sort = new SortArrayByParityII();
         sort.sortArrayByParityII(nums);
+
+        sort.test(nums);
 
     }
 
@@ -79,6 +81,39 @@ public class SortArrayByParityII {
         }
         return arr;
     }
+
+
+    public int[] test(int nums[]) {
+
+        int n = nums.length;
+
+        int j = 1;
+
+        for (int i = 0; i < n; i += 2) {
+
+            if (nums[i] % 2 == 1) {
+
+                while (nums[j] % 2 == 1) {
+                    j += 2;
+                }
+                swap(nums, i, j);
+            }
+        }
+
+
+        for (int i = 0; i < nums.length; i++) {
+            System.out.println(nums[i]);
+        }
+        return nums;
+
+    }
+
+    public void swap(int[] A, int i, int j) {
+        int temp = A[i];
+        A[i] = A[j];
+        A[j] = temp;
+    }
+
 
 }
 
