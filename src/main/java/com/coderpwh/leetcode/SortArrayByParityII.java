@@ -17,6 +17,17 @@ public class SortArrayByParityII {
 
     }
 
+
+    /***
+     *    思路:
+     *       1. 时间复杂度为O(logN)
+     *       2. 空间复杂度为O(N)，定义了3个未知大小的集合
+     *       3. for循环区分开奇偶数，算法效率不够高
+     *
+     *
+     * @param nums
+     * @return
+     */
     public int[] sortArrayByParityII(int[] nums) {
 
 
@@ -52,3 +63,4 @@ public class SortArrayByParityII {
     }
 
 }
+
