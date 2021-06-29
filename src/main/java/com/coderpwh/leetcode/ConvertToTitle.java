@@ -1,8 +1,7 @@
 package com.coderpwh.leetcode;
 
-
 /***
- * 
+ *
  * 给定一个正整数，返回它在 Excel 表中相对应的列名称。
  *
  * 例如，
@@ -57,6 +56,10 @@ public class ConvertToTitle {
      *   AA- 27
      *   AB- 28
      *
+     *      思路:
+     *         1. 时间复杂度为O(log26 columnNumber)
+     *         2, 空间复杂度为O(log26 columnNumber)
+     *
      *
      *
      * @param columnNumber
@@ -77,4 +80,5 @@ public class ConvertToTitle {
 
 
 }
+
 
