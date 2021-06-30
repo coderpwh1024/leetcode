@@ -1,5 +1,8 @@
 package com.coderpwh.leetcode;
 
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
+
+import java.util.Deque;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -32,13 +35,14 @@ public class CheckRecord {
 
 //        String str = "PPALLP";
 
-        String str = "PPALLL";
+//        String str = "PPALLL";
 
+        String str = "LLPPPLL";
 
         CheckRecord check = new CheckRecord();
         check.checkRecord(str);
 
-        System.out.println(check.test(str));
+//        System.out.println(check.test(str));
 
     }
 
@@ -54,20 +58,35 @@ public class CheckRecord {
      */
     public boolean checkRecord(String s) {
 
-        char arr[] = s.toCharArray();
 
+        Deque deque = new LinkedList<>();
+        int count = 0;
+        for (int i = 0; i < s.length(); i++) {
 
-        Queue queue = new LinkedList();
-
-
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] == 'A') {
-                queue.add(arr[i]);
+            if (s.charAt(i) == 'A') {
+                count++;
             }
+            deque.push(s.charAt(i));
         }
 
 
-        return false;
+        int sum = 1;
+        while (!deque.isEmpty()) {
+
+            char a = (char) deque.pop();
+
+            if (deque.peek() != null && deque.peek().equals(a) && a == 'L') {
+                sum++;
+            }
+
+        }
+
+        System.out.println(count);
+        System.out.println(sum);
+
+        System.out.println(count <= 1 && sum <= 2);
+
+        return count <= 1 && sum <= 2;
     }
 
 
