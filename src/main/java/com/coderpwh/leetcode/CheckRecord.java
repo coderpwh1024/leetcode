@@ -48,6 +48,16 @@ public class CheckRecord {
         return false;
     }
 
+
+    /***
+     *    思路:
+     *      1. 时间复杂度为O(N),
+     *      2.  空间复杂度为O(1)
+     *
+     *
+     * @param s
+     * @return
+     */
     public boolean test(String s) {
 
         int count = 0;
