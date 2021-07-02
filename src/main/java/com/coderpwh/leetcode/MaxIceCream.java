@@ -30,6 +30,17 @@ public class MaxIceCream {
     }
 
 
+    /***
+     *     思路:
+     *       1. 时间复杂度为O(NlogN),数组排序与遍历
+     *       2. 空间复杂度为(logn)
+     *       3. 利用排序方式与遍历即可以解决
+     *
+     *
+     * @param costs
+     * @param coins
+     * @return
+     */
     public int maxIceCream(int[] costs, int coins) {
 
         Arrays.sort(costs);
@@ -48,3 +59,4 @@ public class MaxIceCream {
 
 
 }
+
