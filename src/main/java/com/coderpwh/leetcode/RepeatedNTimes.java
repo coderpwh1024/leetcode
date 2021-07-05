@@ -1,5 +1,7 @@
 package com.coderpwh.leetcode;
 
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -33,7 +35,8 @@ public class RepeatedNTimes {
         int nums[] = {2, 1, 2, 5, 3, 2};
 
         RepeatedNTimes times = new RepeatedNTimes();
-        times.repeatedNTimes(nums);
+//        times.repeatedNTimes(nums);
+        times.test(nums);
 
     }
 
@@ -78,6 +81,14 @@ public class RepeatedNTimes {
     }
 
 
+    /***
+     *    思路:
+     *       1. 时间复杂度为O(N)
+     *       2. 空间复杂度为O(N)
+     *
+     * @param nums
+     * @return
+     */
     public int test(int[] nums) {
 
         Map<Integer, Integer> count = new HashMap<>();
