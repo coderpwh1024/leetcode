@@ -1,6 +1,7 @@
 package com.coderpwh.leetcode;
 
 import java.util.HashMap;
+import java.util.Map;
 
 /*****
  * 961. 重复 N 次的元素
@@ -75,11 +76,26 @@ public class RepeatedNTimes {
         return result;
 
     }
-    
 
 
+    public int test(int[] nums) {
+
+        Map<Integer, Integer> count = new HashMap<>();
+
+        for (int x : nums) {
+            count.put(x, count.getOrDefault(x, 0) + 1);
+        }
+
+        for (int k : count.keySet()) {
+            if (count.get(k) > 1) {
+                return k;
+            }
+        }
+        throw null;
+    }
 
 
 }
+
 
 
