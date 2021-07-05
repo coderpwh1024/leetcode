@@ -36,6 +36,17 @@ public class RepeatedNTimes {
 
     }
 
+
+    /***
+     *     思路:
+     *        1. 时间复杂度为O(2N), 两次for循环遍历
+     *        2. 空间复杂度为O(N)
+     *        3. 主要用map和fox循环
+     *
+     *
+     * @param nums
+     * @return
+     */
     public int repeatedNTimes(int[] nums) {
 
         int result = 0;
@@ -64,6 +75,11 @@ public class RepeatedNTimes {
         return result;
 
     }
+    
+
+
+
 
 }
+
 
