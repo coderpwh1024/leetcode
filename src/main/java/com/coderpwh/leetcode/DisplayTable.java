@@ -57,6 +57,12 @@ public class DisplayTable {
 
     /***
      *
+     *      思路:
+     *         1. 时间复杂度为O(T+NlogN+MlogM+MN)
+     *         2.  空间复杂度为O(T+N+M)
+     *
+     *
+     *
      * [
      *
      * ["Table","Beef Burrito","Ceviche","Fried Chicken","Water"],
