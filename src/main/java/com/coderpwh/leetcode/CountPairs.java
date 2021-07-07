@@ -20,6 +20,19 @@ public class CountPairs {
 
     }
 
+
+    /***
+     *
+     *     思路:
+     *       1. 时间复杂度为O(N^2)
+     *       2. 空间复杂度为O(N)
+     *       3. 利用map遍历，未通过测试用例
+     *
+     *
+     *
+     * @param deliciousness
+     * @return
+     */
     public int countPairs(int[] deliciousness) {
 
 
@@ -106,3 +119,4 @@ public class CountPairs {
 
 
 }
+
