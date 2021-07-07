@@ -29,7 +29,7 @@ import java.util.Set;
  * 解释：大餐的美味程度组合为 3 种 (1,1) ，9 种 (1,3) ，和 3 种 (1,7) 。
  *
  *
- * 
+ *
  *
  */
 public class CountPairs {
@@ -114,6 +114,19 @@ public class CountPairs {
     }
 
 
+    /****
+     *
+     *   思路:
+     *     1. 时间复杂度为O(NlogN)
+     *     2. 空间复杂度为O(N)
+     *     3.利用哈希表方式解决
+     *
+     *
+     *
+     *
+     * @param deliciousness
+     * @return
+     */
     public int test(int[] deliciousness) {
 
         final int MOD = 1000000007;
@@ -147,4 +160,5 @@ public class CountPairs {
 
 
 }
+
 
