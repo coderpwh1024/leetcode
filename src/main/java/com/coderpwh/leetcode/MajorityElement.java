@@ -77,6 +77,18 @@ public class MajorityElement {
     }
 
 
+    /***
+     *     思路:
+     *        1. 时间复杂度为O(N),对数组进行遍历
+     *        2. 空间复杂度为O(1)
+     *        3. 第一个for循环主要是统计出，出现次数较多的元素
+     *           第二个fox循环则是主要统计出次数
+     *
+     *
+     *
+     * @param nums
+     * @return
+     */
     public int test(int[] nums) {
 
         int candidate = -1;
