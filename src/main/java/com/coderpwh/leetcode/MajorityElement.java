@@ -42,7 +42,7 @@ public class MajorityElement {
      *
      *     思路:
      *        1. 时间复杂度为O(N)
-     *        2. 空间复杂度为O(1)
+     *        2. 空间复杂度为O(N)
      *        3. 利用哈希 进行遍历实现
      *
      *
