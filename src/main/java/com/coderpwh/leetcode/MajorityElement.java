@@ -70,7 +70,7 @@ public class MajorityElement {
                 return key;
             }
         }
-        return 0;
+        return -1;
 
     }
 
