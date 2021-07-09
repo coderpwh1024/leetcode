@@ -35,6 +35,8 @@ public class MajorityElement {
 
         MajorityElement element = new MajorityElement();
         System.out.println(element.majorityElement(nums));
+
+        System.out.println(element.test(nums));
     }
 
 
@@ -73,5 +75,39 @@ public class MajorityElement {
         return -1;
 
     }
+
+
+    public int test(int[] nums) {
+
+        int candidate = -1;
+
+        int count = 0;
+
+        for (int num : nums) {
+
+            if (count == 0) {
+                candidate = num;
+            }
+            if (num == candidate) {
+                count++;
+            } else {
+                count--;
+            }
+
+        }
+
+        count = 0;
+
+        int length = nums.length;
+
+        for (int num : nums) {
+            if (num == candidate) {
+                count++;
+            }
+        }
+        return count * 2 > length ? candidate : -1;
+
+    }
+
 
 }
