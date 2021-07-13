@@ -75,6 +75,26 @@ public class DivisorGame {
     }
 
 
+    /***
+     *   思路:
+     *       1. 时间复杂度为O(1)
+     *       2. 空间复杂度为O(1)
+     *
+     *       n： 1 事，（0，1）之间没有因子，故alisi 失败
+     *       n: 2   alisi 取 1 n就变为1 了 alisi 成功
+     *       n: 3   alisi 只能取 1 n变为2 ,根据2 的结论  alisi 失败
+     *       n： 4  alisi 取 1 或2  取1：n 变为3 则 Bob则失败 ，取2 alisi 成功
+     *       n： 5   alisi 取1 n变为4 alisi 失败
+     *
+     *       .........
+     *
+     *      奇数失败，偶数成功
+     *       
+     *
+     *
+     * @param n
+     * @return
+     */
     public boolean test(int n) {
         return n % 2 == 0;
     }
