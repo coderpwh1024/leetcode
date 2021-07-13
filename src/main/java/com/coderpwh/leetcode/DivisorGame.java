@@ -41,6 +41,18 @@ public class DivisorGame {
         System.out.println(game.divisorGame(n));
     }
 
+
+    /***
+     *    思路:
+     *      1. 时间复杂度为O(N)
+     *      2. 空间复杂度为O(1)
+     *      3. 测试用例不通过，没理解清楚题意
+     *   
+     * 
+     * 
+     * @param n
+     * @return
+     */
     public boolean divisorGame(int n) {
 
         int x = 1;
@@ -62,4 +74,3 @@ public class DivisorGame {
 
 }
 
- 
