@@ -1,4 +1,4 @@
-package com.coderpwh.leetcode;
+ package com.coderpwh.leetcode;
 
 import java.util.Arrays;
 
@@ -55,6 +55,20 @@ public class MinAbsoluteSumDiff {
 
     }
 
+
+    /***
+     *    思路:
+     *      1. 时间复杂度为O(nlogN),
+     *      2. 空间复杂度为O(N)
+     *
+     *
+     *
+     *
+     * @param nums1
+     * @param nums2
+     * @return
+     */
+
     public int minAbsoluteSumDiff(int[] nums1, int[] nums2) {
 
         final int MOD = 1000000007;
@@ -66,6 +80,7 @@ public class MinAbsoluteSumDiff {
         Arrays.sort(rec);
 
         int sum = 0;
+
         int maxn = 0;
 
         for (int i = 0; i < n; i++) {
@@ -83,6 +98,10 @@ public class MinAbsoluteSumDiff {
     }
 
 
+
+
+
+
     public int binarySearch(int[] rec, int target) {
         int low = 0;
         int higt = rec.length - 1;
@@ -90,7 +109,6 @@ public class MinAbsoluteSumDiff {
         if (rec[higt] < target) {
             return higt + 1;
         }
-
         while (low < higt) {
             int mid = (higt - low) / 2 + low;
 
