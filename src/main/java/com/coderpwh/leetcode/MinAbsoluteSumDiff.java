@@ -1,4 +1,4 @@
- package com.coderpwh.leetcode;
+package com.coderpwh.leetcode;
 
 import java.util.Arrays;
 
@@ -61,9 +61,6 @@ public class MinAbsoluteSumDiff {
      *      1. 时间复杂度为O(nlogN),
      *      2. 空间复杂度为O(N)
      *
-     *
-     *
-     *
      * @param nums1
      * @param nums2
      * @return
@@ -98,10 +95,13 @@ public class MinAbsoluteSumDiff {
     }
 
 
-
-
-
-
+    /***
+     *  二分查找方式
+     *
+     * @param rec
+     * @param target
+     * @return
+     */
     public int binarySearch(int[] rec, int target) {
         int low = 0;
         int higt = rec.length - 1;
@@ -122,3 +122,4 @@ public class MinAbsoluteSumDiff {
     }
 
 }
+
