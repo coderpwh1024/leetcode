@@ -38,7 +38,7 @@ public class Search {
 
         System.out.println(search.search(num, target));
 
-        System.out.println(search.test(num,target));
+        System.out.println(search.test(num, target));
     }
 
 
@@ -63,6 +63,17 @@ public class Search {
 
     }
 
+
+    /***
+     *    思路:
+     *       1.时间复杂度为O(logN)
+     *       2.空间复杂度为O(1)
+     *       3. 利用二分查找方式，时间复杂度为O(logn)
+     *
+     * @param nums
+     * @param target
+     * @return
+     */
     public int test(int[] nums, int target) {
 
         int leftIdx = binarySearch(nums, target, true);
@@ -98,5 +109,3 @@ public class Search {
 
 
 }
-
-
