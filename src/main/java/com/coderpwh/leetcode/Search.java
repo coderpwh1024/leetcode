@@ -40,7 +40,16 @@ public class Search {
     }
 
 
-
+    /****
+     *   思路:
+     *      1. 时间复杂度为O(N)
+     *      2. 空间复杂度为O(1)
+     *
+     *
+     * @param nums
+     * @param target
+     * @return
+     */
     public int search(int[] nums, int target) {
         int count = 0;
         for (int i = 0; i < nums.length; i++) {
@@ -53,3 +62,4 @@ public class Search {
     }
 
 }
+
