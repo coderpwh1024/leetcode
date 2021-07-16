@@ -37,6 +37,8 @@ public class Search {
         search.search(num, target);
 
         System.out.println(search.search(num, target));
+
+        System.out.println(search.test(num,target));
     }
 
 
@@ -61,5 +63,40 @@ public class Search {
 
     }
 
+    public int test(int[] nums, int target) {
+
+        int leftIdx = binarySearch(nums, target, true);
+
+        int rightIdx = binarySearch(nums, target, false) - 1;
+
+        if (leftIdx <= rightIdx && rightIdx < nums.length && nums[leftIdx] == target && nums[rightIdx] == target) {
+            return rightIdx - leftIdx + 1;
+        }
+
+        return 0;
+    }
+
+    public int binarySearch(int[] nums, int target, boolean lower) {
+
+        int left = 0;
+        int right = nums.length - 1;
+        int ans = nums.length;
+
+        while (left <= right) {
+
+            int mid = (left + right) / 2;
+
+            if (nums[mid] > target || (lower && nums[mid] >= target)) {
+                right = mid - 1;
+                ans = mid;
+            } else {
+                left = mid + 1;
+            }
+        }
+        return ans;
+    }
+
+
 }
+
 
