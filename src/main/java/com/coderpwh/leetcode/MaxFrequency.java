@@ -49,7 +49,6 @@ public class MaxFrequency {
 
 
         MaxFrequency max = new MaxFrequency();
-//        max.maxFrequency(nums, k);
 
         System.out.println(max.maxFrequency(nums, k));
     }
@@ -60,6 +59,35 @@ public class MaxFrequency {
      *   思路:
      *      1. 时间复杂度为O(nlongN)
      *      2. 空间复杂度为O(logN)
+     *      3 . 利用排序与窗口滑动实现的
+     *
+     *   退到过程如下
+     * 1-4   加3      下标 0，1  （4-1）*（1-0）=3*1=3
+     *
+     *  4-8   加4      下标 1，2   （8-4）*（2-1）=4*1=4
+     *
+     *  8-13   加5     下标 2，3    （13-8）*（3-2）=5*1=5
+     *
+     *
+     *
+     *
+     * 1-4   加3  下标 0，1 （4-1）*（1-0）=3*1=3=3+0=3
+     *
+     *   res=2
+     *
+     *
+     * 4-8   加4  下标 1,2  （8-4）*（1-0）=4*2=8+3=11
+     *     total : 11-(8-1)=4
+     *     l=1
+     *
+     *   res=2
+     *
+     * 8-13  加5   下标 2，3     （13-8）*（3-1）=10+4=14
+     *
+     *       total: 14-(13-4)=14-9=5
+     *       l=2
+     *       res=max(2,3-2+1) =2
+     *
      * @param nums
      * @param k
      * @return
@@ -80,6 +108,7 @@ public class MaxFrequency {
 
             total += (long) (nums[r] - nums[r - 1]) * (r - l);
 
+            System.out.println(total);
             while (total > k) {
                 total -= nums[r] - nums[l];
                 ++l;
@@ -92,4 +121,5 @@ public class MaxFrequency {
     }
 
 }
+
 
