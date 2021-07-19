@@ -55,6 +55,15 @@ public class MaxFrequency {
     }
 
 
+    /***
+     *
+     *   思路:
+     *      1. 时间复杂度为O(nlongN)
+     *      2. 空间复杂度为O(logN)
+     * @param nums
+     * @param k
+     * @return
+     */
     public int maxFrequency(int[] nums, int k) {
 
         Arrays.sort(nums);
@@ -83,3 +92,4 @@ public class MaxFrequency {
     }
 
 }
+
