@@ -18,6 +18,16 @@ public class FindRepeatNumber {
     }
 
 
+    /***
+     *     思路:
+     *        1. 时间复杂度为O(N)
+     *        2. 空间复杂度为O(N)
+     *        3. 利用map与遍历方式实现
+     *
+     *
+     * @param nums
+     * @return
+     */
     public int findRepeatNumber(int[] nums) {
 
 
@@ -49,3 +59,4 @@ public class FindRepeatNumber {
 
 
 }
+
