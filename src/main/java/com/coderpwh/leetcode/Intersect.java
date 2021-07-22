@@ -101,22 +101,34 @@ public class Intersect {
     }
 
 
+    /***
+     *   思路:
+     *       1. 时间复杂度为O(NlogN+MlogM)
+     *       2. 空间复杂度为O(min(m,n))
+     *       3. 利用排序与双指针方式实现
+     *
+     *
+     * @param nums1
+     * @param nums2
+     * @return
+     */
     public int[] test(int[] nums1, int[] nums2) {
 
         Arrays.sort(nums1);
         Arrays.sort(nums2);
 
+
         int length1 = nums1.length;
 
         int length2 = nums2.length;
 
-        int[] intersection = new int[Math.min(length1, length1)];
-
+        int index = 0;
         int index1 = 0;
-
         int index2 = 0;
 
-        int index = 0;
+
+        int intersection[] = new int[Math.min(length1, length2)];
+
 
         while (index1 < length1 && index2 < length2) {
 
@@ -125,15 +137,14 @@ public class Intersect {
             } else if (nums1[index1] > nums2[index2]) {
                 index2++;
             } else {
-                intersection[index] = nums1[index1];
+                intersection[index] = nums1[index];
+                index++;
                 index1++;
                 index2++;
-                index++;
+
             }
 
         }
-
-
         return Arrays.copyOfRange(intersection, 0, index);
     }
 
