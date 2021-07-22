@@ -18,12 +18,27 @@ public class Intersect {
 
 
         Intersect intersect = new Intersect();
-        intersect.intersect(nums1, nums2);
+        int[] arr =  intersect.intersect(nums1, nums2);
+
+        for(int i=0;i<arr.length;i++){
+            System.out.print(arr[i]+"  ");
+        }
 
 
     }
 
 
+    /****
+     *
+     *  思路:
+     *      1. 时间复杂度为O(N+M),对两个数组nums1,nums2的遍历
+     *      2. 空间复杂度为O(min(m,n)) 创建长度为m或者n的数组
+     *
+     *
+     * @param nums1
+     * @param nums2
+     * @return
+     */
     public int[] intersect(int[] nums1, int[] nums2) {
 
         if (nums1.length > nums2.length) {
@@ -59,3 +74,4 @@ public class Intersect {
     }
 
 }
+
