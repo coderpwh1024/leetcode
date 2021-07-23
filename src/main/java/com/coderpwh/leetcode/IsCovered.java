@@ -1,4 +1,4 @@
-package com.coderpwh.leetcode;
+ package com.coderpwh.leetcode;
 
 public class IsCovered {
 
@@ -23,6 +23,15 @@ public class IsCovered {
     }
 
 
+    /****
+     *     思路:
+     *        1. 时间复杂度为O(N^2)
+     *        2.  空间复杂度为O(1)
+     * @param ranges
+     * @param left
+     * @param right
+     * @return
+     */
     public boolean isCovered(int[][] ranges, int left, int right) {
 
         boolean[] flag = new boolean[51];
