@@ -1,5 +1,6 @@
 package com.coderpwh.leetcode;
 
+import java.util.Arrays;
 import java.util.HashMap;
 
 /***
@@ -50,7 +51,7 @@ public class IsAnagram {
     /****
      *
      *      思路:
-     *         1. 时间复杂度为O(M+N)
+     *         1. 时间复杂度为O(N)
      *         2. 空间复杂度为O(N)
      *
      *
@@ -86,5 +87,35 @@ public class IsAnagram {
         return true;
     }
 
-}
 
+    /****
+     *
+     *    思路:
+     *      1. 时间复杂度为O(NlogN)
+     *      2. 空间复杂度为O(NlogN)
+     *      3. 主要利用排序的方式积极
+     *
+     *
+     *
+     * @param s
+     * @param t
+     * @return
+     */
+    public boolean test(String s, String t) {
+
+        if (s.length() != t.length()) {
+            return false;
+        }
+
+        char[] s1 = s.toCharArray();
+
+        char[] t1 = t.toCharArray();
+
+        Arrays.sort(s1);
+        Arrays.sort(t1);
+
+        return Arrays.equals(s1, t1);
+    }
+
+
+}
