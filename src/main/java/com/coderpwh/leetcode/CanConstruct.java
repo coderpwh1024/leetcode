@@ -88,6 +88,16 @@ public class CanConstruct {
 
     }
 
+
+    /***
+     *     思路:
+     *        1. 时间复杂度为O(N+M)
+     *        2. 空间复杂度为O(1)
+     * 
+     * @param ransomNote
+     * @param magazine
+     * @return
+     */
     public boolean test(String ransomNote, String magazine) {
 
         int[] charCountRN = new int[26];
