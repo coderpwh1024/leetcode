@@ -12,25 +12,38 @@ public class IsAnagram {
 //        String t = "nagaram";
 
 
-       String s="aacc";
+        String s = "aacc";
 
-       String t="ccac";
+        String t = "ccac";
 
 
         IsAnagram isAnagram = new IsAnagram();
 //        isAnagram.isAnagram(s, t);
 
-        System.out.println(isAnagram.isAnagram(s,t));
+        System.out.println(isAnagram.isAnagram(s, t));
 
     }
 
+
+    /****
+     *
+     *      思路:
+     *         1. 时间复杂度为O(M+N)
+     *         2. 空间复杂度为O(N)
+     *
+     *
+     *
+     * @param s
+     * @param t
+     * @return
+     */
     public boolean isAnagram(String s, String t) {
 
         HashMap<Character, Integer> map = new HashMap<>();
 
 
-        if(s.length()!=t.length()){
-            return  false;
+        if (s.length() != t.length()) {
+            return false;
         }
 
         for (char c : s.toCharArray()) {
@@ -45,8 +58,8 @@ public class IsAnagram {
                 return false;
             }
 
-            count-=1;
-            map.put(c,count);
+            count -= 1;
+            map.put(c, count);
         }
 
         return true;
