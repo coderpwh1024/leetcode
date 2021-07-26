@@ -22,6 +22,17 @@ public class CanConstruct {
     }
 
 
+    /***
+     *    思路:
+     *       1. 时间复杂度为O(N+M)
+     *       2. 空间复杂度为O(N)
+     *       3. 利用哈希与遍历实现，算法效率不算太高效
+     * 
+     * 
+     * @param ransomNote
+     * @param magazine
+     * @return
+     */
     public boolean canConstruct(String ransomNote, String magazine) {
 
         HashMap<Character, Integer> map = new HashMap<>();
