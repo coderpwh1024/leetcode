@@ -23,13 +23,23 @@ public class HasCycle {
     }
 
 
+    /***
+     *    思路:
+     *       1. 时间复杂度为O(N)
+     *       2. 空间复杂度为O(N)
+     *       3. 利用哈希方式遍历实现
+     *
+     *
+     * @param head
+     * @return
+     */
     public boolean hasCycle(ListNode head) {
 
         Set<ListNode> set = new HashSet<>();
 
-        while (head!=null){
+        while (head != null) {
 
-            if(!set.add(head)){
+            if (!set.add(head)) {
                 return true;
             }
             head = head.next;
@@ -40,3 +50,4 @@ public class HasCycle {
 
 
 }
+
