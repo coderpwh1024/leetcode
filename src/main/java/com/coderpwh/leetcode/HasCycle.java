@@ -41,7 +41,6 @@ import java.util.Set;
  * 输入：head = [1], pos = -1
  * 输出：false
  * 解释：链表中没有环。
-
  *
  *
  */
@@ -91,5 +90,28 @@ public class HasCycle {
     }
 
 
+  
+    public boolean test(ListNode head) {
+
+        if (head == null || head.next == null) {
+            return false;
+        }
+
+        ListNode slow = head;
+        ListNode fast = head.next;
+
+        while (slow != fast) {
+
+            if (fast == null || fast.next == null) {
+                return false;
+            }
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return true;
+    }
+
+
 }
+
 
