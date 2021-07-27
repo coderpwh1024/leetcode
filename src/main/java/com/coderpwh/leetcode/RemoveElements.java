@@ -15,6 +15,17 @@ public class RemoveElements {
     }
 
 
+    /***
+     *      思路:
+     *         1. 时间复杂度为O(N)
+     *         2. 空间复杂度为O(1)
+     *         3. 通过迭代方式实现
+     *
+     *
+     * @param head
+     * @param val
+     * @return
+     */
     public ListNode removeElements(ListNode head, int val) {
 
         ListNode headNode = new ListNode(0);
