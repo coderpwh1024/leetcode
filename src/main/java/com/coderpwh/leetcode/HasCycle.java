@@ -90,7 +90,18 @@ public class HasCycle {
     }
 
 
-  
+    /***
+     *
+     *   思路:
+     *      1. 时间复杂度为O(N)
+     *      2. 空间复杂度为O(1)
+     *      3. 用快慢指针方式实现
+     *
+     *
+     *
+     * @param head
+     * @return
+     */
     public boolean test(ListNode head) {
 
         if (head == null || head.next == null) {
@@ -113,5 +124,6 @@ public class HasCycle {
 
 
 }
+
 
 
