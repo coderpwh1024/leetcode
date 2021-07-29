@@ -3,6 +3,11 @@ package com.coderpwh.leetcode;
 import java.util.ArrayList;
 import java.util.List;
 
+/***
+ * 
+ * 二叉树的前序遍历
+ * 
+ */
 public class PreorderTraversal {
 
 
@@ -26,11 +31,24 @@ public class PreorderTraversal {
      * @return
      */
     public BiTree createBTree() {
-
+/*
         TreeNode node3 = new TreeNode(3);
         TreeNode node2 = new TreeNode(2, node3, null);
 
-        TreeNode node1 = new TreeNode(1, null, node2);
+        TreeNode node1 = new TreeNode(1, null, node2);*/
+
+        TreeNode node7 = new TreeNode(7);
+        TreeNode node6 = new TreeNode(6);
+
+        TreeNode node3 = new TreeNode(3, node6, node7);
+
+        TreeNode node5 = new TreeNode(5);
+        TreeNode node4 = new TreeNode(4);
+
+        TreeNode node2 = new TreeNode(2, node4, node5);
+
+        TreeNode node1 = new TreeNode(1, node2, node3);
+
 
         return new BiTree(node1);
 
@@ -45,7 +63,7 @@ public class PreorderTraversal {
 
 
         for (Integer count : list) {
-            System.out.print(count+" ");
+            System.out.print(count + " ");
         }
 
         return list;
@@ -57,8 +75,6 @@ public class PreorderTraversal {
      *         1. 递归方式实现二叉树的先根遍历
      *         2. 时间复杂度为O(N)
      *         3. 空间复杂度为O(N)
-     *
-     *
      * @param root
      * @param list
      */
