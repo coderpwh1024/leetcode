@@ -26,6 +26,15 @@ public class DeleteDuplicates {
     }
 
 
+    
+    /***
+     *    思路:
+     *      1. 时间复杂度为O(N)
+     *      2. 空间复杂度为O(1)
+     *
+     * @param head
+     * @return
+     */
     public ListNode deleteDuplicates(ListNode head) {
 
 
@@ -49,3 +58,4 @@ public class DeleteDuplicates {
 
 
 }
+
