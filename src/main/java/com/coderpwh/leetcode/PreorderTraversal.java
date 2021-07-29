@@ -20,6 +20,11 @@ public class PreorderTraversal {
     }
 
 
+    /***
+     * 创建二叉树
+     *
+     * @return
+     */
     public BiTree createBTree() {
 
         TreeNode node3 = new TreeNode(3);
@@ -47,6 +52,16 @@ public class PreorderTraversal {
     }
 
 
+    /***
+     *     思路:
+     *         1. 递归方式实现二叉树的先根遍历
+     *         2. 时间复杂度为O(N)
+     *         3. 空间复杂度为O(N)
+     *
+     *
+     * @param root
+     * @param list
+     */
     public void preRootTraversal(TreeNode root, List<Integer> list) {
 
         if (root != null) {
@@ -57,3 +72,4 @@ public class PreorderTraversal {
     }
 
 }
+
