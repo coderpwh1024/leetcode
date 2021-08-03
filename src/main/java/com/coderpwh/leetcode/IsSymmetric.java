@@ -97,7 +97,17 @@ public class IsSymmetric {
         return p.val == q.val && check(p.left, q.right) && check(p.right, q.left);
     }
 
-    
+
+    /***
+     *     思路:
+     *        1.时间复杂度为O(N)
+     *        2.空间复杂度为O(N)
+     *        3. 借助队列与循环实现
+     *
+     * @param p
+     * @param q
+     * @return
+     */
     public boolean test(TreeNode p, TreeNode q) {
 
         Queue<TreeNode> queue = new LinkedList<>();
