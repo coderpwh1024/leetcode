@@ -1,5 +1,8 @@
 package com.coderpwh.leetcode;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 /***
  *
  *  101 对称二叉树
@@ -66,6 +69,9 @@ public class IsSymmetric {
 
         boolean flag = check(root, root);
 
+        boolean f = test(root, root);
+        System.out.println("f:" + f);
+
         return flag;
     }
 
@@ -90,5 +96,36 @@ public class IsSymmetric {
         }
         return p.val == q.val && check(p.left, q.right) && check(p.right, q.left);
     }
+
     
+    public boolean test(TreeNode p, TreeNode q) {
+
+        Queue<TreeNode> queue = new LinkedList<>();
+
+        queue.offer(p);
+        queue.offer(q);
+
+        while (!queue.isEmpty()) {
+
+            p = queue.poll();
+            q = queue.poll();
+
+            if (p == null && q == null) {
+                continue;
+            }
+
+            if (p == null || q == null || (p.val != q.val)) {
+                return false;
+            }
+
+            queue.offer(p.left);
+            queue.offer(q.right);
+
+
+            queue.offer(p.right);
+            queue.offer(q.left);
+        }
+        return true;
+    }
+
 }
