@@ -50,6 +50,16 @@ public class MaxDepth {
     }
 
 
+    /***
+     *     思路:
+     *       1.时间复杂度为O(N)
+     *       2.空间复杂度为O(1)
+     *       3.主要利用递归方式，最大深度，分别求出左右树深度并比较，然后加上根节点即可
+     * 
+     * 
+     * @param root
+     * @return
+     */
     public int maxDepth(TreeNode root) {
 
         if (root != null) {
