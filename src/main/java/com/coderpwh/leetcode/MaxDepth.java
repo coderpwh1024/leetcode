@@ -13,6 +13,9 @@ public class MaxDepth {
         // 获取根
         TreeNode root = biTree.getRoot();
 
+        int count = maxDepth.maxDepth(root);
+
+        System.out.println("二叉树的最大深度为:" + count);
 
     }
 
