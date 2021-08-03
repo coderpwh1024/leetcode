@@ -1,8 +1,5 @@
 package com.coderpwh.leetcode;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class IsSymmetric {
 
     public static void main(String[] args) {
@@ -48,6 +45,15 @@ public class IsSymmetric {
     }
 
 
+    /***
+     *   思路:
+     *       1.时间复杂度为O(N)
+     *       2.空间复杂度为O(N)
+     *       3.利用递归方式
+     * @param p
+     * @param q
+     * @return
+     */
     public boolean check(TreeNode p, TreeNode q) {
 
         if (p == null && q == null) {
