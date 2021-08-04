@@ -1,8 +1,24 @@
-package com.coderpwh.leetcode;
+ package com.coderpwh.leetcode;
 
-import java.awt.image.AreaAveragingScaleFilter;
 import java.util.Arrays;
 
+/***
+ *
+ *  611 有效的三角形的个数
+ *  给定一个包含非负整数的数组，你的任务是统计其中可以组成三角形三条边的三元组个数。
+ *
+ * 示例 1:
+ *
+ * 输入: [2,2,3,4]
+ * 输出: 3
+ * 解释:
+ * 有效的组合是:
+ * 2,3,4 (使用第一个 2)
+ * 2,3,4 (使用第二个 2)
+ * 2,2,3
+ **
+ *
+ */
 public class TriangleNumber {
 
 
@@ -23,8 +39,6 @@ public class TriangleNumber {
      *        1. 时间复杂度为O(N^2)
      *        2. 空间复杂度为O(logN)
      *        3. 利用双指针方式实现
-     *
-     *
      * @param nums
      * @return
      */
@@ -48,10 +62,10 @@ public class TriangleNumber {
                 ans += Math.max(k - j, 0);
             }
         }
-
         System.out.println(ans);
 
         return ans;
     }
 
 }
+
