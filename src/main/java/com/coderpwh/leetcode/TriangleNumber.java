@@ -72,8 +72,15 @@ public class TriangleNumber {
     }
 
 
-
-    
+    /***
+     *   思路:
+     *     1.时间复杂度为O(N^2logN)
+     *     2. 空间复杂度为O(logN)
+     *
+     *
+     * @param nums
+     * @return
+     */
     public int test(int[] nums) {
 
         int n = nums.length;
