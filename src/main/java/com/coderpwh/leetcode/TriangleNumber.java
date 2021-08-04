@@ -1,4 +1,4 @@
- package com.coderpwh.leetcode;
+package com.coderpwh.leetcode;
 
 import java.util.Arrays;
 
@@ -28,7 +28,11 @@ public class TriangleNumber {
         int arr[] = {2, 2, 3, 4};
 
         TriangleNumber triangleNumber = new TriangleNumber();
+
         triangleNumber.triangleNumber(arr);
+
+        triangleNumber.test(arr);
+
 
     }
 
@@ -67,5 +71,38 @@ public class TriangleNumber {
         return ans;
     }
 
-}
 
+
+    
+    public int test(int[] nums) {
+
+        int n = nums.length;
+
+        Arrays.sort(nums);
+
+        int ans = 0;
+
+        for (int i = 0; i < n; i++) {
+
+            for (int j = i + 1; j < n; ++j) {
+                int left = j + 1;
+                int right = n - 1;
+                int k = j;
+                while (left <= right) {
+                    int mid = (left + right) / 2;
+                    if (nums[mid] < nums[i] + nums[j]) {
+                        k = mid;
+                        left = mid + 1;
+                    } else {
+                        right = mid - 1;
+                    }
+                }
+                ans += k - j;
+            }
+        }
+
+        System.out.println(ans);
+        return ans;
+    }
+
+}
