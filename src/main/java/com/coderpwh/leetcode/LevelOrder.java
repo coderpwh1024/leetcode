@@ -40,7 +40,7 @@ public class LevelOrder {
         TreeNode node5 = new TreeNode(null);
         TreeNode node4 = new TreeNode(4 + "");
 
-        TreeNode node2 = new TreeNode(2 + "", node4,null);
+        TreeNode node2 = new TreeNode(2 + "", node4, null);
 
         TreeNode node1 = new TreeNode(1 + "", node2, node3);
 
@@ -50,8 +50,11 @@ public class LevelOrder {
 
     public List<List<String>> levelOrder(TreeNode root) {
 
-        List<List<String>> list = new ArrayList<>();
-        level(root, list);
+//        List<List<String>> list = new ArrayList<>();
+//        level(root, list);
+
+        List<List<String>> list = test(root);
+
 
         if (list != null && list.size() > 0) {
 
@@ -94,6 +97,41 @@ public class LevelOrder {
                 }
             }
         }
+    }
+
+
+    public List<List<String>> test(TreeNode root) {
+        List<List<String>> ret = new ArrayList<>();
+        if (root == null) {
+            return ret;
+        }
+
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+
+        while (!queue.isEmpty()) {
+            List<String> level = new ArrayList<>();
+
+            int size = queue.size();
+
+            for (int i = 0; i < size; i++) {
+                TreeNode node = queue.poll();
+                level.add(node.val);
+
+                if (node.left != null) {
+                    queue.offer(node.left);
+                }
+
+                if (node.right != null) {
+                    queue.offer(node.right);
+                }
+
+            }
+
+            ret.add(level);
+        }
+
+        return ret;
     }
 
 
