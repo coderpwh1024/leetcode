@@ -100,6 +100,15 @@ public class LevelOrder {
     }
 
 
+    /***
+     *    思路
+     *       1. 时间复杂度为O(N)
+     *       2. 空间复杂度为O(N)
+     *
+     *
+     * @param root
+     * @return
+     */
     public List<List<String>> test(TreeNode root) {
         List<List<String>> ret = new ArrayList<>();
         if (root == null) {
