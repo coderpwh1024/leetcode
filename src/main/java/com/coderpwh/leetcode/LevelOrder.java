@@ -66,6 +66,16 @@ public class LevelOrder {
         return list;
     }
 
+
+    /***
+     *   思路:
+     *     1. 时间复杂度为O(N)
+     *     2. 空间复杂度为O(N)
+     *
+     *
+     * @param root
+     * @param list
+     */
     public void level(TreeNode root, List<List<String>> list) {
 
 
