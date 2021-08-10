@@ -7,14 +7,17 @@ public class InvertTree {
         InvertTree integer = new InvertTree();
 
         BiTree biTree = integer.createBTree();
-
-
+        
         integer.invertTree(biTree.getRoot());
-
-
+        
     }
 
 
+    /***
+     *   创建二叉树
+     *
+     * @return
+     */
     public BiTree createBTree() {
 
         TreeNode node7 = new TreeNode(9 + "");
