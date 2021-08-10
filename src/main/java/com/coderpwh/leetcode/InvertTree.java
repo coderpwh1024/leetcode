@@ -43,6 +43,15 @@ public class InvertTree {
     }
 
 
+    /***
+     *    思路:
+     *       1. 时间复杂度为O(N)
+     *       2. 空间复杂度为O(1)
+     *       3. 利用递归的方式，对左右结点进行交换
+     *
+     *
+     * @param node
+     */
     public void exchangeNode(TreeNode node) {
 
         if (node != null) {
