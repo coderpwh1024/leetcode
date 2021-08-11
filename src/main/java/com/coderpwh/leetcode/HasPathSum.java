@@ -52,6 +52,18 @@ public class HasPathSum {
     }
 
 
+    /***
+     *    思路:
+     *       1. 时间复杂度为O(N)
+     *       2. 空间复杂度为O(N)
+     *       3. 主要利用队列方式实现
+     *
+     *
+     *
+     * @param root
+     * @param sum
+     * @return
+     */
     public boolean hasPathSum(TreeNodes root, int sum) {
 
         if (root == null) {
@@ -88,7 +100,6 @@ public class HasPathSum {
             }
 
         }
-
 
         return false;
     }
