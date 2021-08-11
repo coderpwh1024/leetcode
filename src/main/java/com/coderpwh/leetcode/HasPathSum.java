@@ -45,6 +45,8 @@ public class HasPathSum {
 
         System.out.println(sum.hasPathSum(root, count));
 
+        System.out.println(sum.test(root,count));
+
 
     }
 
@@ -133,6 +135,22 @@ public class HasPathSum {
         }
 
         return false;
+    }
+
+    public boolean test(TreeNodes root, int sum) {
+
+        if (root == null) {
+            return false;
+        }
+
+        if (root.left == null && root.right == null) {
+
+            return sum == root.val;
+        }
+
+
+        return test(root.left, sum - root.val) || test(root.right, sum - root.val);
+
     }
 
 
