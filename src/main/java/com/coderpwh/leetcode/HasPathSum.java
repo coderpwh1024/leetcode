@@ -1,4 +1,4 @@
-package com.coderpwh.leetcode;
+ package com.coderpwh.leetcode;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -45,7 +45,7 @@ public class HasPathSum {
 
         System.out.println(sum.hasPathSum(root, count));
 
-        System.out.println(sum.test(root,count));
+        System.out.println(sum.test(root, count));
 
 
     }
@@ -137,6 +137,18 @@ public class HasPathSum {
         return false;
     }
 
+
+    /***
+     *   思路:
+     *      1. 时间复杂度为O(N)
+     *      2. 空间复杂度为O(N)
+     *      3. 主要用递归的方式实现
+     *
+     *
+     * @param root
+     * @param sum
+     * @return
+     */
     public boolean test(TreeNodes root, int sum) {
 
         if (root == null) {
