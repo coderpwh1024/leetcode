@@ -24,6 +24,13 @@ public class HasPathSum {
 
     }
 
+
+    /***
+     *    创建二叉树
+     *
+     *
+     * @return
+     */
     public BiTrees createBTree() {
 
 
