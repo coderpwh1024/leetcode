@@ -1,4 +1,4 @@
- package com.coderpwh.leetcode;
+package com.coderpwh.leetcode;
 
 public class InsertIntoBST {
 
@@ -8,17 +8,27 @@ public class InsertIntoBST {
 
         InsertIntoBST insertIntoBST = new InsertIntoBST();
 
+        // 创建二叉树
         BiTrees biTrees = insertIntoBST.create();
 
 
-        insertIntoBST.insertIntoBST(biTrees.getRoot(),val);
+        // 插入对应的值
+        insertIntoBST.insertIntoBST(biTrees.getRoot(), val);
 
+
+        // 前根遍历
         insertIntoBST.preNode(biTrees.getRoot());
 
 
     }
 
 
+    /***
+     *
+     *   创建二叉树
+     *
+     * @return
+     */
     public BiTrees create() {
 
         TreeNodes node1 = new TreeNodes(1);
@@ -37,6 +47,15 @@ public class InsertIntoBST {
     }
 
 
+    /***
+     *    思路:
+     *      1. 时间复杂度为O(N)
+     *      2. 空间复杂度为O(1)
+     *
+     * @param root
+     * @param val
+     * @return
+     */
     public TreeNodes insertIntoBST(TreeNodes root, int val) {
 
         if (root == null) {
@@ -69,6 +88,12 @@ public class InsertIntoBST {
     }
 
 
+    /***
+     *  前根遍历
+     *
+     *
+     * @param node
+     */
     public void preNode(TreeNodes node) {
 
         if (node != null) {
