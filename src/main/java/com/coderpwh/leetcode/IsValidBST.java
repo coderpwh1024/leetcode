@@ -17,6 +17,11 @@ public class IsValidBST {
     }
 
 
+    /***
+     *   创建二叉树
+     *
+     * @return
+     */
     public BiTrees create() {
 
         TreeNodes node1 = new TreeNodes(1);
@@ -27,6 +32,13 @@ public class IsValidBST {
         return new BiTrees(node3);
     }
 
+
+    /***
+     *
+     *  创建二叉树
+     *
+     * @return
+     */
     public BiTrees create2() {
 
         TreeNodes node3 = new TreeNodes(3);
