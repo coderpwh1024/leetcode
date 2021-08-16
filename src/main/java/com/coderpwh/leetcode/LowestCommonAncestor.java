@@ -1,13 +1,37 @@
-package com.coderpwh.leetcode;
+ package com.coderpwh.leetcode;
 
 public class LowestCommonAncestor {
 
 
     public static void main(String[] args) {
 
+
+        LowestCommonAncestor lowestCommonAncestor = new LowestCommonAncestor();
+
+        // 调用创建二叉树方法
+        BiTrees biTrees = lowestCommonAncestor.create();
+
+        // 获取根节点
+        TreeNodes root = biTrees.getRoot();
+
+        TreeNodes p = new TreeNodes(3);
+
+        TreeNodes q = new TreeNodes(5);
+
+
+        // 实现方法
+        TreeNodes node = lowestCommonAncestor.lowestCommonAncestor(root, p, q);
+
+        System.out.println(node.val);
+
     }
 
 
+    /***
+     *  创建二叉树
+     *
+     * @return
+     */
     public BiTrees create() {
 
         TreeNodes node3 = new TreeNodes(3);
