@@ -1,6 +1,5 @@
-package com.coderpwh.leetcode;
+ package com.coderpwh.leetcode;
 
-import javax.transaction.TransactionRequiredException;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -54,6 +53,18 @@ public class FindTarget {
     }
 
 
+    /***
+     *
+     *     思路:
+     *        1. 时间复杂度为:O(N)
+     *        2. 空间复杂度为: O(N)
+     *        3. 利用HASH与递归方式实现
+     *
+     * @param root
+     * @param set
+     * @param k
+     * @return
+     */
     public boolean pre(TreeNodes root, Set<Integer> set, int k) {
 
         if (root == null) {
