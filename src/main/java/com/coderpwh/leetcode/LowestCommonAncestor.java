@@ -55,6 +55,18 @@ public class LowestCommonAncestor {
     }
 
 
+    /***
+     *     思路:
+     *       1. 时间复杂度为:O(N)
+     *       2. 空间复杂度为:O(1)
+     *       3. 搜索二叉树的性质，左边节点的值小于中间值，中间值小于右节点值
+     *
+     *
+     * @param root
+     * @param p
+     * @param q
+     * @return
+     */
     public TreeNodes lowestCommonAncestor(TreeNodes root, TreeNodes p, TreeNodes q) {
 
 
