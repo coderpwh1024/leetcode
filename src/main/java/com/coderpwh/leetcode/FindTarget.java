@@ -3,6 +3,12 @@
 import java.util.HashSet;
 import java.util.Set;
 
+
+/***
+ *   653 两数之和 IV -输入BST
+ *
+ *   给定一个二叉搜索树 root 和一个目标结果 k，如果 BST 中存在两个元素且它们的和等于给定的目标结果，则返回 true。
+ */
 public class FindTarget {
 
     public static void main(String[] args) {
@@ -12,8 +18,10 @@ public class FindTarget {
 
         FindTarget find = new FindTarget();
 
+        // 创建二叉树
         BiTrees biTrees = find.create();
 
+        // 获取树根
         TreeNodes root = biTrees.getRoot();
 
         System.out.println(find.findTarget(root, k));
@@ -22,6 +30,10 @@ public class FindTarget {
     }
 
 
+    /***
+     *    创建二叉树
+     * @return
+     */
     public BiTrees create() {
 
         TreeNodes node4 = new TreeNodes(4);
