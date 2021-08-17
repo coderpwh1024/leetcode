@@ -59,6 +59,18 @@ public class IsSameTree {
     }
 
 
+    /***
+     *    思路:
+     *       1. 时间复杂度为:O(N)
+     *       2. 空间复杂度为:O(1)
+     *       3. 判断两个树是否相同，可以用中根遍历方式
+     *          先判断两个树的左结点是否相等
+     *          若相等，则判断根结点值是否相等
+     *          若相等， 则判断右结点是否相等
+     * @param p
+     * @param q
+     * @return
+     */
     public boolean isSameTree(TreeNodes p, TreeNodes q) {
 
         if (p == null && q == null) {
