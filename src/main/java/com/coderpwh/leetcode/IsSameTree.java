@@ -53,9 +53,15 @@ public class IsSameTree {
         TreeNodes q = biTrees2.getRoot();
 
 
+        // 中根判断方式
         System.out.println(tree.isSameTree(p, q));
 
-        System.out.println(tree.test(p, q));
+        // 前根判断方式
+        System.out.println(tree.testPre(p, q));
+
+
+        // 后根判断方式
+        System.out.println(tree.testAfter(p, q));
 
 
     }
@@ -133,7 +139,7 @@ public class IsSameTree {
      * @param q
      * @return
      */
-    public boolean test(TreeNodes p, TreeNodes q) {
+    public boolean testPre(TreeNodes p, TreeNodes q) {
 
         if (p == null && q == null) {
             return true;
@@ -142,11 +148,41 @@ public class IsSameTree {
         if (p != null && q != null) {
 
             if (p.val.equals(q.val)) {
-                if (test(p.left, q.left)) {
-                    if (test(p.right, q.right)) {
+                if (testPre(p.left, q.left)) {
+                    if (testPre(p.right, q.right)) {
                         return true;
                     }
 
+                }
+            }
+
+        }
+        return false;
+    }
+
+
+    /***
+     *
+     *    利用后根方式实现
+     *
+     * @param p
+     * @param q
+     * @return
+     */
+    public boolean testAfter(TreeNodes p, TreeNodes q) {
+
+        if (p == null && q == null) {
+            return true;
+        }
+
+        if (p != null && q != null) {
+
+            if (testAfter(p.left, q.left)) {
+
+                if (testAfter(p.right, q.right)) {
+                    if (p.val.equals(q.val)) {
+                        return true;
+                    }
                 }
             }
 
