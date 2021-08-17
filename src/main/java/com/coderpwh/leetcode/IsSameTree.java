@@ -1,4 +1,4 @@
-package com.coderpwh.leetcode;
+ package com.coderpwh.leetcode;
 
 
 /***
@@ -54,6 +54,8 @@ public class IsSameTree {
 
 
         System.out.println(tree.isSameTree(p, q));
+
+        System.out.println(tree.test(p, q));
 
 
     }
@@ -124,5 +126,32 @@ public class IsSameTree {
         return false;
     }
 
+
+    /***
+     *  利用前根方式来判断二叉树是否相等
+     * @param p
+     * @param q
+     * @return
+     */
+    public boolean test(TreeNodes p, TreeNodes q) {
+
+        if (p == null && q == null) {
+            return true;
+        }
+
+        if (p != null && q != null) {
+
+            if (p.val.equals(q.val)) {
+                if (test(p.left, q.left)) {
+                    if (test(p.right, q.right)) {
+                        return true;
+                    }
+
+                }
+            }
+
+        }
+        return false;
+    }
+
 }
-  
