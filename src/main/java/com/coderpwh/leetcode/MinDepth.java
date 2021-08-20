@@ -7,8 +7,10 @@ public class MinDepth {
 
         MinDepth depth = new MinDepth();
 
+        // 创建二叉树
         BiTrees biTrees = depth.create();
 
+        // 获取根结点
         TreeNodes root = biTrees.getRoot();
 
         System.out.println(depth.minDepth(root));
@@ -17,6 +19,11 @@ public class MinDepth {
     }
 
 
+    /***
+     *   创建二叉树
+     *
+     * @return
+     */
     public BiTrees create() {
 
         TreeNodes node9 = new TreeNodes(9);
