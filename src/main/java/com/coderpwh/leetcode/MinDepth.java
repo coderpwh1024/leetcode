@@ -1,4 +1,4 @@
-package com.coderpwh.leetcode;
+ package com.coderpwh.leetcode;
 
 public class MinDepth {
 
@@ -33,6 +33,15 @@ public class MinDepth {
     }
 
 
+    /***
+     *      思路:
+     *        1. 时间复杂度为O(N)
+     *        2. 空间复杂度为O(H),H为二叉树的深度
+     *        3. 利用递归的方式实现
+     *
+     * @param root
+     * @return
+     */
     public int minDepth(TreeNodes root) {
 
 
