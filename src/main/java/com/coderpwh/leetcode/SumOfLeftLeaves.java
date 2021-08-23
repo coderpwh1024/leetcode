@@ -1,4 +1,4 @@
-package com.coderpwh.leetcode;
+ package com.coderpwh.leetcode;
 
 /**
  * @author coderpwh
@@ -10,8 +10,10 @@ public class SumOfLeftLeaves {
 
         SumOfLeftLeaves sum = new SumOfLeftLeaves();
 
+        // 创建二叉树
         BiTrees biTrees = sum.create();
 
+        // 获取根结点
         TreeNodes root = biTrees.getRoot();
 
 //        sum.sumOfLeftLeaves(root);
@@ -21,6 +23,11 @@ public class SumOfLeftLeaves {
     }
 
 
+    /***
+     *  创建二叉树
+     *
+     * @return
+     */
     public BiTrees create() {
 
         TreeNodes node15 = new TreeNodes(15);
@@ -37,6 +44,16 @@ public class SumOfLeftLeaves {
     }
 
 
+    /***
+     *   思路:
+     *     1. 时间复杂度为O(N)
+     *     2. 空间复杂度为O(1)
+     *     3. 利用递归方式实现
+     *
+     *
+     * @param root
+     * @return
+     */
     public int sumOfLeftLeaves(TreeNodes root) {
 
         int count = 0;
@@ -52,8 +69,6 @@ public class SumOfLeftLeaves {
         return count + sumOfLeftLeaves(root.left) + sumOfLeftLeaves(root.right);
 
     }
-
-
 
 
 }
