@@ -14,14 +14,17 @@ public class FindMode {
 
         FindMode findMode = new FindMode();
 
+
+         // 创建二叉树
         BiTrees biTrees = findMode.create();
 
+         // 获取根部
         TreeNodes root = biTrees.getRoot();
 
 
         int[] arr = findMode.findMode(root);
 
-        for(int i=0;i<arr.length;i++){
+        for (int i = 0; i < arr.length; i++) {
             System.out.println(arr[i]);
         }
 
@@ -29,6 +32,11 @@ public class FindMode {
     }
 
 
+    /***
+     *   创建二叉树
+     *
+     * @return
+     */
     public BiTrees create() {
 
         TreeNodes node22 = new TreeNodes(2);
@@ -42,6 +50,15 @@ public class FindMode {
     }
 
 
+    /***
+     *
+     *    思路:
+     *      1. 时间复杂度为O(N)
+     *      2. 空间复杂度为O(N)
+     *
+     * @param root
+     * @return
+     */
     public int[] findMode(TreeNodes root) {
 
         dfs(root);
