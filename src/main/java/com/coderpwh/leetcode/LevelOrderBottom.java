@@ -1,4 +1,4 @@
-package com.coderpwh.leetcode;
+ package com.coderpwh.leetcode;
 
 import java.util.*;
 
@@ -6,7 +6,41 @@ public class LevelOrderBottom {
 
     public static void main(String[] args) {
 
+        LevelOrderBottom bottom = new LevelOrderBottom();
 
+        // 创建二叉树
+        BiTrees biTrees = bottom.create();
+
+        // 二叉树层次遍历
+        List<List<Integer>> list = bottom.levelOrderBottom(biTrees.getRoot());
+
+        if (list != null) {
+            for (List<Integer> date : list) {
+                System.out.println(date);
+            }
+        }
+
+
+    }
+
+
+    /***
+     *  创建二叉树
+     * @return
+     */
+    public BiTrees create() {
+
+        TreeNodes node15 = new TreeNodes(15);
+
+        TreeNodes node7 = new TreeNodes(7);
+
+        TreeNodes node20 = new TreeNodes(20, node15, node7);
+
+        TreeNodes node9 = new TreeNodes(9);
+
+        TreeNodes node3 = new TreeNodes(3, node9, node20);
+
+        return new BiTrees(node3);
     }
 
 
