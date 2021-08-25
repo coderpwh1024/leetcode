@@ -44,6 +44,16 @@ public class LevelOrderBottom {
     }
 
 
+    /***
+     *  思路:
+     *     1.时间复杂度为O(N)
+     *     2. 空间复杂度为O(N)
+     *     3.主要利用队列与循环实现
+     *
+     *
+     * @param root
+     * @return
+     */
     public List<List<Integer>> levelOrderBottom(TreeNodes root) {
 
         List<List<Integer>> list = new ArrayList<>();
