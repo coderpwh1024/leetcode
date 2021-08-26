@@ -2,6 +2,7 @@
 
 
 /***
+ *   
  *   108 将有序数组转化为二叉搜索树
  *
  *
@@ -27,14 +28,12 @@ public class SortedArrayToBST {
         prePrint(root);
 
         return root;
-
-
     }
 
     /***
      *    思路:
      *      1. 时间复杂度为O(N)
-     *      2. 空间复杂度为O(1)
+     *      2. 空间复杂度为O(N)
      *
      *
      * @param nums
@@ -57,6 +56,7 @@ public class SortedArrayToBST {
         root.right = help(nums, mid + 1, right);
 
         return root;
+
     }
 
 
