@@ -1,6 +1,5 @@
- package com.coderpwh.leetcode;
+package com.coderpwh.leetcode;
 
-import javax.swing.tree.TreeNode;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,6 +36,11 @@ public class SortedListToBST {
 
         System.out.println();
         bst.sortedListToBST(listNode);
+
+        System.out.println();
+        System.out.println("-------------------------------------");
+
+        bst.test();
 
 
     }
@@ -132,9 +136,16 @@ public class SortedListToBST {
 
     public TreeNodes test() {
 
+        // 获取其结点
         ListNode head = getListNode();
 
-        return buildTree(head, null);
+        // 构建二叉树
+        TreeNodes root = buildTree(head, null);
+
+        // 前缀打印二叉树
+        pre(root);
+
+        return root;
     }
 
 
@@ -164,9 +175,9 @@ public class SortedListToBST {
     }
 
 
-    /**
-     * 获取中间结点
+    /***
      *
+     *   获取链表的中间结点
      * @param left
      * @param right
      * @return
@@ -183,6 +194,21 @@ public class SortedListToBST {
             slow = slow.next;
         }
         return slow;
+    }
+
+
+    /***
+     *  前缀打印二叉树
+     * @param root
+     */
+    public void pre(TreeNodes root) {
+
+        if (root != null) {
+            System.out.print(root.val);
+            System.out.print("   ");
+            pre(root.left);
+            pre(root.right);
+        }
     }
 
 }
