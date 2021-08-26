@@ -1,4 +1,4 @@
-package com.coderpwh.leetcode;
+ package com.coderpwh.leetcode;
 
 
 public class SortedArrayToBST {
@@ -21,11 +21,22 @@ public class SortedArrayToBST {
 
         prePrint(root);
 
-        return  root;
+        return root;
 
 
     }
 
+    /***
+     *    思路:
+     *      1. 时间复杂度为O(N)
+     *      2. 空间复杂度为O(1)
+     *
+     *
+     * @param nums
+     * @param left
+     * @param right
+     * @return
+     */
     public TreeNodes help(int[] nums, int left, int right) {
 
         if (left > right) {
@@ -44,10 +55,15 @@ public class SortedArrayToBST {
     }
 
 
-    public  void prePrint(TreeNodes root){
+    /**
+     * 前根方式进行遍历
+     *
+     * @param root
+     */
+    public void prePrint(TreeNodes root) {
 
-        if(root!=null){
-            System.out.print(root.val+" ");
+        if (root != null) {
+            System.out.print(root.val + " ");
             prePrint(root.left);
             prePrint(root.right);
         }
