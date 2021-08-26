@@ -1,11 +1,12 @@
-package com.coderpwh.leetcode;
+ package com.coderpwh.leetcode;
 
+import javax.swing.tree.TreeNode;
 import java.util.ArrayList;
 import java.util.List;
 
 /***
  *  109 有序链表转换二叉搜索树
- *  
+ *
  *给定一个单链表，其中的元素按升序排序，将其转换为高度平衡的二叉搜索树。
  *
  * 本题中，一个高度平衡二叉树是指一个二叉树每个节点 的左右两个子树的高度差的绝对值不超过 1。
@@ -34,10 +35,22 @@ public class SortedListToBST {
 
         bst.printNode(listNode);
 
+        System.out.println();
+        bst.sortedListToBST(listNode);
+
 
     }
 
 
+    /**
+     * 思路:
+     * 1. 时间复杂度为O(N)
+     * 2. 空间复杂度为O(N)
+     * 3. 先循环遍历链表，获取其中的数值，然后对其数组构成二叉搜索树
+     *
+     * @param head
+     * @return
+     */
     public TreeNodes sortedListToBST(ListNode head) {
 
         List<Integer> list = printNode(head);
@@ -116,5 +129,60 @@ public class SortedListToBST {
         return list;
     }
 
+
+    public TreeNodes test() {
+
+        ListNode head = getListNode();
+
+        return buildTree(head, null);
+    }
+
+
+    /**
+     * 构建二叉搜索树
+     *
+     * @param left
+     * @param right
+     * @return
+     */
+    public TreeNodes buildTree(ListNode left, ListNode right) {
+
+        if (left == right) {
+            return null;
+        }
+
+
+        ListNode mid = getMedian(left, right);
+
+        TreeNodes root = new TreeNodes(mid.val);
+
+        root.left = buildTree(left, mid);
+        root.right = buildTree(mid.next, right);
+
+        return root;
+
+    }
+
+
+    /**
+     * 获取中间结点
+     *
+     * @param left
+     * @param right
+     * @return
+     */
+    public ListNode getMedian(ListNode left, ListNode right) {
+
+        ListNode fast = left;
+
+        ListNode slow = left;
+
+        while (fast != right && fast.next != right) {
+            fast = fast.next;
+            fast = fast.next;
+            slow = slow.next;
+        }
+        return slow;
+    }
+
 }
- 
