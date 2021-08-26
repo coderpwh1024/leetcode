@@ -17,6 +17,7 @@ public class SortedListToBST {
     }
 
 
+      
     public TreeNodes sortedListToBST(ListNode head) {
 
         List<Integer> list = printNode(head);
@@ -24,6 +25,18 @@ public class SortedListToBST {
         return help(list, 0, list.size() - 1);
     }
 
+
+    /***
+     *     思路:
+     *        1. 时间复杂度为O(N)
+     *        2. 空间复杂度为O(N)
+     *
+     *
+     * @param list
+     * @param left
+     * @param right
+     * @return
+     */
     public TreeNodes help(List<Integer> list, int left, int right) {
 
         if (left > right) {
@@ -43,6 +56,10 @@ public class SortedListToBST {
     }
 
 
+    /***
+     *   构建链表
+     * @return
+     */
     public ListNode getListNode() {
 
 
@@ -61,6 +78,12 @@ public class SortedListToBST {
     }
 
 
+    /**
+     * 遍历链表
+     *
+     * @param listNode
+     * @return
+     */
     public List<Integer> printNode(ListNode listNode) {
 
         List<Integer> list = new ArrayList<>();
