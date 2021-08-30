@@ -31,6 +31,11 @@ public class AddTwoNumbers {
     }
 
 
+    /***
+     *   创建结点
+     *
+     * @return
+     */
     public ListNode getNode1() {
 
         ListNode listNode4 = new ListNode(4);
@@ -43,6 +48,11 @@ public class AddTwoNumbers {
     }
 
 
+    /**
+     * 创建结点
+     *
+     * @return
+     */
     public ListNode getNode2() {
 
         ListNode node3 = new ListNode(3);
@@ -56,6 +66,10 @@ public class AddTwoNumbers {
     }
 
 
+    /***
+     *   打印链表结点
+     * @param head
+     */
     public void printNode(ListNode head) {
 
         while (head != null) {
@@ -67,6 +81,17 @@ public class AddTwoNumbers {
     }
 
 
+    /***
+     *   思路:
+     *      1. 时间复杂度为O(N)
+     *      2. 空间复杂度为O(1)
+     *      3. 主要是对两个链表同时遍历，容易出错点就是进位的处理
+     *
+     *
+     * @param l1
+     * @param l2
+     * @return
+     */
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
 
         ListNode head = null, tail = null;
@@ -144,8 +169,8 @@ public class AddTwoNumbers {
 
         }
 
-        if(carry>0){
-            tail.next=new ListNode(carry);
+        if (carry > 0) {
+            tail.next = new ListNode(carry);
         }
 
 
