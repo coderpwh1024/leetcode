@@ -21,6 +21,13 @@ public class AddTwoNumbers {
 
         add.printNode(head);
 
+/*        System.out.println();
+
+
+        ListNode test = add.addTwoNumbers(node, node2);
+
+        add.printNode(test);*/
+
     }
 
 
@@ -64,6 +71,7 @@ public class AddTwoNumbers {
 
         ListNode head = null, tail = null;
 
+        // 进位
         int carry = 0;
 
         while (l1 != null || l2 != null) {
@@ -80,6 +88,7 @@ public class AddTwoNumbers {
                 tail.next = new ListNode(sum % 10);
                 tail = tail.next;
             }
+
             carry = sum / 10;
 
             if (l1 != null) {
@@ -91,9 +100,52 @@ public class AddTwoNumbers {
             }
 
         }
+        System.out.println(carry);
 
         if (carry > 0) {
             tail.next = new ListNode(carry);
+        }
+
+
+        return head;
+    }
+
+
+    public ListNode test(ListNode node1, ListNode node2) {
+
+        ListNode head = null, tail = null;
+
+        int carry = 0;
+
+        while (node1 != null || node2 != null) {
+
+            int n1 = node1 != null ? node1.val : 0;
+
+            int n2 = node2 != null ? node2.val : 0;
+
+            int sum = n1 + n2 + carry;
+
+            if (head == null) {
+                head = tail = new ListNode(sum % 10);
+            } else {
+                tail.next = new ListNode(sum % 10);
+                tail = tail.next;
+            }
+
+            carry = sum / 10;
+
+            if (node1 != null) {
+                node1 = node1.next;
+            }
+
+            if (node2 != null) {
+                node2 = node2.next;
+            }
+
+        }
+
+        if(carry>0){
+            tail.next=new ListNode(carry);
         }
 
 
