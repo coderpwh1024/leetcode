@@ -1,7 +1,11 @@
- package com.coderpwh.leetcode;
+package com.coderpwh.leetcode;
 
-import java.util.List;
 
+/***
+ *  删除链表的倒数第N个结点
+ *
+ *
+ */
 public class RemoveNthFromEnd {
 
 
@@ -16,16 +20,19 @@ public class RemoveNthFromEnd {
 
         System.out.println();
 
-        int n = 2;
 
-    /*    ListNode node = end.removeNthFromEnd(head, n);
+        ListNode node1 = end.getNodeOne();
 
-        end.printNode(node);*/
+        ListNode node = end.removeNthFromEnd(head, 2);
 
-        System.out.println();
+
+        System.out.println("删除结点后的值为");
+        end.printNode(node);
+
+      /*  System.out.println();
         ListNode testNode = end.test(head, 2);
 
-        end.printNode(testNode);
+        end.printNode(testNode);*/
 
     }
 
@@ -50,6 +57,13 @@ public class RemoveNthFromEnd {
 
     }
 
+    public ListNode getNodeOne() {
+
+        ListNode node1 = new ListNode(1);
+
+        return node1;
+    }
+
 
     /***
      * 打印链表
@@ -71,7 +85,6 @@ public class RemoveNthFromEnd {
      *   思路:
      *      1. 时间复杂度为O(N)
      *      2. 空间复杂度为O(1)
-     *      3. 测试用例未完全通过
      *
      * @param head
      * @param n
@@ -81,15 +94,24 @@ public class RemoveNthFromEnd {
 
         int length = getLength(head);
 
-        ListNode node = head;
+        int i = length - n;
 
-        for (int i = 1; i < length - n; i++) {
-            node = node.next;
+        int j = 0;
+
+        ListNode p = head;
+
+        while (p.next != null && j < i - 1) {
+            p = p.next;
+            j++;
         }
-        node.next = node.next.next;
 
+
+        if (p.next == null) {
+            return head.next;
+        }
+
+        p.next = p.next.next;
         return head;
-
     }
 
 
