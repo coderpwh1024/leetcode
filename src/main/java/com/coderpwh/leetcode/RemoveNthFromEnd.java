@@ -1,4 +1,4 @@
-package com.coderpwh.leetcode;
+ package com.coderpwh.leetcode;
 
 
 /***
@@ -107,6 +107,7 @@ public class RemoveNthFromEnd {
      *   思路:
      *      1. 时间复杂度为O(N)
      *      2. 空间复杂度为O(1)
+     *      3. 并未完全通过测试用例
      *
      * @param head
      * @param n
