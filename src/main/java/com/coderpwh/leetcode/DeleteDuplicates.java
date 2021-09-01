@@ -1,6 +1,9 @@
 package com.coderpwh.leetcode;
 
+import org.omg.CORBA.NO_IMPLEMENT;
+
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -23,10 +26,47 @@ public class DeleteDuplicates {
 
     public static void main(String[] args) {
 
+        DeleteDuplicates deleteDuplicates = new DeleteDuplicates();
+
+        ListNode head = deleteDuplicates.create();
+
+        deleteDuplicates.printNode(head);
+
     }
 
 
-    
+    public ListNode create() {
+
+        ListNode node5 = new ListNode(5);
+
+        ListNode node4 = new ListNode(4, node5);
+
+        ListNode node44 = new ListNode(4, node4);
+
+        ListNode node3 = new ListNode(3, node44);
+
+        ListNode node32 = new ListNode(3, node3);
+
+        ListNode node2 = new ListNode(2, node32);
+
+        ListNode node1 = new ListNode(1, node2);
+
+        return node1;
+
+    }
+
+
+    public void printNode(ListNode head) {
+
+        while (head != null) {
+            System.out.print(head.val);
+            System.out.print("  ");
+            head = head.next;
+        }
+
+    }
+
+
     /***
      *    思路:
      *      1. 时间复杂度为O(N)
@@ -58,4 +98,3 @@ public class DeleteDuplicates {
 
 
 }
-
