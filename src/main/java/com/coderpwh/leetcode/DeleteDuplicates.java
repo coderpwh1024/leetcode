@@ -1,13 +1,9 @@
 package com.coderpwh.leetcode;
 
-import org.omg.CORBA.NO_IMPLEMENT;
-
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-
 /**
  * 83 删除排序链表中的重复元素
+ * <p>
+ * 82. 删除排序链表中的重复元素 II
  * 给定一个排序链表，删除所有重复的元素，使得每个元素只出现一次。
  * <p>
  * 示例 1:
@@ -28,14 +24,29 @@ public class DeleteDuplicates {
 
         DeleteDuplicates deleteDuplicates = new DeleteDuplicates();
 
-        ListNode head = deleteDuplicates.create();
 
+        // 创建链表
+        ListNode head = deleteDuplicates.create2();
+
+        // 打印链表
         deleteDuplicates.printNode(head);
+
+        System.out.println("");
+
+        System.out.println("删除重复元素的结点为:");
+
+        // 删除重复结点
+        ListNode result = deleteDuplicates.deleteDuplicates2(head);
+
+
+        // 打印删除重复结点后的元素
+        deleteDuplicates.printNode(result);
+
 
     }
 
 
-   /***
+    /***
      *    创建链表
      *
      * @return
@@ -58,6 +69,21 @@ public class DeleteDuplicates {
 
         return node1;
 
+    }
+
+    public ListNode create2() {
+
+        ListNode node3 = new ListNode(3);
+
+        ListNode node2 = new ListNode(2, node3);
+
+        ListNode node1 = new ListNode(1, node2);
+
+        ListNode node11 = new ListNode(1, node1);
+
+        ListNode node111 = new ListNode(1, node11);
+
+        return node111;
     }
 
 
@@ -106,4 +132,29 @@ public class DeleteDuplicates {
     }
 
 
+    public ListNode deleteDuplicates2(ListNode head) {
+
+        if (head == null) {
+            return null;
+        }
+
+        ListNode cur = head;
+
+        while (cur.next.next != null) {
+
+            if (cur.val != cur.next.val && cur.next.val == cur.next.next.val) {
+                cur.next = cur.next.next.next;
+            } else {
+                cur = cur.next;
+            }
+
+
+        }
+
+
+        return head;
+    }
+
+
 }
+
