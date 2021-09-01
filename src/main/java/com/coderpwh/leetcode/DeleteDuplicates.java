@@ -35,6 +35,11 @@ public class DeleteDuplicates {
     }
 
 
+   /***
+     *    创建链表
+     *
+     * @return
+     */
     public ListNode create() {
 
         ListNode node5 = new ListNode(5);
@@ -56,6 +61,10 @@ public class DeleteDuplicates {
     }
 
 
+    /***
+     *  打印链表
+     * @param head
+     */
     public void printNode(ListNode head) {
 
         while (head != null) {
