@@ -1,5 +1,10 @@
 package com.coderpwh.leetcode;
 
+import java.util.Deque;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Map;
+
 /**
  * 83 删除排序链表中的重复元素
  * <p>
@@ -26,7 +31,7 @@ public class DeleteDuplicates {
 
 
         // 创建链表
-        ListNode head = deleteDuplicates.create2();
+        ListNode head = deleteDuplicates.create();
 
         // 打印链表
         deleteDuplicates.printNode(head);
@@ -134,27 +139,36 @@ public class DeleteDuplicates {
 
     public ListNode deleteDuplicates2(ListNode head) {
 
+
         if (head == null) {
             return null;
         }
 
-        ListNode cur = head;
+        ListNode node = new ListNode(0, head);
 
-        while (cur.next.next != null) {
+        ListNode cur = node;
 
-            if (cur.val != cur.next.val && cur.next.val == cur.next.next.val) {
-                cur.next = cur.next.next.next;
+
+        while (cur.next != null && cur.next.next != null) {
+
+            if (cur.next.val == cur.next.next.val) {
+
+                // x =1
+                int x = cur.next.val;
+
+                while (cur.next != null && cur.next.val == x) {
+                    cur.next = cur.next.next;
+                }
             } else {
                 cur = cur.next;
             }
-
-
         }
 
 
-        return head;
+        return node.next;
     }
 
 
-}
 
+
+}
