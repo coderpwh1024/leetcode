@@ -137,6 +137,16 @@ public class DeleteDuplicates {
     }
 
 
+    /***
+     *   思路:
+     *      1. 时间复杂度为O(N)
+     *      2. 空间复杂度为O(1)
+     *      3. 要防止头结点可能被删除，需要构建一个头结点取代之前的，否则头结点的数据难删除
+     *
+     *
+     * @param head
+     * @return
+     */
     public ListNode deleteDuplicates2(ListNode head) {
 
 
@@ -167,8 +177,6 @@ public class DeleteDuplicates {
 
         return node.next;
     }
-
-
 
 
 }
