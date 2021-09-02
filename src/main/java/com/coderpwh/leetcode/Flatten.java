@@ -1,6 +1,5 @@
 package com.coderpwh.leetcode;
 
-import jdk.internal.org.objectweb.asm.util.CheckAnnotationAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,16 +10,18 @@ public class Flatten {
 
         Flatten flatten = new Flatten();
 
-//        TreeNodes root = flatten.createTree();
 
+        //  创建二叉树
         BiTrees biTrees = flatten.createTree();
 
+
+        // 获取根结点
         TreeNodes root = biTrees.getRoot();
 
 
+        //   转换二叉树
         flatten.flatten(root);
 
-//        flatten.preNode(root);
 
     }
 
@@ -80,6 +81,11 @@ public class Flatten {
     }
 
 
+    /***
+     *   前序遍历方式
+     * @param root
+     * @param list
+     */
     public void preNode(TreeNodes root, List<TreeNodes> list) {
 
 
