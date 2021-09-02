@@ -47,7 +47,15 @@ public class Flatten {
     }
 
 
-    // 1  2  3  4 5 6
+    /***
+     *
+     *    思路:
+     *       1. 时间复杂度为O(N)
+     *       2. 空间复杂度为O(N)
+     *       3. 主要利用前序遍历的方式实现
+     *
+     * @param root
+     */
     public void flatten(TreeNodes root) {
 
         List<TreeNodes> list = new ArrayList<>();
@@ -65,7 +73,7 @@ public class Flatten {
 
             prev.left = null;
             prev.right = cur;
-            
+
         }
 
 
