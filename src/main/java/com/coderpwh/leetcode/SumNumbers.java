@@ -1,7 +1,5 @@
 package com.coderpwh.leetcode;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class SumNumbers {
 
@@ -35,34 +33,22 @@ public class SumNumbers {
 
     public int sumNumbers(TreeNodes root) {
 
-        List<Integer> list = new ArrayList<>();
-
-        preNode(root, list);
-
-        int sum = 0;
-
-        if (list != null && list.size() > 0) {
-
-            for (int i = 1; i < list.size(); i++) {
-
-                Integer number = list.get(0) * 10 + list.get(i);
-                sum += number;
-
-            }
-        }
-
-        return sum;
-
-
+        return preNode(root, 0);
     }
 
 
-    public void preNode(TreeNodes root, List<Integer> list) {
+    public int preNode(TreeNodes root, int presum) {
 
-        if (root != null) {
-            list.add(root.val);
-            preNode(root.left, list);
-            preNode(root.right, list);
+        if (root == null) {
+            return 0;
+        }
+
+        int sum = presum * 10 + root.val;
+
+        if (root.left == null && root.right == null) {
+            return sum;
+        } else {
+            return preNode(root.left, sum) + preNode(root.right, sum);
         }
 
     }
