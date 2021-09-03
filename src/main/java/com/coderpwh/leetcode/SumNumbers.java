@@ -7,8 +7,10 @@ public class SumNumbers {
 
         SumNumbers sum = new SumNumbers();
 
+        // 创建二叉树
         BiTrees biTrees = sum.create();
 
+        // 获取二叉树根结点
         TreeNodes root = biTrees.getRoot();
 
         sum.sumNumbers(root);
@@ -19,6 +21,11 @@ public class SumNumbers {
     }
 
 
+    /**
+     * 创建二叉树
+     *
+     * @return
+     */
     public BiTrees create() {
 
         TreeNodes node2 = new TreeNodes(2);
@@ -37,6 +44,17 @@ public class SumNumbers {
     }
 
 
+    /***
+     *   思路:
+     *      1. 时间复杂度为O(N)
+     *      2. 空间复杂度为O(N)
+     *      3. 利用递归方式实现，树如果是三层，则会产生三位数，这个地方易出错
+     *
+     *
+     * @param root
+     * @param presum
+     * @return
+     */
     public int preNode(TreeNodes root, int presum) {
 
         if (root == null) {
@@ -50,7 +68,6 @@ public class SumNumbers {
         } else {
             return preNode(root.left, sum) + preNode(root.right, sum);
         }
-
     }
 
 }
