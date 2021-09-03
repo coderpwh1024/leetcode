@@ -23,7 +23,7 @@ public class SumNumbers {
         SumNumbers sum = new SumNumbers();
 
         // 创建二叉树
-        BiTrees biTrees = sum.create();
+        BiTrees biTrees = sum.create2();
 
         // 获取二叉树根结点
         TreeNodes root = biTrees.getRoot();
@@ -50,6 +50,22 @@ public class SumNumbers {
         TreeNodes node1 = new TreeNodes(1, node2, node3);
 
         return new BiTrees(node1);
+    }
+
+
+    public BiTrees create2() {
+
+        TreeNodes node5 = new TreeNodes(5);
+
+        TreeNodes node1 = new TreeNodes(1);
+
+        TreeNodes node9 = new TreeNodes(9, node5, node1);
+
+        TreeNodes node0 = new TreeNodes(0);
+
+        TreeNodes node4 = new TreeNodes(4, node9, node0);
+
+        return new BiTrees(node4);
     }
 
 
