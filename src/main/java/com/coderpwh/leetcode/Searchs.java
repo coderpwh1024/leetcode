@@ -17,6 +17,18 @@ public class Searchs {
 
     }
 
+
+    /***
+     *   思路:
+     *     1. 时间复杂度为O(N)
+     *     2. 空间复杂度为O(1)
+     *     3. 算法效率不高
+     *
+     *
+     * @param nums
+     * @param target
+     * @return
+     */
     public int search(int[] nums, int target) {
 
         if (nums == null || nums.length <= 0) {
