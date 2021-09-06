@@ -14,8 +14,11 @@ public class Searchs {
         Searchs search = new Searchs();
 
 
+        // 普通的for循环
         System.out.println(search.search(nums, target));
 
+
+        // 二分查找方式实现
         System.out.println(search.testSearch(nums, target));
 
     }
@@ -52,6 +55,16 @@ public class Searchs {
     }
 
 
+    /**
+     * 思路:
+     * 1. 时间复杂度为O(LogN)
+     * 2. 空间复杂度为O(1)
+     * 3.利用二分查找方式实现
+     *
+     * @param nums
+     * @param target
+     * @return
+     */
     public int testSearch(int nums[], int target) {
 
         int low = 0;
