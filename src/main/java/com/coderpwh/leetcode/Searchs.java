@@ -13,7 +13,10 @@ public class Searchs {
 
         Searchs search = new Searchs();
 
-        search.search(nums, target);
+
+        System.out.println(search.search(nums, target));
+
+        System.out.println(search.testSearch(nums, target));
 
     }
 
@@ -38,7 +41,7 @@ public class Searchs {
         int count = -1;
 
         for (int i = 0; i < nums.length; i++) {
-            if (target == count) {
+            if (target == nums[i]) {
                 count = i;
                 break;
             }
@@ -47,4 +50,30 @@ public class Searchs {
         return count;
 
     }
+
+
+    public int testSearch(int nums[], int target) {
+
+        int low = 0;
+
+        int high = nums.length - 1;
+
+        while (low < high) {
+            int mid = (high - low) / 2 + low;
+
+            int num = nums[mid];
+
+            if (num == target) {
+                return mid;
+            } else if (num > target) {
+                high = mid - 1;
+            } else {
+                low = mid + 1;
+            }
+        }
+
+        return -1;
+    }
+
+
 }
