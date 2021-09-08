@@ -25,6 +25,17 @@ public class BuildTreeTwo {
     }
 
 
+    /***
+     *    思路:
+     *       1.时间复杂度为O(N)
+     *       2.空间复杂度为O(N)
+     * @param inOrder
+     * @param postOrder
+     * @param inIndex
+     * @param postIndex
+     * @param count
+     * @return
+     */
     public TreeNodes tree(int[] inOrder, int[] postOrder, int inIndex, int postIndex, int count) {
 
 
@@ -50,8 +61,7 @@ public class BuildTreeTwo {
             return root;
 
         }
-
-
+        
         return null;
 
     }
