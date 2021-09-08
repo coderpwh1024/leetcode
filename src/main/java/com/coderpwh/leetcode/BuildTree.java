@@ -1,5 +1,25 @@
 package com.coderpwh.leetcode;
 
+
+/***
+ *
+ * 105. 从前序与中序遍历序列构造二叉树
+ * 给定一棵树的前序遍历 preorder 与中序遍历  inorder。请构造二叉树并返回其根节点。
+ *
+ *  
+ *
+ * 示例 1:
+ *
+ *
+ * Input: preorder = [3,9,20,15,7], inorder = [9,3,15,20,7]
+ * Output: [3,9,20,null,null,15,7]
+ * 示例 2:
+ *
+ * Input: preorder = [-1], inorder = [-1]
+ * Output: [-1]
+ *
+ *
+ */
 public class BuildTree {
 
     public static void main(String[] args) {
@@ -10,7 +30,7 @@ public class BuildTree {
         int[] inorder = {9, 3, 15, 20, 7};
 
         BuildTree tree = new BuildTree();
-        
+
         tree.buildTree(preorder, inorder);
 
 
