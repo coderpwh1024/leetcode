@@ -10,7 +10,7 @@ public class BuildTree {
         int[] inorder = {9, 3, 15, 20, 7};
 
         BuildTree tree = new BuildTree();
-        tree.buildTree(preorder,inorder);
+        tree.buildTree(preorder, inorder);
 
 
     }
@@ -29,6 +29,19 @@ public class BuildTree {
     }
 
 
+    /***
+     *     思路:
+     *        1.时间复杂度为O(N)
+     *        2.空间复杂度为O(N)
+     *        3.利用递归方式实现
+     *
+     * @param preOrder
+     * @param inOrder
+     * @param preIndex
+     * @param inIndex
+     * @param count
+     * @return
+     */
     public TreeNodes build(int[] preOrder, int[] inOrder, int preIndex, int inIndex, int count) {
 
 
