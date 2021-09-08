@@ -21,6 +21,20 @@ public class BuildTreeTwo {
         TreeNodes root = tree(inorder, postorder, inorder.length - 1, postorder.length - 1, postorder.length);
 
 
+        System.out.println("前序遍历:");
+        preNode(root);
+        System.out.println();
+
+
+        System.out.println("中序遍历:");
+        inNode(root);
+        System.out.println();
+
+        System.out.println("后序遍历:");
+        postNode(root);
+        System.out.println();
+
+
         return root;
     }
 
@@ -61,8 +75,56 @@ public class BuildTreeTwo {
             return root;
 
         }
-        
         return null;
+    }
+
+
+    /***
+     *
+     *  前序遍历
+     * @param root
+     */
+    public void preNode(TreeNodes root) {
+
+        if (root != null) {
+            System.out.print(root.val);
+            System.out.print("  ");
+            preNode(root.left);
+            preNode(root.right);
+        }
+
+    }
+
+
+    /***
+     * 中序遍历
+     * @param root
+     */
+    public void inNode(TreeNodes root) {
+
+        if (root != null) {
+            inNode(root.left);
+            System.out.print(root.val);
+            System.out.print("  ");
+            inNode(root.right);
+        }
+    }
+
+
+    /***
+     * 后序遍历
+     * @param root
+     */
+    public void postNode(TreeNodes root) {
+
+        if (root != null) {
+
+            postNode(root.left);
+            postNode(root.right);
+
+            System.out.print(root.val);
+            System.out.print("  ");
+        }
 
     }
 
