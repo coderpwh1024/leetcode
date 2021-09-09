@@ -28,8 +28,11 @@ public class CountNodes {
         CountNodes countNodes = new CountNodes();
 
 
+        // 创建结点
         BiTrees biTrees = countNodes.create();
 
+
+        // 获取根结点
         TreeNodes root = biTrees.getRoot();
 
 
@@ -37,6 +40,12 @@ public class CountNodes {
 
     }
 
+
+    /***
+     * 主方法
+     * @param root
+     * @return
+     */
     public int countNodes(TreeNodes root) {
 
 
@@ -48,6 +57,11 @@ public class CountNodes {
     }
 
 
+    /***
+     *   创建结点
+     *
+     * @return
+     */
     public BiTrees create() {
 
 
