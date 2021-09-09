@@ -20,7 +20,7 @@ public class CountNodes {
     public int countNodes(TreeNodes root) {
 
 
-        int count =   getCount(root);
+        int count = getCount(root);
 
         System.out.println(count);
 
@@ -48,6 +48,18 @@ public class CountNodes {
     }
 
 
+    /***
+     *  思路:
+     *     1. 时间复杂度为O(N)
+     *     2. 空间复杂度为O(N)
+     *     3. 主要利用递归方式实现
+     *
+     *
+     *
+     *
+     * @param root
+     * @return
+     */
     public int getCount(TreeNodes root) {
 
         int count = 0;
