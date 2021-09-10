@@ -46,16 +46,21 @@ public class BinaryTreePaths {
 
         stringAppend(root, list, path);
 
-
-        for (int i = 0; i < list.size(); i++) {
-            System.out.println(list.get(i));
-        }
-
-
         return list;
     }
 
 
+    /***
+     *      思路:
+     *        1. 时间复杂度为O(N^2)
+     *        2. 空间复杂度为O(N^2)
+     *        3. 递归方式实现
+     *
+     *
+     * @param root
+     * @param list
+     * @param path
+     */
     public void stringAppend(TreeNodes root, List<String> list, String path) {
 
         if (root != null) {
@@ -77,3 +82,4 @@ public class BinaryTreePaths {
 
 
 }
+
