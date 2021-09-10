@@ -10,19 +10,27 @@ public class BinaryTreePaths {
 
     public static void main(String[] args) {
 
-        BinaryTreePaths path = new BinaryTreePaths();
+     BinaryTreePaths path = new BinaryTreePaths();
 
 
-        BiTrees biTrees = path.create();
+     // 获取创建二叉树方法
+     BiTrees biTrees = path.create();
 
-        TreeNodes root = biTrees.getRoot();
-
-
-        path.binaryTreePaths(root);
-
-    }
+     // 获取根结点
+     TreeNodes root = biTrees.getRoot();
 
 
+     path.binaryTreePaths(root);
+
+     }
+
+
+     /***
+     *
+     *   创建二叉树
+     *
+     * @return
+     */
     public BiTrees create() {
 
         TreeNodes node5 = new TreeNodes(5);
@@ -82,4 +90,5 @@ public class BinaryTreePaths {
 
 
 }
+
 
