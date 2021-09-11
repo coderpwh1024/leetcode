@@ -1,13 +1,25 @@
 package com.coderpwh.leetcode;
 
+
+/**
+ * 110. 平衡二叉树
+ * <p>
+ * 给定一个二叉树，判断它是否是高度平衡的二叉树。
+ * <p>
+ * 本题中，一棵高度平衡二叉树定义为：
+ * <p>
+ * 一个二叉树每个节点 的左右两个子树的高度差的绝对值不超过 1 。
+ */
 public class IsBalanced {
 
     public static void main(String[] args) {
 
         IsBalanced isBalanced = new IsBalanced();
 
+        // 创建二叉树
         BiTrees biTrees = isBalanced.create();
 
+        // 获取二叉树根结点
         TreeNodes root = biTrees.getRoot();
 
 
@@ -19,6 +31,10 @@ public class IsBalanced {
     }
 
 
+    /***
+     * 创建二叉树
+     * @return
+     */
     public BiTrees create() {
 
         TreeNodes node7 = new TreeNodes(7);
