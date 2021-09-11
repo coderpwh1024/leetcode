@@ -37,16 +37,28 @@ public class IsBalanced {
     }
 
 
+    /***
+     *   思路:
+     *      1. 时间复杂度为:O(N)
+     *      2.  空间复杂度为O(N)
+     *      3.平衡二叉树左右结点高度差小于等1，并且左右结点都要满足这个性质
+     * @param root
+     * @return
+     */
     public boolean isBalanced(TreeNodes root) {
-
         if (root == null) {
             return true;
         } else {
-
             return Math.abs(height(root.left) - height(root.right)) <= 1 && isBalanced(root.left) && isBalanced(root.right);
         }
     }
 
+
+    /***
+     *   求二叉树的最大高度
+     * @param root
+     * @return
+     */
     public int height(TreeNodes root) {
 
         if (root == null) {
