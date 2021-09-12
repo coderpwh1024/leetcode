@@ -39,6 +39,16 @@ public class MinDiffInBST {
     }
 
 
+    /***
+     *
+     *    思路:
+     *       1. 时间复杂度为O(N)
+     *       2. 空间复杂度为O(N),递归用到了隐形的栈空间
+     *       3. 二叉搜索树 用中序遍历的方式遍历，是按小到达顺序，然后最去比较两个数相互之家的值
+     *
+     * @param root
+     * @return
+     */
     public int minDiffInBST(TreeNodes root) {
 
 
@@ -62,6 +72,16 @@ public class MinDiffInBST {
 
     }
 
+
+    /***
+     *     思路:
+     *       1. 时间复杂度为O(N)
+     *       2. 空间复杂度为:O(N)
+     *       3. 用中序遍历方式实现
+     *
+     * @param root
+     * @param list
+     */
     public void midPrint(TreeNodes root, List<Integer> list) {
 
         if (root != null) {
