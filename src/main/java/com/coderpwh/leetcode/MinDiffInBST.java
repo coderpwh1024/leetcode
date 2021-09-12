@@ -3,24 +3,34 @@ package com.coderpwh.leetcode;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author coderpwh
+ */
 public class MinDiffInBST {
 
     public static void main(String[] args) {
 
         MinDiffInBST min = new MinDiffInBST();
 
+
+        // 创建二叉树
         BiTrees biTrees = min.create();
 
+        // 获取根结点
         TreeNodes root = biTrees.getRoot();
 
-        min.minDiffInBST(root);
-
+        // 打印最小值
         System.out.println(min.minDiffInBST(root));
 
 
     }
 
 
+    /***
+     *
+     *   创建二叉树
+     * @return
+     */
     public BiTrees create() {
 
         TreeNodes node1 = new TreeNodes(1);
