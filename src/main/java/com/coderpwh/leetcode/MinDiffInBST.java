@@ -1,9 +1,24 @@
-package com.coderpwh.leetcode;
+ package com.coderpwh.leetcode;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * 783. 二叉搜索树节点最小距离
+ * <p>
+ * 给你一个二叉搜索树的根节点 root ，返回 树中任意两不同节点值之间的最小差值 。
+ * <p>
+ * 注意：本题与 530：https://leetcode-cn.com/problems/minimum-absolute-difference-in-bst/ 相同
+ * <p>
+ *  
+ * <p>
+ * 示例 1：
+ * <p>
+ * <p>
+ * 输入：root = [4,2,6,1,3]
+ * 输出：1
+ * 示例 2：
+ *
  * @author coderpwh
  */
 public class MinDiffInBST {
