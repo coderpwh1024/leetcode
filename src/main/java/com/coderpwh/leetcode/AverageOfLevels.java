@@ -8,10 +8,13 @@ public class AverageOfLevels {
 
         AverageOfLevels average = new AverageOfLevels();
 
+        // 创建二叉树
         BiTrees biTrees = average.create();
 
+        // 获取根结点
         TreeNodes root = biTrees.getRoot();
 
+        // 获取二叉树层次的平均值
         average.averageOfLevels(root);
 
         average.test(root);
@@ -20,6 +23,11 @@ public class AverageOfLevels {
     }
 
 
+    /***
+     *   创建二叉树
+     *
+     * @return
+     */
     public BiTrees create() {
 
         TreeNodes node15 = new TreeNodes(15);
@@ -37,13 +45,13 @@ public class AverageOfLevels {
 
 
     /***
-     *   
+     *
      *    思路:
      *       1. 时间复杂度为O(N)
      *       2. 空间复杂度为O(N)
      *       3. 也利用队列的方式对二叉树进行层次遍历
-     *       4. 没有控制队列的大小，导致计算平均值不准旗
-     * 
+     *       4. 没有控制队列的大小，导致计算平均值不准旗，未能通过所有测试用例
+     *
      * @param root
      * @return
      */
@@ -123,12 +131,10 @@ public class AverageOfLevels {
         link.offer(root);
         while (!link.isEmpty()) {
 
-
             int size = link.size();
 
             double sum = 0;
             for (int i = 0; i < size; i++) {
-
 
                 root = link.poll();
 
