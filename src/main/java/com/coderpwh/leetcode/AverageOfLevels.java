@@ -14,6 +14,8 @@ public class AverageOfLevels {
 
         average.averageOfLevels(root);
 
+        average.test(root);
+
 
     }
 
@@ -37,8 +39,8 @@ public class AverageOfLevels {
     public List<Double> averageOfLevels(TreeNodes root) {
 
 
-        List<List<Integer>> date = new ArrayList<>();
-
+        List<List<Double>> date = new ArrayList<>();
+        List<Double> doubleList = new ArrayList<>();
 
         Queue<TreeNodes> link = new LinkedList<>();
 
@@ -48,21 +50,21 @@ public class AverageOfLevels {
 
             link.offer(node);
 
-            List<Integer> datelist = new ArrayList<>();
-            datelist.add(node.val);
+            List<Double> datelist = new ArrayList<>();
+            datelist.add(1.0 * node.val);
             date.add(datelist);
             while (!link.isEmpty()) {
-                List<Integer> list = new ArrayList<>();
+                List<Double> list = new ArrayList<>();
 
                 root = link.poll();
 
                 if (root.left != null) {
-                    list.add(root.left.val);
+                    list.add(1.0 * root.left.val);
                     link.offer(root.left);
                 }
 
                 if (root.right != null) {
-                    list.add(root.right.val);
+                    list.add(1.0 * root.right.val);
                     link.offer(root.right);
                 }
 
@@ -73,27 +75,59 @@ public class AverageOfLevels {
             }
         }
 
-      /*  for (List<Integer> list : date) {
-            System.out.println(list);
-
-        }*/
-
-        List<Double> doubleList = new ArrayList<>();
-
 
         for (int i = 0; i < date.size(); i++) {
 
-             int sum = 0;
+            int sum = 0;
             for (int j = 0; j < date.get(i).size(); j++) {
-                sum+=date.get(i).get(j);
+                sum += date.get(i).get(j);
             }
-            double range = (double) sum/date.get(i).size();
+            double range = (double) sum / date.get(i).size();
             System.out.println(range);
             doubleList.add(range);
         }
 
+        return doubleList;
+    }
 
 
+    public List<Double> test(TreeNodes root) {
+
+        List<Double> doubleList = new ArrayList<>();
+
+        Queue<TreeNodes> link = new LinkedList<>();
+
+
+        link.offer(root);
+        while (!link.isEmpty()) {
+
+
+            int size = link.size();
+
+            double sum = 0;
+            for (int i = 0; i < size; i++) {
+
+
+                root = link.poll();
+
+                sum += root.val;
+
+                if (root.left != null) {
+                    link.offer(root.left);
+                }
+
+                if (root.right != null) {
+                    link.offer(root.right);
+                }
+
+            }
+            doubleList.add(sum / size);
+        }
+
+
+        for (int i = 0; i < doubleList.size(); i++) {
+            System.out.println(doubleList.get(i));
+        }
 
         return doubleList;
     }
