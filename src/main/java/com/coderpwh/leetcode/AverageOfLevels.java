@@ -91,6 +91,17 @@ public class AverageOfLevels {
     }
 
 
+    /***
+     *
+     *    思路:
+     *      1. 时间复杂度为O(N)
+     *      2. 空间复杂度为O(N)
+     *      3. 利用队列对二叉树层次遍历并计算其平均值
+     *
+     *
+     * @param root
+     * @return
+     */
     public List<Double> test(TreeNodes root) {
 
         List<Double> doubleList = new ArrayList<>();
@@ -119,16 +130,9 @@ public class AverageOfLevels {
                 if (root.right != null) {
                     link.offer(root.right);
                 }
-
             }
             doubleList.add(sum / size);
         }
-
-
-        for (int i = 0; i < doubleList.size(); i++) {
-            System.out.println(doubleList.get(i));
-        }
-
         return doubleList;
     }
 
