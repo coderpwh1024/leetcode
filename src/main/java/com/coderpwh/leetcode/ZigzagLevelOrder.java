@@ -9,15 +9,24 @@ public class ZigzagLevelOrder {
 
         ZigzagLevelOrder order = new ZigzagLevelOrder();
 
+
+        // 创建二叉树
         BiTrees biTrees = order.create();
 
+        // 获取根结点
         TreeNodes root = biTrees.getRoot();
 
+        //进行层次遍历打印
         order.zigzagLevelOrder(root);
-
     }
 
 
+    /***
+     *
+     *  创建二叉树
+     *
+     * @return
+     */
     public BiTrees create() {
 
         TreeNodes node15 = new TreeNodes(15);
