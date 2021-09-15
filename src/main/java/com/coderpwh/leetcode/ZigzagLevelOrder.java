@@ -34,6 +34,16 @@ public class ZigzagLevelOrder {
     }
 
 
+    /***
+     *     思路:
+     *       1. 时间复杂度为O(N)
+     *       2. 空间复杂度为O(N)
+     *       3. 主要是利用队列方式实现
+     *
+     *
+     * @param root
+     * @return
+     */
     public List<List<Integer>> zigzagLevelOrder(TreeNodes root) {
 
 
@@ -70,13 +80,6 @@ public class ZigzagLevelOrder {
                 }
             }
         }
-
-
-        for (List<Integer> d : date) {
-            System.out.println(d);
-        }
-
-
         return date;
     }
 
