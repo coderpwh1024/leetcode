@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * 897. 递增顺序搜索树
+ *
  * @author coderpwh
  */
 public class IncreasingBST {
@@ -70,6 +72,7 @@ public class IncreasingBST {
         List<Integer> list = new ArrayList<>();
 
         midPrint(root, list);
+        System.out.println();
 
 
         if (list != null && list.size() > 0) {
@@ -83,6 +86,8 @@ public class IncreasingBST {
                 cur.right = new TreeNodes(list.get(i));
                 cur = cur.right;
             }
+
+            prePrint(node.right);
 
             return node.right;
         }
