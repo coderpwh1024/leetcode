@@ -1,4 +1,4 @@
-package com.coderpwh.leetcode;
+ package com.coderpwh.leetcode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +15,6 @@ public class IncreasingBST {
         TreeNodes root = biTrees.getRoot();
 
         bst.increasingBST(root);
-
 
 
     }
@@ -45,6 +44,15 @@ public class IncreasingBST {
     }
 
 
+    /***
+     *    思路:
+     *      1. 时间复杂度为O(N)
+     *      2. 空间复杂度为O(N)
+     *      3.中序遍历获取了从小到大的集合，主要构建二叉树
+     *
+     * @param root
+     * @return
+     */
     public TreeNodes increasingBST(TreeNodes root) {
 
         List<Integer> list = new ArrayList<>();
