@@ -1,0 +1,96 @@
+package com.coderpwh.leetcode;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class IncreasingBST {
+
+
+    public static void main(String[] args) {
+
+        IncreasingBST bst = new IncreasingBST();
+
+        BiTrees biTrees = bst.create();
+
+        TreeNodes root = biTrees.getRoot();
+
+        bst.increasingBST(root);
+
+
+
+    }
+
+
+    public BiTrees create() {
+
+        TreeNodes node7 = new TreeNodes(7);
+
+        TreeNodes node9 = new TreeNodes(9);
+
+        TreeNodes node8 = new TreeNodes(8, node7, node9);
+
+        TreeNodes node6 = new TreeNodes(6, null, node8);
+
+        TreeNodes node1 = new TreeNodes(1);
+
+        TreeNodes node2 = new TreeNodes(2, node1, null);
+
+        TreeNodes node4 = new TreeNodes(4);
+
+        TreeNodes node3 = new TreeNodes(3, node2, node4);
+
+        TreeNodes node5 = new TreeNodes(5, node3, node6);
+
+        return new BiTrees(node5);
+    }
+
+
+    public TreeNodes increasingBST(TreeNodes root) {
+
+        List<Integer> list = new ArrayList<>();
+
+        midPrint(root, list);
+
+
+        if (list != null && list.size() > 0) {
+
+            TreeNodes node = new TreeNodes(-1);
+
+            TreeNodes cur = node;
+
+            for (int i = 0; i < list.size(); i++) {
+
+                cur.right = new TreeNodes(list.get(i));
+                cur = cur.right;
+            }
+
+            return node.right;
+        }
+        return null;
+    }
+
+
+    public void prePrint(TreeNodes root) {
+
+        if (root != null) {
+            System.out.print(root.val);
+            System.out.print("  ");
+            prePrint(root.left);
+            prePrint(root.right);
+        }
+
+    }
+
+    public void midPrint(TreeNodes root, List<Integer> list) {
+
+        if (root != null) {
+            midPrint(root.left, list);
+            list.add(root.val);
+            System.out.print(root.val);
+            System.out.print("  ");
+            midPrint(root.right, list);
+
+        }
+    }
+
+}
