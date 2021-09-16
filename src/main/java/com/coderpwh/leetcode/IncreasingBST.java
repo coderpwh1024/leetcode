@@ -3,6 +3,9 @@
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author coderpwh
+ */
 public class IncreasingBST {
 
 
@@ -10,16 +13,25 @@ public class IncreasingBST {
 
         IncreasingBST bst = new IncreasingBST();
 
+
+        // 创建二叉树
         BiTrees biTrees = bst.create();
 
+        // 获取根结点
         TreeNodes root = biTrees.getRoot();
 
+
+        // 遍历并构建二叉树
         bst.increasingBST(root);
 
 
     }
 
 
+    /***
+     *  创建二叉树
+     * @return
+     */
     public BiTrees create() {
 
         TreeNodes node7 = new TreeNodes(7);
@@ -78,6 +90,11 @@ public class IncreasingBST {
     }
 
 
+    /**
+     * 前序遍历方式
+     *
+     * @param root
+     */
     public void prePrint(TreeNodes root) {
 
         if (root != null) {
@@ -89,6 +106,13 @@ public class IncreasingBST {
 
     }
 
+
+    /**
+     * 中序遍历
+     *
+     * @param root
+     * @param list
+     */
     public void midPrint(TreeNodes root, List<Integer> list) {
 
         if (root != null) {
