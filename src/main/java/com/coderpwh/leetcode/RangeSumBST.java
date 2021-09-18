@@ -1,7 +1,9 @@
  package com.coderpwh.leetcode;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 /**
  * 938. 二叉搜索树的范围和
@@ -24,6 +26,8 @@ public class RangeSumBST {
         bst.rangeSumBST(root, 7, 15);
 
         System.out.println(bst.rangeSumBST(root, 7, 15));
+
+        System.out.println(bst.test(root, 7, 15));
 
 
     }
@@ -82,7 +86,11 @@ public class RangeSumBST {
 
     /***
      *
-     *   中序遍历
+     *    中序遍历
+     *    时间复杂度为O(N)
+     *    空间复杂度为O(N)
+     *
+     *
      *
      * @param root
      * @param list
@@ -93,6 +101,49 @@ public class RangeSumBST {
             list.add(root.val);
             mid(root.right, list);
         }
+    }
+
+
+    /***
+     *    思路:
+     *      1. 时间复杂度为O(N)
+     *      2. 空间复杂度为O(N)
+     *      3. 主要用队列方式实现
+     *
+     * @param root
+     * @param low
+     * @param high
+     * @return
+     */
+    public int test(TreeNodes root, int low, int high) {
+
+        int sum = 0;
+
+        Queue<TreeNodes> queue = new LinkedList<>();
+
+        queue.offer(root);
+
+        while (!queue.isEmpty()) {
+
+            TreeNodes node = queue.poll();
+
+            if (node == null) {
+                continue;
+            }
+            if (node.val > high) {
+                queue.offer(node.left);
+            } else if (node.val < low) {
+                queue.offer(node.right);
+            } else {
+                sum += node.val;
+                queue.offer(node.left);
+                queue.offer(node.right);
+            }
+
+
+        }
+
+        return sum;
     }
 
 
