@@ -36,7 +36,6 @@ public class RangeSumBST {
 
         TreeNodes node15 = new TreeNodes(15, null, node18);
 
-
         TreeNodes node10 = new TreeNodes(10, node5, node15);
 
         return new BiTrees(node10);
@@ -44,6 +43,16 @@ public class RangeSumBST {
     }
 
 
+    /***
+     *    思路:
+     *       1. 时间复杂度为O(N)
+     *       2. 空间复杂度为O(N)
+     *       3. 先中序遍历，后通过数组遍历
+     * @param root
+     * @param low
+     * @param high
+     * @return
+     */
     public int rangeSumBST(TreeNodes root, int low, int high) {
 
         List<Integer> list = new ArrayList<>();
@@ -58,14 +67,11 @@ public class RangeSumBST {
                 }
             }
         }
-
-
         return sum;
     }
 
 
     public void mid(TreeNodes root, List<Integer> list) {
-
         if (root != null) {
             mid(root.left, list);
             list.add(root.val);
