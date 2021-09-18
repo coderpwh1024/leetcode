@@ -1,4 +1,4 @@
-package com.coderpwh.leetcode;
+ package com.coderpwh.leetcode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,8 +12,11 @@ public class RangeSumBST {
 
         RangeSumBST bst = new RangeSumBST();
 
+
+        // 获取二叉树
         BiTrees biTree = bst.create();
 
+        // 获取二叉树根结点
         TreeNodes root = biTree.getRoot();
 
         bst.rangeSumBST(root, 7, 15);
@@ -24,6 +27,10 @@ public class RangeSumBST {
     }
 
 
+    /***
+     *  创建二叉树
+     * @return
+     */
     public BiTrees create() {
 
         TreeNodes node3 = new TreeNodes(3);
@@ -71,13 +78,19 @@ public class RangeSumBST {
     }
 
 
+    /***
+     *
+     *   中序遍历
+     *
+     * @param root
+     * @param list
+     */
     public void mid(TreeNodes root, List<Integer> list) {
         if (root != null) {
             mid(root.left, list);
             list.add(root.val);
             mid(root.right, list);
         }
-
     }
 
 
