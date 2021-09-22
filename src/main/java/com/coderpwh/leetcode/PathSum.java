@@ -10,8 +10,10 @@ public class PathSum {
 
         PathSum pathSum = new PathSum();
 
+        // 创建二叉树
         BiTrees biTrees = pathSum.create();
 
+        // 获取根结点
         TreeNodes root = biTrees.getRoot();
 
         int targetSum = 22;
@@ -26,6 +28,10 @@ public class PathSum {
     }
 
 
+    /***
+     *  构建二叉树
+     * @return
+     */
     public BiTrees create() {
 
         TreeNodes node2 = new TreeNodes(2);
@@ -35,7 +41,6 @@ public class PathSum {
         TreeNodes node11 = new TreeNodes(11, node7, node2);
 
         TreeNodes node4 = new TreeNodes(4, node11, null);
-
 
         TreeNodes node1 = new TreeNodes(1);
 
@@ -101,8 +106,12 @@ public class PathSum {
     }
 
 
+    /***
+     *  前序遍历
+     *
+     * @param root
+     */
     public void pre(TreeNodes root) {
-
         if (root != null) {
             System.out.print(root.val);
             System.out.print("  ");
