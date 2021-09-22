@@ -1,4 +1,4 @@
-package com.coderpwh.leetcode;
+ package com.coderpwh.leetcode;
 
 
 import java.util.*;
@@ -53,6 +53,7 @@ public class PathSum {
 
     }
 
+    // 主要实现
     public List<List<Integer>> pathSum(TreeNodes root, int targetSum) {
 
         List<List<Integer>> list = new ArrayList<>();
@@ -62,14 +63,24 @@ public class PathSum {
         dfs(root, targetSum, list, queue);
 
         for (int i = 0; i < list.size(); i++) {
-
             System.out.println(list.get(i));
         }
-
 
         return list;
     }
 
+
+    /***
+     *    思路:
+     *      1. 时间复杂度为O(N^2)
+     *      2. 空间复杂度为O(N)
+     *      3. 利用队列与递归方式实现
+     *
+     * @param root
+     * @param targetSum
+     * @param list
+     * @param queue
+     */
     public void dfs(TreeNodes root, int targetSum, List<List<Integer>> list, Deque<Integer> queue) {
 
         if (root == null) {
@@ -80,17 +91,13 @@ public class PathSum {
 
         targetSum -= root.val;
 
-
         if (root.left == null && root.right == null && targetSum == 0) {
             list.add(new LinkedList<>(queue));
         }
 
-
         dfs(root.left, targetSum, list, queue);
         dfs(root.right, targetSum, list, queue);
         queue.pollLast();
-
-
     }
 
 
