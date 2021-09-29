@@ -1,4 +1,4 @@
-package com.coderpwh.leetcode;
+ package com.coderpwh.leetcode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,15 +15,21 @@ public class KthSmallest {
         TreeNodes root = biTrees.getRoot();
 
 
-        int k=3;
+        int k = 3;
 
 //        kthSmallest.kthSmallest(root,k);
 
-        System.out.println(kthSmallest.kthSmallest(root,k));
+        System.out.println(kthSmallest.kthSmallest(root, k));
 
     }
 
 
+    /***
+     *
+     *  创建二叉树
+     *
+     * @return
+     */
     public BiTrees create() {
 
         TreeNodes node1 = new TreeNodes(1);
@@ -41,28 +47,41 @@ public class KthSmallest {
         return new BiTrees(node5);
     }
 
+
+    /***
+     *    思路:
+     *       1. 时间复杂度为O(N)
+     *       2. 空间复杂度为O(N)
+     *       3. 采用中序遍历方式
+     *
+     * @param root
+     * @param k
+     * @return
+     */
     public int kthSmallest(TreeNodes root, int k) {
 
         List<Integer> list = new ArrayList<>();
-
         mid(root, list);
 
         if (list != null) {
-             return  list.get(k-1);
+            return list.get(k - 1);
         }
 
         return 0;
     }
 
 
+    /***
+     *   中序遍历方式
+     * @param root
+     * @param list
+     */
     public void mid(TreeNodes root, List<Integer> list) {
-
         if (root != null) {
             mid(root.left, list);
             list.add(root.val);
             mid(root.right, list);
         }
-
     }
 
 
