@@ -3,6 +3,13 @@
 import java.util.ArrayList;
 import java.util.List;
 
+
+/**
+ * 
+ * 230. 二叉搜索树中第K小的元素
+ *
+ * @author coderpwh
+ */
 public class KthSmallest {
 
 
@@ -10,14 +17,13 @@ public class KthSmallest {
 
         KthSmallest kthSmallest = new KthSmallest();
 
+        // 创建二叉树
         BiTrees biTrees = kthSmallest.create();
 
+        // 获取根结点
         TreeNodes root = biTrees.getRoot();
 
-
         int k = 3;
-
-//        kthSmallest.kthSmallest(root,k);
 
         System.out.println(kthSmallest.kthSmallest(root, k));
 
@@ -86,3 +92,4 @@ public class KthSmallest {
 
 
 }
+
