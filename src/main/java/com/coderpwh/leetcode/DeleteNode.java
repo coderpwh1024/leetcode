@@ -12,20 +12,28 @@ public class DeleteNode {
 
         DeleteNode node = new DeleteNode();
 
+        // 创建二叉树
         BiTrees biTrees = node.create();
 
+        // 获取根结点
         TreeNodes root = biTrees.getRoot();
 
         int key = 3;
 
+        // 删除 结点值为key的结点
         TreeNodes rootnNode = node.deleteNode(root, key);
 
+        // 中序遍历
         node.mid(rootnNode);
-
 
     }
 
 
+    /**
+     * 创建二叉树
+     *
+     * @return
+     */
     public BiTrees create() {
 
         TreeNodes node2 = new TreeNodes(2);
@@ -44,6 +52,15 @@ public class DeleteNode {
     }
 
 
+    /***
+     *      思路:
+     *         1.时间复杂度为O(NlogN)
+     *         2.空间复杂度为O(N)
+     *
+     * @param root
+     * @param key
+     * @return
+     */
     public TreeNodes deleteNode(TreeNodes root, int key) {
 
         if (root == null) {
@@ -85,6 +102,13 @@ public class DeleteNode {
     }
 
 
+    /***
+     *
+     *  获取左结点的最大值(最右结点)
+     *
+     * @param root
+     * @return
+     */
     public int predecessor(TreeNodes root) {
         root = root.left;
         while (root.right != null) {
@@ -117,8 +141,12 @@ public class DeleteNode {
     }
 
 
+    /**
+     * 中序遍历方式
+     *
+     * @param root
+     */
     public void mid(TreeNodes root) {
-
         if (root != null) {
             mid(root.left);
             System.out.print(root.val);
