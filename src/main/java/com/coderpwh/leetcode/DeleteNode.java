@@ -4,6 +4,8 @@ import java.util.Deque;
 import java.util.LinkedList;
 
 /**
+ * 450. 删除二叉搜索树中的节点
+ *
  * @author coderpwh
  */
 public class DeleteNode {
@@ -139,7 +141,6 @@ public class DeleteNode {
             }
         }
     }
-
 
     /**
      * 中序遍历方式
