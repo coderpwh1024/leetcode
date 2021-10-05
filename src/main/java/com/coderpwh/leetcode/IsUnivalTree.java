@@ -1,4 +1,7 @@
-    package com.coderpwh.leetcode;
+ package com.coderpwh.leetcode;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /****
  *965. 单值二叉树
@@ -22,6 +25,8 @@ public class IsUnivalTree {
 
         // 获取根结点
         TreeNodes root = biTrees.getRoot();
+
+        System.out.println(tree.isUnivalTree(root));
 
         System.out.println(tree.isUnivalTree(root));
     }
@@ -49,6 +54,31 @@ public class IsUnivalTree {
 
         return new BiTrees(root);
 
+    }
+
+    public boolean test(TreeNodes root) {
+
+        List<Integer> list = new ArrayList<>();
+        mid(root, list);
+
+        for (int i = 1; i < list.size(); i++) {
+            if (!list.get(i).equals(list.get(0))) {
+                return false;
+            }
+        }
+
+        return true;
+
+    }
+
+
+    public void mid(TreeNodes root, List<Integer> list) {
+
+        if (root != null) {
+            mid(root.left, list);
+            list.add(root.val);
+            mid(root.right, list);
+        }
     }
 
 
