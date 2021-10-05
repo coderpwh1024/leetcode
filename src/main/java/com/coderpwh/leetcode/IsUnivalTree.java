@@ -1,4 +1,4 @@
-package com.coderpwh.leetcode;
+ package com.coderpwh.leetcode;
 
 public class IsUnivalTree {
 
@@ -35,6 +35,13 @@ public class IsUnivalTree {
     }
 
 
+    /***
+     *  思路:
+     *      1.时间复杂度为O(N)
+     *      2.空间复杂度为O(N)
+     * @param root
+     * @return
+     */
     public boolean isUnivalTree(TreeNodes root) {
 
         boolean left = (root.left == null || (root.val.equals(root.left.val) && isUnivalTree(root.left)));
