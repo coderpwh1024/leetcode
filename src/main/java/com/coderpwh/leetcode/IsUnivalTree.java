@@ -7,14 +7,21 @@ public class IsUnivalTree {
 
         IsUnivalTree tree = new IsUnivalTree();
 
+        // 创建二叉树
         BiTrees biTrees = tree.create();
 
+        // 获取根结点
         TreeNodes root = biTrees.getRoot();
 
         System.out.println(tree.isUnivalTree(root));
     }
 
 
+    /**
+     * 创建二叉树
+     *
+     * @return
+     */
     public BiTrees create() {
 
         TreeNodes nodes1 = new TreeNodes(2);
