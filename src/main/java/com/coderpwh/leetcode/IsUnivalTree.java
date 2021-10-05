@@ -1,5 +1,15 @@
- package com.coderpwh.leetcode;
+    package com.coderpwh.leetcode;
 
+/****
+ *965. 单值二叉树
+ *
+ 如果二叉树每个节点都具有相同的值，那么该二叉树就是单值二叉树。
+
+ 只有给定的树是单值二叉树时，才返回 true；否则返回 false
+ *
+ *
+ *
+ */
 public class IsUnivalTree {
 
     public static void main(String[] args) {
