@@ -56,6 +56,16 @@ public class IsUnivalTree {
 
     }
 
+
+    /***
+     *   思路:
+     *      1. 时间复杂度为O(N)
+     *      2. 空间复杂度为O(N)
+     *      3. 利用递归方式获取所有元素，然后比较
+     *
+     * @param root
+     * @return
+     */
     public boolean test(TreeNodes root) {
 
         List<Integer> list = new ArrayList<>();
