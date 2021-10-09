@@ -1,5 +1,10 @@
  package com.coderpwh.leetcode;
 
+/**
+ *617. 合并二叉树
+ *
+ * @author coderpwh
+ */
 public class MergeTrees {
 
     public static void main(String[] args) {
@@ -8,12 +13,15 @@ public class MergeTrees {
 
         BiTrees biTreesOne = trees.createOne();
 
+        // 获取二叉树one
         TreeNodes rootOne = biTreesOne.getRoot();
 
         BiTrees biTreesTwo = trees.createTwo();
 
+        // 获取二叉树two
         TreeNodes rootTwo = biTreesTwo.getRoot();
 
+        // 合并二叉树
         TreeNodes node = trees.mergeTrees(rootOne, rootTwo);
 
 
@@ -28,6 +36,10 @@ public class MergeTrees {
     }
 
 
+    /***
+     * 创建二叉树
+     * @return
+     */
     public BiTrees createOne() {
 
         TreeNodes node5 = new TreeNodes(5);
@@ -42,6 +54,11 @@ public class MergeTrees {
 
     }
 
+
+    /***
+     *  创建二叉树二
+     * @return
+     */
     public BiTrees createTwo() {
 
         TreeNodes node4 = new TreeNodes(4);
@@ -89,8 +106,11 @@ public class MergeTrees {
     }
 
 
+    /***
+     * 前序遍历
+     * @param root
+     */
     public void pre(TreeNodes root) {
-
         if (root != null) {
             System.out.print(root.val);
             System.out.print(" ");
@@ -100,6 +120,10 @@ public class MergeTrees {
     }
 
 
+    /***
+     *  中序遍历
+     * @param root
+     */
     public void mid(TreeNodes root) {
 
         if (root != null) {
