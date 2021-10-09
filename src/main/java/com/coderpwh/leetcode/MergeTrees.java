@@ -1,4 +1,4 @@
-package com.coderpwh.leetcode;
+ package com.coderpwh.leetcode;
 
 public class MergeTrees {
 
@@ -58,6 +58,17 @@ public class MergeTrees {
     }
 
 
+    /***
+     *
+     *    思路:
+     *      1. 时间复杂度为O(N)
+     *      2. 空间复杂度为O(N)
+     *      3. 递归方式，对左右根进行整合
+     *
+     * @param root1
+     * @param root2
+     * @return
+     */
     public TreeNodes mergeTrees(TreeNodes root1, TreeNodes root2) {
 
         if (root1 == null) {
@@ -75,7 +86,6 @@ public class MergeTrees {
         root.right = mergeTrees(root1.right, root2.right);
 
         return root;
-
     }
 
 
