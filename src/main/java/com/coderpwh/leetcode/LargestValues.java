@@ -1,4 +1,4 @@
-package com.coderpwh.leetcode;
+ package com.coderpwh.leetcode;
 
 import java.util.ArrayList;
 import java.util.Deque;
@@ -14,17 +14,26 @@ public class LargestValues {
 
         LargestValues values = new LargestValues();
 
+        // 创建二叉树
         BiTrees biTrees = values.create();
 
+        // 获取根结点
         TreeNodes root = biTrees.getRoot();
 
-//        values.largestValues(root);
+        //  层次遍历比较获取每层次的最大值
+        values.largestValues(root);
 
+        // 二叉树的层次遍历
         values.test(root);
 
     }
 
 
+    /**
+     * 创建二叉树
+     *
+     * @return
+     */
     public BiTrees create() {
 
         TreeNodes node5 = new TreeNodes(5);
