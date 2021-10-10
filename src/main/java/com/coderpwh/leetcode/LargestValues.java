@@ -1,4 +1,4 @@
-package com.coderpwh.leetcode;
+ package com.coderpwh.leetcode;
 
 import java.util.ArrayList;
 import java.util.Deque;
@@ -41,8 +41,17 @@ public class LargestValues {
     }
 
 
+    /***
+     *   思路:
+     *       1.时间复杂度为O(N^2)
+     *       2. 空间复杂度为O(N)
+     *       3. 借助队列方式实现二叉树的层次遍历
+     *
+     *
+     * @param root
+     * @return
+     */
     public List<Integer> largestValues(TreeNodes root) {
-
 
         if (root == null) {
             return null;
@@ -72,13 +81,14 @@ public class LargestValues {
             }
             list.add(max);
         }
-
-        for (int a : list) {
-            System.out.println(a);
-        }
-
         return list;
     }
+    
+    
+    
+    
+    
+    
 
 
 }
