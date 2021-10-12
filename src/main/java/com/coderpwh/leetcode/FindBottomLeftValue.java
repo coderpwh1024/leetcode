@@ -15,8 +15,10 @@ public class FindBottomLeftValue {
 
         FindBottomLeftValue find = new FindBottomLeftValue();
 
+        // 获取二叉树
         BiTrees biTree = find.createTwo();
 
+        // 获取二叉树根结点
         TreeNodes root = biTree.getRoot();
 
         find.findBottomLeftValue(root);
@@ -24,6 +26,10 @@ public class FindBottomLeftValue {
     }
 
 
+    /***
+     *   创建二叉树
+     * @return
+     */
     public BiTrees create() {
 
         TreeNodes node7 = new TreeNodes(7);
@@ -44,6 +50,11 @@ public class FindBottomLeftValue {
     }
 
 
+    /**
+     * 创建二叉树二
+     *
+     * @return
+     */
     public BiTrees createTwo() {
 
         TreeNodes node1 = new TreeNodes(1);
@@ -53,8 +64,6 @@ public class FindBottomLeftValue {
         TreeNodes node2 = new TreeNodes(2, node1, node3);
 
         return new BiTrees(node2);
-
-
     }
 
 
@@ -101,6 +110,14 @@ public class FindBottomLeftValue {
     }
 
 
+    /***
+     *
+     *   中遍历方式
+     *
+     * @param root
+     * @param count
+     * @return
+     */
     public int mid(TreeNodes root, Integer count) {
 
         if (root != null) {
@@ -113,6 +130,12 @@ public class FindBottomLeftValue {
     }
 
 
+    /***
+     *  前序遍历方式
+     * @param root
+     * @param count
+     * @return
+     */
     public int pre(TreeNodes root, Integer count) {
 
         if (root != null) {
