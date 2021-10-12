@@ -1,6 +1,8 @@
  package com.coderpwh.leetcode;
 
 /**
+ * 513. 找树左下角的值
+ *
  * @author coderpwh
  */
 public class FindBottomLeftValue {
@@ -16,7 +18,7 @@ public class FindBottomLeftValue {
         FindBottomLeftValue find = new FindBottomLeftValue();
 
         // 获取二叉树
-        BiTrees biTree = find.createTwo();
+        BiTrees biTree = find.create();
 
         // 获取二叉树根结点
         TreeNodes root = biTree.getRoot();
