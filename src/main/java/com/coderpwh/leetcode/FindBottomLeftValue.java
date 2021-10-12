@@ -23,7 +23,9 @@ public class FindBottomLeftValue {
         // 获取二叉树根结点
         TreeNodes root = biTree.getRoot();
 
-        find.findBottomLeftValue(root);
+//        find.findBottomLeftValue(root);
+
+        find.test(root);
 
     }
 
@@ -109,6 +111,28 @@ public class FindBottomLeftValue {
         if (root.right != null) {
             findValue(root.right, deep + 1);
         }
+    }
+
+
+    public void test(TreeNodes root) {
+        int height = getHeight(root);
+
+        System.out.println(height);
+    }
+
+
+    /***
+     *  递归方式求二叉树深度
+     * @param root
+     * @return
+     */
+    public int getHeight(TreeNodes root) {
+        if (root != null) {
+            int leftHeight = getHeight(root.left);
+            int rightHeight = getHeight(root.right);
+            return 1 + (leftHeight > rightHeight ? leftHeight : rightHeight);
+        }
+        return 0;
     }
 
 
