@@ -15,10 +15,13 @@ public class ConvertBST {
 
         ConvertBST bst = new ConvertBST();
 
+        // 创建二叉树
         BiTrees biTrees = bst.create();
 
+        // 获取根结点
         TreeNodes root = biTrees.getRoot();
 
+        //  进行累加
         bst.convertBST(root);
 
         List<Integer> list = new ArrayList<>();
@@ -29,9 +32,13 @@ public class ConvertBST {
         Integer sum = list.stream().collect(Collectors.summingInt(Integer::intValue));
         System.out.println(sum);
 
-
     }
 
+
+    /***
+     *  创建二叉树
+     * @return
+     */
     public BiTrees create() {
 
         TreeNodes node8 = new TreeNodes(8);
