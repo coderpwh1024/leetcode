@@ -1,4 +1,4 @@
-package com.coderpwh.leetcode;
+ package com.coderpwh.leetcode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,7 +57,6 @@ public class ConvertBST {
 
 
     public TreeNodes convertBST(TreeNodes root) {
-
         int sum = 0;
 
         convertValue(root);
@@ -65,6 +64,17 @@ public class ConvertBST {
         return root;
     }
 
+
+    /***
+     *   思路:
+     *     1.时间复杂度为O(N)
+     *     2.空间复杂度为O(N)
+     *     3. 由于是二叉搜索树，中序遍历后是，[1,2,3]
+     *     则累加的结果为:[6,5,3],用反中序遍历的方式，先进行
+     *    右结点，对根结点进行赋值后(累加)，后进行左结点
+     *
+     * @param root
+     */
     public void convertValue(TreeNodes root) {
         if (root == null) {
             return;
@@ -76,8 +86,13 @@ public class ConvertBST {
     }
 
 
+    /***
+     *   中序遍历方式
+     *
+     * @param root
+     * @param list
+     */
     public void mid(TreeNodes root, List<Integer> list) {
-
         if (root != null) {
             mid(root.left, list);
             System.out.print(root.val);
