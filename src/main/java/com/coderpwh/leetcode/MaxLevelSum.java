@@ -14,17 +14,23 @@ public class MaxLevelSum {
 
         MaxLevelSum max = new MaxLevelSum();
 
+        // 创建二叉树
         BiTrees biTrees = max.create();
 
+        // 获取根结点
         TreeNodes root = biTrees.getRoot();
 
         int maxNum = max.maxLevelSum(root);
 
         System.out.println(maxNum);
-
     }
 
 
+    /**
+     * 创建二叉树
+     *
+     * @return
+     */
     public BiTrees create() {
 
         TreeNodes node8 = new TreeNodes(-8);
