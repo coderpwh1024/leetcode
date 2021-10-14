@@ -1,4 +1,4 @@
-package com.coderpwh.leetcode;
+ package com.coderpwh.leetcode;
 
 import java.util.ArrayList;
 import java.util.Deque;
@@ -40,6 +40,14 @@ public class MaxLevelSum {
     }
 
 
+    /***
+     *  思路:
+     *     1.时间复杂度为O(N^2)
+     *     2.空间复杂度为O(N)
+     *     3.借助队列对二叉树进行层次遍历
+     * @param root
+     * @return
+     */
     public int maxLevelSum(TreeNodes root) {
 
         Deque<TreeNodes> deque = new LinkedList<>();
@@ -52,7 +60,6 @@ public class MaxLevelSum {
             int sum = 0;
 
             for (int i = 0; i < size; i++) {
-
                 TreeNodes node = deque.poll();
                 sum += node.val;
 
