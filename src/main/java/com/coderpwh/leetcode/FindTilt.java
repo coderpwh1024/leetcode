@@ -1,12 +1,17 @@
-package com.coderpwh.leetcode;
+ package com.coderpwh.leetcode;
 
-import java.util.Deque;
-import java.util.LinkedList;
+
 
 /**
+ * 563 二叉树的坡度
+ *
  * @author coderpwh
  */
 public class FindTilt {
+
+
+    private int total = 0;
+
 
     public static void main(String[] args) {
 
@@ -16,7 +21,9 @@ public class FindTilt {
 
         TreeNodes root = biTrees.getRoot();
 
-        find.pre(root);
+
+        System.out.println(find.findTilt(root));
+
 
     }
 
@@ -41,25 +48,25 @@ public class FindTilt {
 
     public int findTilt(TreeNodes root) {
 
+        traverse(root);
+
+        return total;
+    }
+
+    public int traverse(TreeNodes root) {
+
         if (root == null) {
             return 0;
         }
 
-        Deque<TreeNodes> deque = new LinkedList<>();
-        deque.offer(root);
+        int left = traverse(root.left);
 
-        while (!deque.isEmpty()) {
+        int right = traverse(root.right);
 
-            int size = deque.size();
+        total += Math.abs(left - right);
 
-            for (int i = 0; i < size; i++) {
-                TreeNodes node = deque.poll();
-            }
+        return root.val+left+right;
 
-        }
-
-
-        return 0;
     }
 
 
