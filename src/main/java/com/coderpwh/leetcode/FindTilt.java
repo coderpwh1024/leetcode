@@ -18,8 +18,10 @@ public class FindTilt {
 
         BiTrees biTrees = find.create2();
 
+        // 获取二叉树根结点
         TreeNodes root = biTrees.getRoot();
 
+        // 前序遍历打印
         find.pre(root);
 
         System.out.println(find.findTilt(root));
@@ -27,6 +29,10 @@ public class FindTilt {
     }
 
 
+    /***
+     *  创建二叉树 
+     * @return
+     */
     public BiTrees create() {
 
         TreeNodes node3 = new TreeNodes(3);
@@ -44,6 +50,10 @@ public class FindTilt {
         return new BiTrees(node4);
     }
 
+    /***
+     * 创建二叉树
+     * @return
+     */
     public BiTrees create2() {
 
         TreeNodes node1 = new TreeNodes(1);
@@ -96,6 +106,10 @@ public class FindTilt {
     }
 
 
+    /***
+     *  前序遍历
+     * @param root
+     */
     public void pre(TreeNodes root) {
 
         if (root != null) {
