@@ -1,4 +1,4 @@
-package com.coderpwh.leetcode;
+ package com.coderpwh.leetcode;
 
 import java.util.*;
 
@@ -69,7 +69,6 @@ public class DeepestLeavesSum {
         List<List<Integer>> date = new ArrayList<>();
 
         while (!deque.isEmpty()) {
-
             int size = deque.size();
             List<Integer> list = new ArrayList<>();
 
@@ -104,6 +103,14 @@ public class DeepestLeavesSum {
     }
 
 
+    /***
+     *   思路:
+     *      1.时间复杂度为O(N)
+     *      2.空间复杂度为O(N)
+     *      3.利用二叉树深度进行递归
+     * @param root
+     * @param dep
+     */
     public void dfs(TreeNodes root, int dep) {
 
         if (root == null) {
