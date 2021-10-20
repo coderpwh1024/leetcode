@@ -9,6 +9,11 @@ import java.util.*;
  */
 public class DeepestLeavesSum {
 
+    private int maxDep = -1;
+
+    private int total = 0;
+
+
     public static void main(String[] args) {
 
         DeepestLeavesSum sum = new DeepestLeavesSum();
@@ -24,6 +29,7 @@ public class DeepestLeavesSum {
 
         System.out.println("结果为:" + count);
 
+        sum.test(root);
 
     }
 
@@ -85,9 +91,34 @@ public class DeepestLeavesSum {
                 sum += count;
             }
         }
-
-
         return sum;
+    }
+
+
+    public int test(TreeNodes root) {
+
+        dfs(root, 0);
+
+        System.out.println("total:" + total);
+        return total;
+    }
+
+
+    public void dfs(TreeNodes root, int dep) {
+
+        if (root == null) {
+            return;
+        }
+
+        if (dep > maxDep) {
+            maxDep = dep;
+            total = root.val;
+        } else if (dep == maxDep) {
+            total += root.val;
+        }
+
+        dfs(root.left, dep + 1);
+        dfs(root.right, dep + 1);
     }
 
 
