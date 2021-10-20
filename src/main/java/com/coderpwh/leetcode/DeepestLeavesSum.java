@@ -18,8 +18,11 @@ public class DeepestLeavesSum {
 
         DeepestLeavesSum sum = new DeepestLeavesSum();
 
+
+        // 获取二叉树
         BiTrees biTrees = sum.create();
 
+        // 获取根结点
         TreeNodes root = biTrees.getRoot();
 
         sum.pre(root);
@@ -34,6 +37,11 @@ public class DeepestLeavesSum {
     }
 
 
+    /****
+     *   创建二叉树
+     *
+     * @return
+     */
     public BiTrees create() {
 
         TreeNodes node7 = new TreeNodes(7);
