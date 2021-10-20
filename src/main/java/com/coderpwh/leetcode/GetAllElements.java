@@ -1,10 +1,12 @@
-package com.coderpwh.leetcode;
+ package com.coderpwh.leetcode;
 
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
 /**
+ * 1305 两棵二叉搜索树种的所有元素
+ *
  * @author coderpwh
  */
 public class GetAllElements {
@@ -15,10 +17,12 @@ public class GetAllElements {
 
         BiTrees biTrees = all.create();
 
+        // 获取根结点
         TreeNodes node1 = biTrees.getRoot();
 
         BiTrees biTrees2 = all.create2();
 
+        // 获取根结点
         TreeNodes node2 = biTrees2.getRoot();
 
         List<Integer> list = all.getAllElements(node1, node2);
@@ -33,6 +37,10 @@ public class GetAllElements {
 
     }
 
+    /***
+     * 创建二叉树
+     * @return
+     */
     public BiTrees create() {
 
         TreeNodes node1 = new TreeNodes(1);
@@ -45,6 +53,10 @@ public class GetAllElements {
     }
 
 
+    /***
+     * 创建二叉树
+     * @return
+     */
     public BiTrees create2() {
 
         TreeNodes node0 = new TreeNodes(0);
@@ -81,6 +93,11 @@ public class GetAllElements {
     }
 
 
+    /***
+     *   中序遍历方式
+     * @param root
+     * @param list
+     */
     public void mid(TreeNodes root, List<Integer> list) {
 
         if (root != null) {
