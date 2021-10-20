@@ -1,4 +1,4 @@
-package com.coderpwh.leetcode;
+ package com.coderpwh.leetcode;
 
 import java.util.List;
 
@@ -23,6 +23,7 @@ public class TrimBST {
 
         TreeNodes node = bst.trimBST(root, low, high);
 
+
         System.out.println("中序遍历方式打印:");
         System.out.println("==============================");
         bst.midOrder(node);
@@ -45,6 +46,17 @@ public class TrimBST {
     }
 
 
+    /***
+     *   思路:
+     *       1.时间复杂度为O(N)
+     *       2.空间复杂度为O(N)
+     *       3.利用二叉搜索树特性
+     *
+     * @param root
+     * @param low
+     * @param high
+     * @return
+     */
     public TreeNodes trimBST(TreeNodes root, int low, int high) {
 
         if (root == null) {
