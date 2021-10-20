@@ -58,7 +58,10 @@ public class GetAllElements {
 
 
     /***
-     *
+     *  思路:
+     *     1.时间复杂度为O(3N),3次遍历.3N还是N,时间复杂度为O(N)
+     *     2.空间复杂度为O(3N),两次递归与创建list集合,空间复杂度是O(N)
+     *     3.主要是排序与递归
      *
      * @param root1
      * @param root2
@@ -75,7 +78,6 @@ public class GetAllElements {
         list.sort(Comparator.naturalOrder());
 
         return list;
-
     }
 
 
