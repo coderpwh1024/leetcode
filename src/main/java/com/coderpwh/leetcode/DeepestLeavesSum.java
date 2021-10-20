@@ -55,8 +55,15 @@ public class DeepestLeavesSum {
     }
 
 
+    /***
+     *   思路:
+     *       1.时间复杂度为O(N^2)
+     *       2.空间复杂度为O(N)
+     *       3.借助队列方式对二叉树进行层次遍历
+     * @param root
+     * @return
+     */
     public int deepestLeavesSum(TreeNodes root) {
-
         int sum = 0;
 
         if (root == null) {
