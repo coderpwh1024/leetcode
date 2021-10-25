@@ -1,4 +1,4 @@
- package com.coderpwh.leetcode;
+package com.coderpwh.leetcode;
 
 
 /**
@@ -30,7 +30,7 @@ public class FindTilt {
 
 
     /***
-     *  创建二叉树 
+     *  创建二叉树
      * @return
      */
     public BiTrees create() {

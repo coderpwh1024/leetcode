@@ -1,11 +1,11 @@
- package com.coderpwh.leetcode;
+package com.coderpwh.leetcode;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
 /**
- * 
+ *
  * 230. 二叉搜索树中第K小的元素
  *
  * @author coderpwh
@@ -92,4 +92,3 @@ public class KthSmallest {
 
 
 }
-

@@ -1,9 +1,9 @@
- package com.coderpwh.leetcode;
+package com.coderpwh.leetcode;
 
 import java.util.*;
 
 /**
- * 1302
+ * 1302 层次最深的叶子结点数的和
  *
  * @author coderpwh
  */

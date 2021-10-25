@@ -95,5 +95,23 @@ public class MinimumAbsDifference {
     }
 
 
-}
+    public void test(int arr[]) {
 
+        Integer count = Integer.MAX_VALUE;
+
+        for (int i = 0, j = arr.length - 1; i < j; ) {
+            if (Math.abs(arr[j] - arr[i]) < count) {
+                count = Math.abs(arr[j] - arr[i]);
+                j--;
+                i = 0;
+            } else {
+                i++;
+            }
+
+        }
+
+
+    }
+
+
+}

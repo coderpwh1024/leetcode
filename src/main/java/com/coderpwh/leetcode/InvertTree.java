@@ -1,8 +1,8 @@
- package com.coderpwh.leetcode;
+package com.coderpwh.leetcode;
 /****
  *
  *  226 翻转二叉树
- *   
+ *
  *
  *   翻转一棵二叉树。
  *
@@ -15,7 +15,9 @@
  *   2     7
  *  / \   / \
  * 1   3 6   9
+ *
  * 输出：
+ *
  *
  *      4
  *    /   \

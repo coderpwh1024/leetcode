@@ -1,4 +1,4 @@
- package com.coderpwh.leetcode;
+package com.coderpwh.leetcode;
 
 import java.util.LinkedList;
 import java.util.Queue;

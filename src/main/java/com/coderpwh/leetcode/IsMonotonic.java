@@ -55,7 +55,7 @@ public class IsMonotonic {
 
     /****
      *
-     *    思路: 
+     *    思路:
      *      1: 时间复杂度为O(N)
      *      2: 空间富足度为O(1)
      *
@@ -85,4 +85,3 @@ public class IsMonotonic {
 
 
 }
-

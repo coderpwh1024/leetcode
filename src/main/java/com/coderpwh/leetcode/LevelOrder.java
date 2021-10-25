@@ -1,4 +1,4 @@
- package com.coderpwh.leetcode;
+package com.coderpwh.leetcode;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -172,9 +172,7 @@ public class LevelOrder {
                 if (node.right != null) {
                     queue.offer(node.right);
                 }
-
             }
-
             ret.add(level);
         }
 

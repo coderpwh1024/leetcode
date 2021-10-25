@@ -65,7 +65,7 @@ public class Rob {
      *       如果有两家，则需要比较大小，Math.max(n[0],n[1])
      *       对于房间数大于2的，则会
      *       dp[i]=max(dp[i−2]+nums[i],dp[i−1])
-     
+
      *
      *
      * @param nums
@@ -187,4 +187,3 @@ public class Rob {
 
 
 }
-

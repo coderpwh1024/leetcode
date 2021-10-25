@@ -1,6 +1,6 @@
 package com.coderpwh.leetcode;
 
-import com.sun.tools.javac.code.Attribute;
+
 
 public class MatrixReshape {
 
@@ -18,6 +18,17 @@ public class MatrixReshape {
 
     }
 
+
+    /***
+     *    思路:
+     *        1. 时间复杂度为O(R*C)
+     *        2. 空间复杂度为O(1)
+     *
+     * @param mat
+     * @param r
+     * @param c
+     * @return
+     */
     public int[][] matrixReshape(int[][] mat, int r, int c) {
 
         int m = mat.length;

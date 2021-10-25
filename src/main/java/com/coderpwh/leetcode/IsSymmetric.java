@@ -48,17 +48,17 @@ public class IsSymmetric {
 
     public BiTree createBTree() {
 
-        TreeNode node7 = new TreeNode(3);
-        TreeNode node6 = new TreeNode(4);
+        TreeNode node7 = new TreeNode(3+"");
+        TreeNode node6 = new TreeNode(4+"");
 
-        TreeNode node3 = new TreeNode(2, node6, node7);
+        TreeNode node3 = new TreeNode(2+"", node6, node7);
 
-        TreeNode node5 = new TreeNode(4);
-        TreeNode node4 = new TreeNode(3);
+        TreeNode node5 = new TreeNode(4+"");
+        TreeNode node4 = new TreeNode(3+"");
 
-        TreeNode node2 = new TreeNode(2, node4, node5);
+        TreeNode node2 = new TreeNode(2+"", node4, node5);
 
-        TreeNode node1 = new TreeNode(1, node2, node3);
+        TreeNode node1 = new TreeNode(1+"", node2, node3);
 
 
         return new BiTree(node1);
@@ -70,7 +70,9 @@ public class IsSymmetric {
         boolean flag = check(root, root);
 
         boolean f = test(root, root);
-        System.out.println("f:" + f);
+
+        System.out.println("递归方式:"+flag);
+        System.out.println("迭代方式:" + f);
 
         return flag;
     }

@@ -64,7 +64,7 @@ public class RemoeDuplicatesArray {
 
 
     /***
-     *     思路: 
+     *     思路:
      *        1: 时间复杂度为O(N)
      *        2：空间复杂度为O(1)
      *        3: 主要是利用双指针的方式，数组都是已经排序好，如果数组长度小于2则不用理会
@@ -132,5 +132,3 @@ public class RemoeDuplicatesArray {
 
 
 }
-
-

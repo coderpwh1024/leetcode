@@ -25,6 +25,8 @@ public class Searchs {
 
         int nums[] = {-1, 0, 3, 5, 9, 12};
 
+//        int nums[] ={5};
+
 
         int target = 9;
 
@@ -33,7 +35,7 @@ public class Searchs {
 
 
         // 普通的for循环
-        System.out.println(search.search(nums, target));
+//        System.out.println(search.search(nums, target));
 
 
         // 二分查找方式实现
@@ -89,18 +91,25 @@ public class Searchs {
 
         int high = nums.length - 1;
 
-        while (low < high) {
+        int count = 0;
+        while (low <=high) {
+            count++;
+            System.out.println("count:"+count);
             int mid = (high - low) / 2 + low;
+
+            System.out.println("mid:"+mid);
 
             int num = nums[mid];
 
             if (num == target) {
                 return mid;
-            } else if (num > target) {
-                high = mid - 1;
-            } else {
+            } else if (target > num) {
                 low = mid + 1;
+            } else {
+                high = mid - 1;
             }
+
+
         }
 
         return -1;

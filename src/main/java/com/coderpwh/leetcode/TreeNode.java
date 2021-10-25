@@ -3,7 +3,7 @@ package com.coderpwh.leetcode;
 public class TreeNode {
 
 
-    int val;
+    String val;
 
     TreeNode left;
 
@@ -13,11 +13,11 @@ public class TreeNode {
 
     }
 
-    TreeNode(int val) {
+    TreeNode(String val) {
         this.val = val;
     }
 
-    TreeNode(int val, TreeNode left, TreeNode right) {
+    TreeNode(String val, TreeNode left, TreeNode right) {
         this.val = val;
         this.left = left;
         this.right = right;

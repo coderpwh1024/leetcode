@@ -26,7 +26,7 @@ import java.util.List;
  *
  * 输入：target = [1,3], n = 3
  * 输出：["Push","Push","Pop","Push"]
- * 解释： 
+ * 解释：
  * 读取 1 并自动推入数组 -> [1]
  * 读取 2 并自动推入数组，然后删除它 -> [1]
  * 读取 3 并自动推入数组 -> [1,3]
@@ -76,4 +76,3 @@ public class BuildArray {
 
 
 }
-

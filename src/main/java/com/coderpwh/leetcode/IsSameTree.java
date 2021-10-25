@@ -1,4 +1,4 @@
- package com.coderpwh.leetcode;
+package com.coderpwh.leetcode;
 
 
 /***
@@ -118,7 +118,6 @@ public class IsSameTree {
         }
 
         if (p != null && q != null) {
-
             if (isSameTree(p.left, q.left)) {
                 if (p.val.equals(q.val)) {
                     if (isSameTree(p.right, q.right)) {
@@ -127,12 +126,9 @@ public class IsSameTree {
                     }
                 }
             }
-
         }
         return false;
     }
-
-
     /***
      *  利用前根方式来判断二叉树是否相等
      * @param p
@@ -144,7 +140,6 @@ public class IsSameTree {
         if (p == null && q == null) {
             return true;
         }
-
         if (p != null && q != null) {
 
             if (p.val.equals(q.val)) {

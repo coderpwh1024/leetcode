@@ -96,7 +96,7 @@ public class MinAbsoluteSumDiff {
 
 
     /***
-     *  二分查找方式
+     *  二分查找，找出数组中最小的值的下标
      *
      * @param rec
      * @param target
@@ -122,4 +122,3 @@ public class MinAbsoluteSumDiff {
     }
 
 }
-

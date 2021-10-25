@@ -38,16 +38,18 @@ public class ReverseParentheses {
 
 
         //  leetcode
-//        String str = "(ed(et(oc))el)";
+        String str = "(ed(et(oc))el)";
 
-        String str = "(u(love)i)";
-
+//        String str = "(u(love)i)";
 
         ReverseParentheses rever = new ReverseParentheses();
 
         String result = rever.reverseParentheses(str);
 
-        System.out.println(result);
+//        System.out.println(result);
+
+        String testResult = rever.reverseParentheses(str);
+        System.out.println(testResult);
 
     }
 
@@ -83,5 +85,26 @@ public class ReverseParentheses {
     }
 
 
-}
+    public String test(String s) {
+        Deque<String> stack = new LinkedList<>();
 
+        StringBuffer sb = new StringBuffer();
+
+        for (int i = 0; i < s.length(); i++) {
+            char ch = s.charAt(i);
+
+            if (ch == '(') {
+                stack.push(sb.toString());
+                sb.setLength(0);
+            } else if (ch == ')') {
+                sb.reverse();
+                sb.insert(0, stack.pop());
+            } else {
+                sb.append(ch);
+            }
+        }
+        return sb.toString();
+    }
+
+
+}

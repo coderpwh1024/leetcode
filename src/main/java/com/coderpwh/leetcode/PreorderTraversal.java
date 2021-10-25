@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /***
- * 
+ *
  * 二叉树的前序遍历
- * 
+ *
  */
 public class PreorderTraversal {
 
@@ -14,10 +14,15 @@ public class PreorderTraversal {
     public static void main(String[] args) {
 
         PreorderTraversal preorderTraversa = new PreorderTraversal();
-        BiTree biTree = preorderTraversa.createBTree();
+
+//        BiTree biTree = preorderTraversa.createBTree();
+
+        BiTree biTree = preorderTraversa.createBTree2();
+
 
         // 根结点
         TreeNode root = biTree.getRoot();
+
 
         preorderTraversa.preorderTraversal(root);
 
@@ -26,43 +31,71 @@ public class PreorderTraversal {
 
 
     /***
+     *
      * 创建二叉树
      *
      * @return
      */
     public BiTree createBTree() {
-/*
-        TreeNode node3 = new TreeNode(3);
-        TreeNode node2 = new TreeNode(2, node3, null);
 
-        TreeNode node1 = new TreeNode(1, null, node2);*/
+        TreeNode node7 = new TreeNode(7 + "");
+        TreeNode node6 = new TreeNode(6 + "");
 
-        TreeNode node7 = new TreeNode(7);
-        TreeNode node6 = new TreeNode(6);
+        TreeNode node3 = new TreeNode(3 + "", node6, node7);
 
-        TreeNode node3 = new TreeNode(3, node6, node7);
+        TreeNode node5 = new TreeNode(5 + "");
+        TreeNode node4 = new TreeNode(4 + "");
 
-        TreeNode node5 = new TreeNode(5);
-        TreeNode node4 = new TreeNode(4);
+        TreeNode node2 = new TreeNode(2 + "", node4, node5);
 
-        TreeNode node2 = new TreeNode(2, node4, node5);
-
-        TreeNode node1 = new TreeNode(1, node2, node3);
+        TreeNode node1 = new TreeNode(1 + "", node2, node3);
 
 
         return new BiTree(node1);
+    }
+
+    public BiTree createBTree2() {
+
+
+
+        TreeNode nodeF = new TreeNode("F");
+        TreeNode nodeG = new TreeNode("G");
+
+        TreeNode nodeC = new TreeNode("C", nodeF, nodeG);
+
+
+        TreeNode nodeH = new TreeNode("H");
+        TreeNode nodeI = new TreeNode("I");
+
+        TreeNode nodeD = new TreeNode("D", nodeH, nodeI);
+
+        TreeNode nodeJ = new TreeNode("J");
+
+        TreeNode nodeE = new TreeNode("E", nodeJ, null);
+
+        TreeNode nodeB = new TreeNode("B", nodeD, nodeE);
+
+
+
+        TreeNode nodeA = new TreeNode("A",nodeB,nodeC);
+        return new BiTree(nodeA);
 
     }
 
 
-    public List<Integer> preorderTraversal(TreeNode root) {
+    public List<String> preorderTraversal(TreeNode root) {
 
-        List<Integer> list = new ArrayList<>();
-
-        preRootTraversal(root, list);
+        List<String> list = new ArrayList<>();
 
 
-        for (Integer count : list) {
+        // 调用递归的方式
+//        preRootTraversal(root, list);
+
+//        midRootTraversal(root,list);
+
+        afterRootTraversal(root, list);
+
+        for (String count : list) {
             System.out.print(count + " ");
         }
 
@@ -78,7 +111,7 @@ public class PreorderTraversal {
      * @param root
      * @param list
      */
-    public void preRootTraversal(TreeNode root, List<Integer> list) {
+    public void preRootTraversal(TreeNode root, List<String> list) {
 
         if (root != null) {
             list.add(root.val);
@@ -87,5 +120,39 @@ public class PreorderTraversal {
         }
     }
 
-}
 
+    /***
+     *
+     *   中序遍历方式
+     *
+     * @param root
+     * @param list
+     */
+    public void midRootTraversal(TreeNode root, List<String> list) {
+
+        if (root != null) {
+            midRootTraversal(root.left, list);
+            list.add(root.val);
+            midRootTraversal(root.right, list);
+        }
+
+    }
+
+
+    /***
+     *
+     *   后根遍历--递归
+     *
+     * @param root
+     * @param list
+     */
+    public void afterRootTraversal(TreeNode root, List<String> list) {
+
+        if (root != null) {
+            afterRootTraversal(root.left, list);
+            afterRootTraversal(root.right, list);
+            list.add(root.val);
+        }
+    }
+
+}

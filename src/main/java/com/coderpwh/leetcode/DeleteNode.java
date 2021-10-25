@@ -131,7 +131,6 @@ public class DeleteNode {
         deque.offer(root);
 
         while (!deque.isEmpty()) {
-
             TreeNodes node = deque.poll();
 
             if (node.val.equals(key)) {
@@ -140,6 +139,7 @@ public class DeleteNode {
                 node.right = temp;
             }
         }
+
     }
 
     /**

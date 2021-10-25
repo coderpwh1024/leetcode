@@ -1,6 +1,5 @@
 package com.coderpwh.leetcode;
 
-
 /***
  *
  *
@@ -36,7 +35,6 @@ public class Search {
         Search search = new Search();
         search.search(num, target);
 
-        System.out.println(search.search(num, target));
 
         System.out.println(search.test(num, target));
     }
@@ -78,7 +76,11 @@ public class Search {
 
         int leftIdx = binarySearch(nums, target, true);
 
+        System.out.println(leftIdx);
+
         int rightIdx = binarySearch(nums, target, false) - 1;
+
+        System.out.println(rightIdx);
 
         if (leftIdx <= rightIdx && rightIdx < nums.length && nums[leftIdx] == target && nums[rightIdx] == target) {
             return rightIdx - leftIdx + 1;
@@ -90,12 +92,14 @@ public class Search {
     public int binarySearch(int[] nums, int target, boolean lower) {
 
         int left = 0;
+
         int right = nums.length - 1;
+
         int ans = nums.length;
 
         while (left <= right) {
 
-            int mid = (left + right) / 2;
+            int mid = (right + left) / 2;
 
             if (nums[mid] > target || (lower && nums[mid] >= target)) {
                 right = mid - 1;

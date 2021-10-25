@@ -1,8 +1,8 @@
 package com.coderpwh.leetcode;
-
 import java.util.Arrays;
 
 /****
+
  *  1833. 雪糕的最大数量
  *
  *夏日炎炎，小男孩 Tony 想买一些雪糕消消暑。
@@ -31,8 +31,6 @@ import java.util.Arrays;
  * 输出：6
  * 解释：Tony 可以买下所有的雪糕，总价为 1 + 6 + 3 + 1 + 2 + 5 = 18 。
  *
- *
- *
  */
 public class MaxIceCream {
 
@@ -40,6 +38,7 @@ public class MaxIceCream {
 
 
     /*
+
         int arr[] = {1, 3, 2, 4, 1};
         int coins = 7;
 
@@ -91,5 +90,3 @@ public class MaxIceCream {
 
 
 }
-
-

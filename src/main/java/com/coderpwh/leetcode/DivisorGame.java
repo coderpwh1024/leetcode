@@ -89,7 +89,7 @@ public class DivisorGame {
      *       .........
      *
      *      奇数失败，偶数成功
-     *       
+     *
      *
      *
      * @param n
@@ -100,5 +100,3 @@ public class DivisorGame {
     }
 
 }
-
-

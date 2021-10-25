@@ -1,4 +1,4 @@
-  package com.coderpwh.leetcode;
+package com.coderpwh.leetcode;
 
 /***
  *  700 二叉树搜索树种的值

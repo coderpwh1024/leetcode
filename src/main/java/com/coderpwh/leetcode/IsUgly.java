@@ -81,7 +81,7 @@ public class IsUgly {
      *      思路:
      *         1.时间复杂度为O(NlogN),
      *         2. 空间复杂度为O(N) 创建了list集合
-     *         3. 遍历过多，N过大时，则容易超时 
+     *         3. 遍历过多，N过大时，则容易超时
      *
      *
      * @param n
@@ -129,5 +129,3 @@ public class IsUgly {
     }
 
 }
-
-

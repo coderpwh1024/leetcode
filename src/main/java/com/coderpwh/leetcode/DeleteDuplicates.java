@@ -1,10 +1,5 @@
 package com.coderpwh.leetcode;
 
-import java.util.Deque;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.Map;
-
 /**
  * 83 删除排序链表中的重复元素
  * <p>

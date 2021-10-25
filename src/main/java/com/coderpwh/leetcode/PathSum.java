@@ -1,4 +1,4 @@
- package com.coderpwh.leetcode;
+package com.coderpwh.leetcode;
 
 import java.util.*;
 
@@ -106,6 +106,7 @@ public class PathSum {
 
         dfs(root.left, targetSum, list, queue);
         dfs(root.right, targetSum, list, queue);
+
         queue.pollLast();
     }
 
