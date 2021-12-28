@@ -1,4 +1,4 @@
-package com.coderpwh.leetcode;
+ package com.coderpwh.leetcode;
 
 /**
  * Created by pengwenhao on 2021/12/28.
@@ -15,6 +15,13 @@ public class NumTrees {
     }
 
 
+    /**
+     * 1.时间复杂度为 O(N)
+     * 2.空间复杂度为 O(1)
+     *
+     * @param n
+     * @return
+     */
     public int numTrees(int n) {
         long c = 1;
 
@@ -23,7 +30,6 @@ public class NumTrees {
         }
 
         System.out.println(c);
-
         return (int) c;
     }
 
