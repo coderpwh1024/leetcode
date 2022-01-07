@@ -1,4 +1,4 @@
-package com.coderpwh.leetcode;
+ package com.coderpwh.leetcode;
 
 
 /**
@@ -20,6 +20,15 @@ public class StringMaxDepth {
 
     }
 
+    /***
+     *    思路:
+     *    1. 时间复杂度为O(N)
+     *    2. 空间复杂度为O(1)
+     *    3. 利用遍历方式对()进行判断，统计出次数最大的即可
+     *
+     * @param s
+     * @return
+     */
     public int maxDepth(String s) {
 
         int ans = 0;
