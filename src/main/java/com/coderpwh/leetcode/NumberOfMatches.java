@@ -1,6 +1,7 @@
-package com.coderpwh.leetcode;
+ package com.coderpwh.leetcode;
 
 /**
+ *
  * 给你一个整数 n ，表示比赛中的队伍数。比赛遵循一种独特的赛制：
  * <p>
  * 如果当前队伍数是 偶数 ，那么每支队伍都会与另一支队伍配对。总共进行 n / 2 场比赛，且产生 n / 2 支队伍进入下一轮。
@@ -36,9 +37,17 @@ public class NumberOfMatches {
         return count;
     }
 
+
+    /***
+     *   1.时间复杂度为O(N)
+     *   2.空间复杂度为O(1)
+     *   3.主要通过遍历可获取
+     *
+     * @param n
+     * @param count
+     * @return
+     */
     public int test(int n, int count) {
-
-
         int i = 0;
         while (n > 1) {
 
@@ -47,16 +56,12 @@ public class NumberOfMatches {
                 n = n - a;
                 count += a;
             } else {
-
                 int a = (n - 1) / 2;
                 n = n - a;
                 count += a;
             }
-
-
             i++;
         }
-
         return count;
     }
 
