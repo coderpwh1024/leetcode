@@ -14,21 +14,21 @@ public class Backpack {
         int weight[] = {2, 3, 4, 5};
         int value[] = {3, 4, 5, 7};
 
-        int maxweight = 9;
+        int W = 9;
 
-        System.out.println(getMaxBackpack(weight, value, maxweight));
+        System.out.println(getMaxBackpack(weight, value, W));
 
     }
 
 
-    public static int getMaxBackpack(int[] weight, int[] value, int maxweight) {
+    public static int getMaxBackpack(int[] weight, int[] value, int W) {
 
         int n = weight.length;
-        //最大价值数组为maxvalue[N+1][maxWeight+1]，因为我们要从0开始保存
-        int[][] maxvalue = new int[n + 1][maxweight + 1];
+        //最大价值数组为maxvalue[N+1][W+1]，因为我们要从0开始保存
+        int[][] maxvalue = new int[n + 1][W + 1];
 
         //重量和物品为0时，价值为0
-        for (int i = 0; i < maxweight + 1; i++) {
+        for (int i = 0; i < W + 1; i++) {
             maxvalue[0][i] = 0;
 
         }
@@ -41,7 +41,7 @@ public class Backpack {
         //j：假设能取的总重量为j
         //n是物品件数
         for (int i = 1; i <= n; i++) {
-            for (int j = 1; j <= maxweight; j++) {
+            for (int j = 1; j <= W; j++) {
                 //当前最大价值等于放上一件的最大价值
                 maxvalue[i][j] = maxvalue[i - 1][j];
                 //如果当前件的重量小于总重量，可以放进去或者拿出别的东西再放进去
@@ -54,7 +54,7 @@ public class Backpack {
                 }
             }
         }
-        return maxvalue[n][maxweight];
+        return maxvalue[n][W];
     }
 
 
