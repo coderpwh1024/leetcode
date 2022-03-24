@@ -20,6 +20,18 @@ import java.util.ArrayList;
 public class MaxSubArray {
 
 
+    /***
+     *
+     *   思路:
+     *     1.时间复杂度为O(N)
+     *     2.空间复杂度为O(1)
+     *     3.利用动态规划实现
+     *
+     *
+     *
+     * @param nums
+     * @return
+     */
     public static int maxSubArray(int[] nums) {
 
         int pre = 0, maxAns = nums[0];
@@ -32,9 +44,8 @@ public class MaxSubArray {
     }
 
 
-
     public static void main(String[] args) {
-        int nums[] = {-2,1,-3,4,-1,2,1,-5,4};
+        int nums[] = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
         maxSubArray(nums);
 
     }
