@@ -37,9 +37,7 @@ public class BinarySearch {
            return     getNumber(arr,left,mid-1,findVal);
          }else{
              // 向右查询
-
            return    getNumber(arr,mid+1,right,findVal);
-
          }
     }
 
