@@ -71,8 +71,14 @@ public class SimpleList <T>{
      */
     public  boolean remove(Object o){
 
-
-        return  false;
+         // 会存在 数组越界问题等
+        for(int i=0;i<size;i++){
+            if(o.equals(testObj[i])){
+                testObj[i]=testObj[i+1];
+                size--;
+            }
+        }
+        return  true;
     }
 
 
