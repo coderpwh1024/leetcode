@@ -60,7 +60,17 @@ public class SimpleList <T>{
      * @return
      */
     public  boolean add(T e,int index){
-        return  false;
+
+         if(index<0||index>size){
+             return false;
+         }
+
+         for(int i=index;i<size;i++){
+             testObj[i+1]=testObj[i];
+             testObj[i]=e;
+         }
+         size++;
+        return  true;
     }
 
 
