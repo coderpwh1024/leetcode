@@ -2,10 +2,11 @@ package com.coderpwh.test;
 
 public class SimpleList <T>{
 
-    private  Object testObj;
+    private  Object[] testObj;
 
     private  int size=0;
 
+    private  int initSize=10;
 
     /***
      *  获取数组长度
@@ -13,21 +14,25 @@ public class SimpleList <T>{
      */
     public int size(){
 
-        return  -1;
+        return  size;
     }
 
 
      // 构造函数中的初始化数组
     public SimpleList(){
-
+        testObj = new Object[initSize];
+        testObj.toString();
     }
+
+
 
     /***
      *  判断数组是否为空
      * @return
      */
     public boolean isEmpty(){
-        return  false;
+        return  this.size>0?false:true;
+
     }
 
     /***
@@ -36,7 +41,15 @@ public class SimpleList <T>{
      * @return
      */
     public boolean add(T e){
-        return  false;
+
+          if(size>=testObj.length-1){
+              Object[] a = new Object[testObj.length+1];
+              a.toString();
+              testObj=a;
+          }
+
+          testObj[size++]=e;
+        return  true;
     }
 
 
@@ -58,6 +71,7 @@ public class SimpleList <T>{
      */
     public  boolean remove(Object o){
 
+
         return  false;
     }
 
@@ -69,7 +83,12 @@ public class SimpleList <T>{
      */
     public boolean remove(int index){
 
-        return false;
+        for(int i=index;i<size;i++){
+            testObj[i]=testObj[i+1];
+        }
+        testObj[size]=0;
+        size--;
+        return true;
     }
 
     /***
@@ -78,7 +97,8 @@ public class SimpleList <T>{
      * @return
      */
     public T get(int index){
-        return  null;
+
+         return  (T)testObj[index];
     }
 
 
