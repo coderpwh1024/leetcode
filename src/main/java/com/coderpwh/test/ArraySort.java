@@ -49,15 +49,6 @@ public class ArraySort {
     }
 
 
-
-
-
-
-
-
-
-
-
       public  static void test2(Integer[] arr){
 
         for(int i=0;i<arr.length;i++){
