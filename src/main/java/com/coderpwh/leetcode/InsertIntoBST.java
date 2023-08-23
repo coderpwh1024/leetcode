@@ -47,19 +47,15 @@ public class InsertIntoBST {
 //        insertIntoBST.insertIntoBST(biTrees.getRoot(), val);
 
 
-        // 前根遍历
-        insertIntoBST.preNode(biTrees.getRoot());
+        // 前根遍历(42137)
+//        insertIntoBST.preNode(biTrees.getRoot());
 
 
-        /***
-         * 中序遍历
-         */
-        insertIntoBST.midNode(biTrees.getRoot());
+        // 中根遍历(21347)
+//        insertIntoBST.midNode(biTrees.getRoot());
 
 
-        /**
-         * 后续遍历
-         */
+        // 后根遍历(21374)
         insertIntoBST.afterNode(biTrees.getRoot());
 
 
@@ -133,7 +129,6 @@ public class InsertIntoBST {
 
     /***
      * 前序遍历(根-->左-->右)
-     *
      * @param node
      */
     public void preNode(TreeNodes node) {
@@ -159,7 +154,7 @@ public class InsertIntoBST {
 
 
     /***
-     * 后序遍历（）
+     * 后序遍历（左-->右-->根）
      * @param node
      */
     public void afterNode(TreeNodes node) {
