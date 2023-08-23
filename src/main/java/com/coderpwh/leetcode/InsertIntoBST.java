@@ -1,6 +1,8 @@
 package com.coderpwh.leetcode;
 
 
+import java.util.List;
+
 /****
  *  701 二叉搜索树中的插入操作
  *
@@ -42,11 +44,23 @@ public class InsertIntoBST {
 
 
         // 插入对应的值
-        insertIntoBST.insertIntoBST(biTrees.getRoot(), val);
+//        insertIntoBST.insertIntoBST(biTrees.getRoot(), val);
 
 
         // 前根遍历
         insertIntoBST.preNode(biTrees.getRoot());
+
+
+        /***
+         * 中序遍历
+         */
+        insertIntoBST.midNode(biTrees.getRoot());
+
+
+        /**
+         * 后续遍历
+         */
+        insertIntoBST.afterNode(biTrees.getRoot());
 
 
     }
@@ -118,20 +132,42 @@ public class InsertIntoBST {
 
 
     /***
-     *  前根遍历
-     *
+     * 前序遍历(根-->左-->右)
      *
      * @param node
      */
     public void preNode(TreeNodes node) {
-
         if (node != null) {
             System.out.println(node.val);
             preNode(node.left);
             preNode(node.right);
         }
+    }
 
 
+    /***
+     * 中序遍历(左-->根-->右)
+     * @param node
+     */
+    public void midNode(TreeNodes node) {
+        if (node != null) {
+            preNode(node.left);
+            System.out.println(node.val);
+            preNode(node.right);
+        }
+    }
+
+
+    /***
+     * 后序遍历（）
+     * @param node
+     */
+    public void afterNode(TreeNodes node) {
+        if (node != null) {
+            preNode(node.left);
+            preNode(node.right);
+            System.out.println(node.val);
+        }
     }
 
 
