@@ -82,19 +82,7 @@ public class BrotherBST {
         int k1 = 0;
         int k2 = 0;
 
-
         if (root != null) {
-            if (root.val.equals(String.valueOf(x))) {
-                k1--;
-            } else {
-                k1++;
-            }
-
-            if (root.val.equals(String.valueOf(y))) {
-                k2--;
-            } else {
-                k2++;
-            }
             isCousins(root.left, x, y);
             isCousins(root.right, x, y);
         }
