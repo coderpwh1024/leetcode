@@ -23,11 +23,14 @@ public class FindTwoNumber {
         FindTwoNumber find = new FindTwoNumber();
         Integer result = find.findNumber(list);
         System.out.println(result);
-
-
-
     }
 
+
+    /***
+     * 时间复杂度 O(N^2),两层for循环
+     * @param list
+     * @return
+     */
     public Integer findNumber(List<Integer> list){
          if(list!=null&&list.size()>0){
              for(int i=0;i<list.size();i++){
