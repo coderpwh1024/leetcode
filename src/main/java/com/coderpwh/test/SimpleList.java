@@ -89,6 +89,13 @@ public class SimpleList<T> {
      * @return
      */
     public boolean remove(Object obj) {
+
+         for(int i=0;i<size;i++){
+             if(obj.equals(testObj[i])){
+                 remove(i);
+                 return true;
+             }
+         }
         return false;
     }
 
