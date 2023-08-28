@@ -5,15 +5,16 @@ public class SimpleList<T> {
 
     private Object[] testObj;
 
-    private  int size=0;
+    private int size = 0;
 
 
     /**
      * 获取数组长度
+     *
      * @return
      */
-    public int size(){
-        return  -1;
+    public int size() {
+        return size;
     }
 
 
@@ -21,8 +22,8 @@ public class SimpleList<T> {
      * 判断数组是否为空
      * @return
      */
-    public  boolean isEmpty(){
-        return false;
+    public boolean isEmpty() {
+        return size == 0;
     }
 
 
@@ -31,7 +32,11 @@ public class SimpleList<T> {
      * @param e
      * @return
      */
-    public  boolean add(T e){
+    public boolean add(T e) {
+        if (e != null) {
+            testObj[size]=e;
+            size++;
+        }
         return false;
     }
 
@@ -42,8 +47,21 @@ public class SimpleList<T> {
      * @param index
      * @return
      */
-    public  boolean add(T e,int index){
-        return  false;
+    public boolean add(T e, int index) {
+        if (size == testObj.length) {
+            return false;
+        }
+
+        if (index < 0 || index > size) {
+            return false;
+        }
+
+        for (int j = size; j > index; j--) {
+            testObj[j] = testObj[j - 1];
+        }
+        testObj[index] = e;
+        size++;
+        return true;
     }
 
 
@@ -52,12 +70,40 @@ public class SimpleList<T> {
      * @param index
      * @return
      */
-    public  boolean remove(int index){
+    public boolean remove(int index) {
+        if (index < 0 || index > size - 1) {
+            // 下标不合理
+            return false;
+        }
+        for (int i = index; i < size - 1; i++) {
+            testObj[i] = testObj[i + 1];
+        }
+        size--;
         return false;
     }
 
-    public  T get(int index){
-        return  null;
+
+    /***
+     * 删除元素
+     * @param obj
+     * @return
+     */
+    public boolean remove(Object obj) {
+        return false;
+    }
+
+
+    /***
+     *
+     * @param index
+     * @return
+     */
+    public T get(int index) {
+        if (index < 0 || index > size - 1) {
+            // 下标不对
+            return null;
+        }
+        return (T) testObj[index];
     }
 
 
