@@ -9,14 +9,14 @@ import java.util.List;
  * @author coderpwh
  * @date 2023/8/28 14:21
  */
-public class SerarchTree {
+public class SerarchTreeTwo {
 
 
     public static void main(String[] args) {
 
         int n = 1;
 
-        SerarchTree tree = new SerarchTree();
+        SerarchTreeTwo tree = new SerarchTreeTwo();
         List<TreeNode> list = tree.generateTrees(n);
 
         if (list != null && list.size() > 0) {
