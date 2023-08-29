@@ -32,6 +32,12 @@ public class SearchTree {
         return list.size();
     }
 
+
+    /***
+     * 动态规范
+     * @param n
+     * @return
+     */
     public int getNumberTrees(int n) {
         int[] G = new int[n + 1];
         G[0] = 1;
