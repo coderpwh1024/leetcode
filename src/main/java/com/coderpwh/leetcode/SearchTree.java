@@ -1,9 +1,6 @@
 package com.coderpwh.leetcode;
 
-import com.sun.org.apache.xalan.internal.res.XSLTErrorResources_zh_TW;
-import sun.reflect.generics.tree.Tree;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -15,10 +12,11 @@ public class SearchTree {
 
     public static void main(String[] args) {
 
-        int n = 3;
+        int n = 19;
 
         SearchTree tree = new SearchTree();
-        tree.numTrees(n);
+        Integer result = tree.numTrees(n);
+        System.out.println(result);
     }
 
 
@@ -26,14 +24,14 @@ public class SearchTree {
         if (n == 0) {
             return 0;
         }
-
-
-        return -1;
+        List<TreeNode> list = getNumber(1, n);
+        System.out.println("size:" + list.size());
+        return list.size();
     }
 
 
     /***
-     *
+     * 递归方式(n为19时即超市)
      * @param start
      * @param end
      * @return
@@ -44,11 +42,9 @@ public class SearchTree {
             list.add(null);
             return list;
         }
-
-        for (int i = start; i < end; i++) {
+        for (int i = start; i <= end; i++) {
             List<TreeNode> leftNodeList = getNumber(start, i - 1);
             List<TreeNode> rightNodeList = getNumber(i + 1, end);
-
             for (TreeNode left : leftNodeList) {
                 for (TreeNode right : rightNodeList) {
                     TreeNode node = new TreeNode(i + "");
