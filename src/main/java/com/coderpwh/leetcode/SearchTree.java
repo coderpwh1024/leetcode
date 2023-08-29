@@ -12,11 +12,15 @@ public class SearchTree {
 
     public static void main(String[] args) {
 
-        int n = 19;
+        int n = 3;
 
         SearchTree tree = new SearchTree();
         Integer result = tree.numTrees(n);
         System.out.println(result);
+
+
+        Integer count = tree.getNumberTrees(n);
+        System.out.println(count);
     }
 
 
@@ -25,12 +29,30 @@ public class SearchTree {
             return 0;
         }
         List<TreeNode> list = getNumber(1, n);
-        System.out.println("size:" + list.size());
         return list.size();
+    }
+
+    public int getNumberTrees(int n) {
+        int[] G = new int[n + 1];
+        G[0] = 1;
+        G[1] = 1;
+
+        for (int i = 2; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                G[i] += G[j - 1] * G[i - j];
+            }
+        }
+        return G[n];
     }
 
 
     /***
+     *  n:0, 0
+     *  n:1, 1
+     *  n:2, 2
+     *  n:3, 5
+     *  n:4, 14
+     *
      * 递归方式(n为19时即超市)
      * @param start
      * @param end
