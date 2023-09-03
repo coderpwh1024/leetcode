@@ -20,9 +20,24 @@ public class PrimeNumber {
     }
 
 
+    /***
+     *  时间复杂度为O(N^2)
+     *
+     * @param n
+     * @return
+     */
     public int getMaxNumber(int n){
-
-
+        for(int i=n;i>2;i--){
+            for(int j=2;j<i;j++){
+                if(i%j==0){
+                    break;
+                }
+                if(j==i-1){
+                    System.out.println(i);
+                    return  i;
+                }
+            }
+        }
         return  -1;
     }
 
