@@ -21,6 +21,11 @@ public class NumberCount {
 
         System.out.println(count);
 
+
+        Integer result = numberCount.validNumber(98233);
+        System.out.println(result);
+
+
     }
 
 
@@ -42,7 +47,6 @@ public class NumberCount {
         if (n == 0) {
             return 1;
         }
-
         long sum = 1;
 
         for (int i = 1; i <= n; i++) {
@@ -53,9 +57,13 @@ public class NumberCount {
 
         for (int i = 1; i < sum; i++) {
 
-
+            int count = validNumber(i);
+            if (count == 0) {
+                list.add(i);
+            }
         }
-
+        System.out.println(list.size());
+        sum = sum - list.size();
         return (int) sum;
     }
 
@@ -68,9 +76,17 @@ public class NumberCount {
      * @param n
      * @return
      */
-    public boolean validNumber(int n) {
-
-
+    public int validNumber(int n) {
+        int[] arr = new int[10];
+        while (n != 0) {
+            if (arr[n % 10] == 1) {
+                return 0;
+            } else {
+                arr[n % 10] = 1;
+            }
+            n = n / 10;
+        }
+        return 1;
     }
 
 }
