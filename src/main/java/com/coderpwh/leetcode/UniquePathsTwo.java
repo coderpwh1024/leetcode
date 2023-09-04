@@ -24,6 +24,7 @@ public class UniquePathsTwo {
 
 
     /***
+     * 时间复杂度为O(m*n)
      * 获取路径
      * @param obstacleGrid
      * @return
