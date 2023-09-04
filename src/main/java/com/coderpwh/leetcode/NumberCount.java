@@ -15,7 +15,6 @@ public class NumberCount {
 
         int n = 2;
 
-
         NumberCount numberCount = new NumberCount();
         Integer count = numberCount.countNumbersWithUniqueDigits(n);
         System.out.println(count);
@@ -26,8 +25,6 @@ public class NumberCount {
 
         Integer result = numberCount.validNumber(98233);
         System.out.println(result);
-
-
     }
 
     public int countNumbersWithUniqueDigits2(int n) {
