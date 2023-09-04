@@ -18,14 +18,37 @@ public class NumberCount {
 
         NumberCount numberCount = new NumberCount();
         Integer count = numberCount.countNumbersWithUniqueDigits(n);
-
         System.out.println(count);
 
+
+        Integer count2 = numberCount.countNumbersWithUniqueDigits2(n);
+        System.out.println(count2);
 
         Integer result = numberCount.validNumber(98233);
         System.out.println(result);
 
 
+    }
+
+    public int countNumbersWithUniqueDigits2(int n) {
+
+        if (n == 0) {
+            return 1;
+        }
+
+        if (n == 1) {
+            return 10;
+        }
+
+        int res = 10;
+        int cur = 9;
+
+        for (int i = 0; i < n - 1; i++) {
+            cur *= 9 - i;
+            res += cur;
+        }
+
+        return res;
     }
 
 
