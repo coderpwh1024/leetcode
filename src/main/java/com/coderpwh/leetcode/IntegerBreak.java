@@ -23,12 +23,11 @@ public class IntegerBreak {
 
     public static void main(String[] args) {
 
-        int n = 10;
+        int n = 8;
 
         IntegerBreak ib = new IntegerBreak();
-        ib.integerBreak(n);
-
-
+        Integer count = ib.integerBreak(n);
+        System.out.println(count);
     }
 
 
@@ -43,9 +42,16 @@ public class IntegerBreak {
      * @return
      */
     public int integerBreak(int n) {
+        int[] dp = new int[n + 1];
 
+        for (int i = 2; i <= n; i++) {
 
-
-        return -1;
+            int curMax = 0;
+            for (int j = 1; j < i; j++) {
+                curMax = Math.max(curMax, Math.max(j * (i - j), j * dp[i - j]));
+            }
+            dp[i] = curMax;
+        }
+        return dp[n];
     }
 }
