@@ -25,14 +25,26 @@ public class IntegerBreak {
 
         int n = 10;
 
-
         IntegerBreak ib = new IntegerBreak();
         ib.integerBreak(n);
 
 
     }
 
+
+    /***
+     * n=9;
+     *
+     * 3+3+3,
+     * 3*3*3
+     *
+     *
+     * @param n
+     * @return
+     */
     public int integerBreak(int n) {
+
+
 
         return -1;
     }
