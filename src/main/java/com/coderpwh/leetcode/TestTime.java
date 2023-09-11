@@ -26,12 +26,21 @@ public class TestTime {
     }
 
 
+    /***
+     * 时间复杂度为O(N)
+     * @param n
+     */
     public void test1(int n) {
         for (int i = 0; i < n; i++) {
             System.out.println(i);
         }
     }
 
+
+    /***
+     * 时间复杂度为O(N^2),arr数组大小未知
+     * @param arr
+     */
     public void test2(int[] arr) {
         for (int i = 0; i <= arr.length - 1; i++) {
             for (int j = 0; j < arr.length - 1; j++) {
@@ -44,12 +53,18 @@ public class TestTime {
         }
     }
 
+
+    /***
+     *  1.时间复杂度为O(logN)
+     * @param arr
+     * @param target
+     * @return
+     */
     public int test3(int[] arr, int target) {
         int low = 0;
         int high = arr.length - 1;
 
         while (low <= high) {
-
             int mid = low + (high - low) / 2;
             if (arr[mid] > target) {
                 high = mid - 1;
