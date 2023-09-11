@@ -26,9 +26,9 @@ public class LongestPalindrome {
 
     public static void main(String[] args) {
 
-//        String str = "babad";
+        String str = "babad";
 
-        String str = "cbba";
+//        String str = "ssssss";
 
         LongestPalindrome palindrome = new LongestPalindrome();
         String result = palindrome.longestPalindrome(str);
@@ -38,6 +38,8 @@ public class LongestPalindrome {
 
 
     /***
+     * 1.时间复杂度为O(N^2)
+     * 2.
      * 最长回文串
      * @param s
      * @return
@@ -72,7 +74,7 @@ public class LongestPalindrome {
                     if (j - i < 3) {
                         dp[i][j] = true;
                     } else {
-                        dp[i][j] = dp[i + 1][j + 1];
+                        dp[i][j] = dp[i + 1][j - 1];
                     }
                 }
                 if (dp[i][j] && j - i + 1 > maxLen) {
