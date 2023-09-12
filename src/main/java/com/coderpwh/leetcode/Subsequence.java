@@ -26,6 +26,12 @@ public class Subsequence {
     }
 
 
+    /***
+     * 时间复杂度为O(N+M)
+     * @param s
+     * @param t
+     * @return
+     */
     public boolean isSubsequenceTwo(String s, String t) {
         int n = s.length();
         int m = t.length();
