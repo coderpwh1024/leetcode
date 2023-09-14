@@ -17,7 +17,7 @@ public class SimpleArray<T> {
      * @return
      */
     public int size() {
-        return -1;
+        return size;
     }
 
 
@@ -26,7 +26,7 @@ public class SimpleArray<T> {
      * @return
      */
     public boolean isEmpty() {
-        return false;
+        return size == 0;
     }
 
 
@@ -36,6 +36,12 @@ public class SimpleArray<T> {
      * @return
      */
     public boolean add(T e) {
+        if (e == null) {
+            System.out.println("e为空");
+            return false;
+        }
+        testObj[size] = e;
+        size++;
         return false;
     }
 
@@ -47,17 +53,37 @@ public class SimpleArray<T> {
      * @return
      */
     public boolean add(T e, int index) {
-        return false;
+        if (index < 0 || index > size) {
+            System.out.println("下标不合法");
+            return false;
+        }
+
+        for (int j = size; j > index; j--) {
+            testObj[j] = testObj[j - 1];
+        }
+        testObj[index] = e;
+        size++;
+        return true;
     }
 
 
     /***
+     *
      * 从数组中删除下标为index的元素
      * @param index
      * @return
      */
     public boolean remove(int index) {
-        return false;
+        if (index < 0 || index > size) {
+            System.out.println("下标不合法");
+            return false;
+        }
+
+        for (int i = index; i < size - 1; i++) {
+            testObj[i] = testObj[i + 1];
+        }
+        size--;
+        return true;
     }
 
 
@@ -67,17 +93,29 @@ public class SimpleArray<T> {
      * @return
      */
     public boolean remove(Object obj) {
+        for (int i = 0; i < size - 1; i++) {
+            if (testObj[i].equals(obj)) {
+                remove(i);
+                size--;
+                return true;
+            }
+        }
         return false;
     }
 
 
     /***
-     *
+     *  获取下标
      * @param index
      * @return
      */
     public T get(int index) {
-        return null;
+
+        if (index < 0 || index >= size) {
+            System.out.println("小标不合法");
+            return null;
+        }
+        return (T) testObj[index];
     }
 
 
