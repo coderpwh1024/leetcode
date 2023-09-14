@@ -18,30 +18,39 @@ public class MinCostClimbingStairs {
         // 6
         int arr[] = {1, 100, 1, 1, 1, 100, 1, 1, 100, 1};
 
+        // 15
+//        int arr[] = {10, 15, 20};
+
         MinCostClimbingStairs minCost = new MinCostClimbingStairs();
         Integer result = minCost.minCostClimbingStairs(arr);
-        System.out.println(result);
+//        System.out.println(result);
 
     }
 
     /***
+     *  1. 时间复杂度为O(N)
+     *  2.
      * 最小花费爬楼梯
      * @param cost
      * @return
      */
     public int minCostClimbingStairs(int[] cost) {
+        int n = cost.length;
 
-        int sum = 0;
+        int[] dp = new int[n + 1];
 
-        for (int i = 0; i < cost.length; i++) {
-            for (int j = 0; j < cost.length; j++) {
-                if (cost[i] < cost[j]) {
-                    sum += cost[i];
-                }
-            }
+        dp[0] = dp[1] = 0;
+
+        for (int i = 2; i <= n; i++) {
+            dp[i] = Math.min(dp[i - 1] + cost[i - 1], dp[i - 2] + cost[i - 2]);
         }
 
-        return -1;
+        for (int j = 0; j < dp.length; j++) {
+            System.out.print(dp[j]);
+            System.out.print("  ");
+        }
+
+        return dp[n];
     }
 
 
