@@ -2,6 +2,7 @@ package com.coderpwh.view;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class StringView {
 
@@ -55,6 +56,15 @@ public class StringView {
         }
 
         return null;
+    }
+
+    public void test(){
+        List<String> list = new ArrayList<>();
+
+       /* String str="";
+        str.equals();
+        str.*/
+
     }
 
 }

@@ -17,10 +17,18 @@ public class MaximumGenerated {
 
     public static void main(String[] args) {
 
+//        int n = 7;
+
+        int n = 3;
+
+        MaximumGenerated max = new MaximumGenerated();
+        Integer count = max.getMaximumGenerated(n);
+//        System.out.println(count);
     }
 
 
     /**
+     * int[] arr = {0, 1, 1, 2, 1, 3, 2, 3};
      * 输入：n = 7
      * 输出：3
      * 解释：根据规则：
@@ -39,8 +47,20 @@ public class MaximumGenerated {
      */
     public int getMaximumGenerated(int n) {
 
-        int[] arr = {0, 0, 1, 2, 1, 3, 2, 3};
+        int[] dp = new int[n + 1];
+        dp[0] = 0;
+        dp[1] = 1;
+        int max = -1;
 
+        for (int i = 1; i <= n; i++) {
+            if (n >= 2 * i && 2 * i >= 2) {
+                dp[2 * i] = dp[i];
+            }
+            if (n >= (2 * i + 1) && (2 * i + 1) >= 2) {
+                dp[2 * i + 1] = dp[i] + dp[i + 1];
+            }
+            max = Math.max(max, dp[i]);
+        }
 
         return -1;
     }
