@@ -29,18 +29,41 @@ package com.coderpwh.leetcode;
 public class Rob2 {
     public static void main(String[] args) {
 
-        int[] arr = {1, 2, 3, 1};
+        int[] arr = {2, 3, 2};
+
+//        int[] arr = {1, 2, 3, 1};
+
+//        int[] arr = {1, 2, 1, 6};
 
 
         Rob2 rob = new Rob2();
         int result = rob.rob(arr);
         System.out.println(result);
+        System.out.println(0%2==0);
 
     }
 
     public int rob(int[] nums) {
 
-        return -1;
+        int totalOne = 0;
+        int totalTwo = 0;
+        boolean flag=false;
+
+        for (int i = 0; i < nums.length; i++) {
+            if (i % 2 == 0) {
+                if(i==0){
+                    flag=true;
+                }
+                if(flag&&i==nums.length-1){
+                 continue;
+                }
+                totalTwo += nums[i];
+            } else {
+                totalOne += nums[i];
+            }
+        }
+        return Math.max(totalOne, totalTwo);
+
     }
 
 
