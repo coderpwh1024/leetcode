@@ -29,17 +29,23 @@ package com.coderpwh.leetcode;
 public class Rob2 {
     public static void main(String[] args) {
 
-        int[] arr = {2, 3, 2};
+//        int[] arr = {2, 3, 2};
 
-//        int[] arr = {1, 2, 3, 1};
+//        int [] arr = {1,2,3};
+
+        int[] arr = {1, 2, 3, 1};
 
 //        int[] arr = {1, 2, 1, 6};
 
 
         Rob2 rob = new Rob2();
-        int result = rob.rob(arr);
+     /*   int result = rob.rob(arr);
         System.out.println(result);
-        System.out.println(0%2==0);
+        System.out.println(0 % 2 == 0);*/
+
+        int result = rob.rob2(arr);
+        System.out.println(result);
+
 
     }
 
@@ -47,15 +53,15 @@ public class Rob2 {
 
         int totalOne = 0;
         int totalTwo = 0;
-        boolean flag=false;
+        boolean flag = false;
 
         for (int i = 0; i < nums.length; i++) {
             if (i % 2 == 0) {
-                if(i==0){
-                    flag=true;
+                if (i == 0) {
+                    flag = true;
                 }
-                if(flag&&i==nums.length-1){
-                 continue;
+                if (flag && i == nums.length - 1) {
+                    continue;
                 }
                 totalTwo += nums[i];
             } else {
@@ -63,6 +69,34 @@ public class Rob2 {
             }
         }
         return Math.max(totalOne, totalTwo);
+
+    }
+
+    public int rob2(int[] nums) {
+        int length = nums.length;
+
+
+        if (length == 1) {
+            return nums[0];
+        } else if (length == 2) {
+            return Math.max(nums[0], nums[1]);
+        }
+
+        return Math.max(robRange(nums, 0, length - 2), robRange(nums, 1, length - 1));
+
+    }
+
+    public int robRange(int nums[], int start, int end) {
+        int first = nums[start];
+
+        int second = Math.max(nums[start], nums[start + 1]);
+
+        for (int i = start + 2; i <= end; i++) {
+            int temp = second;
+            second = Math.max(first + nums[i], second);
+            first = temp;
+        }
+        return second;
 
     }
 
