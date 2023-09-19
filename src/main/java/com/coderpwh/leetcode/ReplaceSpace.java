@@ -10,10 +10,19 @@ public class ReplaceSpace {
 
     public static void main(String[] args) {
 
+        String s ="We are happy.";
+
+        ReplaceSpace space = new ReplaceSpace();
+         String result = space.replaceSpace(s);
+        System.out.println(result);
+
     }
 
     public String replaceSpace(String s) {
-
+        if(s==null||s.length()<=0){
+            return  s;
+        }
+       return    s.replace(" ","%20");
     }
 
 }
