@@ -60,6 +60,11 @@ public class ReversePrint {
         return node;
     }
 
+
+    /***
+     * 正序打印
+     * @param head
+     */
     public void print(ListNode head) {
         while (head != null) {
             System.out.print(head.val + " ");
@@ -68,6 +73,11 @@ public class ReversePrint {
     }
 
 
+    /***
+     * 逆序打印
+     * @param head
+     * @return
+     */
     public int[] reversePrint(ListNode head) {
         List<Integer> list = new ArrayList<>();
 
