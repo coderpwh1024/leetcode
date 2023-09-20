@@ -75,6 +75,7 @@ public class ReversePrint {
 
     /***
      * 逆序打印
+     *  1.时间复杂度为O(N)
      * @param head
      * @return
      */
