@@ -1,5 +1,9 @@
 package com.coderpwh.leetcode;
 
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+
 /**
  * 剑指 Offer 06. 从尾到头打印链表
  * <p>
@@ -21,7 +25,14 @@ public class ReversePrint {
 
         ReversePrint print = new ReversePrint();
 
+        // 构建链表结构
         ListNode head = print.createNode();
+
+        // 打印链表
+//        print.print(head);
+
+        System.out.println();
+        System.out.println("---------------------");
 
         int arr[] = print.reversePrint(head);
 
@@ -35,6 +46,7 @@ public class ReversePrint {
 
     /***
      * [1,3,2]
+     * [2,3,1]
      * 创建根节点
      * @return
      */
@@ -48,9 +60,28 @@ public class ReversePrint {
         return node;
     }
 
+    public void print(ListNode head) {
+        while (head != null) {
+            System.out.print(head.val + " ");
+            head = head.next;
+        }
+    }
+
 
     public int[] reversePrint(ListNode head) {
-        return null;
+        List<Integer> list = new ArrayList<>();
+
+        while (head != null) {
+            list.add(head.val);
+            head = head.next;
+        }
+        int arr[] = new int[list.size()];
+        int size = list.size();
+
+        for (int i = 0, j = size - 1; j >= 0 && i < size; i++, j--) {
+            arr[i] = list.get(j);
+        }
+        return arr;
     }
 
 }
