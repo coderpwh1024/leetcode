@@ -30,12 +30,16 @@ public class Fib2 {
 
     public static void main(String[] args) {
 
-        int n = 6;
+        int n = 44;
 
         Fib2 fib = new Fib2();
 
+        long start = System.currentTimeMillis();
         Integer result = fib.fib(n);
+        long end = System.currentTimeMillis();
+
         System.out.println(result);
+        System.out.println((end - start) / 1000);
     }
 
     public int fib(int n) {
