@@ -21,26 +21,61 @@ public class GetKthFromEnd {
     public static void main(String[] args) {
 
         int k = 2;
-
         GetKthFromEnd end = new GetKthFromEnd();
-        end.getKthFromEnd();
+
+        // 创建节点
+        ListNode node = end.createNode();
+
+        // 打印其节点
+        end.print(node);
+        System.out.println();
+        System.out.println("---------------------------");
+
+        ListNode head = end.getKthFromEnd(node, k);
+        System.out.println(head);
+
+        end.print(head);
 
     }
 
 
     /***
+     * 打印节点
+     * @param node
+     */
+    public void print(ListNode node) {
+
+        while (node != null) {
+            System.out.print(node.val + " ");
+            node = node.next;
+        }
+    }
+
+
+    /***
+     * 1->2->3->4->5
      * 创建链表
      * @return
      */
     public ListNode createNode() {
 
-        ListNode node = new ListNode();
+        ListNode node5 = new ListNode(5);
+
+        ListNode node4 = new ListNode(4, node5);
+
+        ListNode node3 = new ListNode(3, node4);
+
+        ListNode node2 = new ListNode(2, node3);
+
+        ListNode node = new ListNode(1, node2);
 
         return node;
     }
 
 
     /***
+     *  1->2->3->4->5, 和 k = 2.
+     *  4->5
      * 获取倒数第k个节点
      * @param head
      * @param k
@@ -48,7 +83,23 @@ public class GetKthFromEnd {
      */
     public ListNode getKthFromEnd(ListNode head, int k) {
 
-        return null;
+        int n = getNodeLength(head);
+
+        for (int i = 0; i < n - k; i++) {
+            head = head.next;
+        }
+
+        return head;
+    }
+
+    public int getNodeLength(ListNode head) {
+
+        int length = 0;
+        while (head != null) {
+            length += 1;
+            head = head.next;
+        }
+        return length;
     }
 
 }
