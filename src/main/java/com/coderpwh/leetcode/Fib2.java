@@ -42,6 +42,12 @@ public class Fib2 {
         System.out.println((end - start) / 1000);
     }
 
+
+    /***
+     * 1.递归方式
+     * @param n
+     * @return
+     */
     public int fib(int n) {
         if (n == 0) {
             return 0;
