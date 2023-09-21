@@ -31,20 +31,51 @@ public class Fib2 {
     public static void main(String[] args) {
 
         int n = 44;
+//        int n = 5;
 
         Fib2 fib = new Fib2();
 
-        long start = System.currentTimeMillis();
+       /* long start = System.currentTimeMillis();
         Integer result = fib.fib(n);
         long end = System.currentTimeMillis();
 
         System.out.println(result);
         System.out.println((end - start) / 1000);
+        System.out.println("-----------------");*/
+
+       /* Integer fibResult = fib.fib2(n);
+        System.out.println(fibResult);
+*/
+        Integer count = fib.fib3(n);
+        System.out.println(count);
+
+    }
+
+
+    /***
+     * 1.动态规划
+     * 2.时间复杂度为O(N)
+     * @param n
+     * @return
+     */
+    public int fib3(int n) {
+        final int MOD = 1000000007;
+        if (n < 2) {
+            return n;
+        }
+        int f1 = 0, f2 = 0, fn = 1;
+        for (int i = 2; i <= n; i++) {
+            f1 = f2;
+            f2 = fn;
+            fn = (f1 + f2) % MOD;
+        }
+        return fn;
     }
 
 
     /***
      * 1.递归方式
+     * 2.时间复杂度为O(N^2)
      * @param n
      * @return
      */
