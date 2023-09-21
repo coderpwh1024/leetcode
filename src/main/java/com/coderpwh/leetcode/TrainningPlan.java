@@ -1,5 +1,8 @@
 package com.coderpwh.leetcode;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * 给定一个头节点为 head 的单链表用于记录一系列核心肌群训练编号，请将该系列训练编号 倒序 记录于链表并返回。
  * <p>
@@ -34,7 +37,28 @@ public class TrainningPlan {
         // 创建链表
         ListNode head = plan.createNode();
 
-        plan.trainningPlan(head);
+        // 打印链表
+        plan.print(head);
+        System.out.println();
+        System.out.println("-----------------------------");
+
+        // 反转链表
+        ListNode node = plan.trainningPlan(head);
+
+        // 打印反转后的链表
+        plan.print(node);
+    }
+
+
+    /***
+     * 打印链表
+     * @param head
+     */
+    public void print(ListNode head) {
+        while (head != null) {
+            System.out.print(head.val + " ");
+            head = head.next;
+        }
     }
 
 
@@ -60,7 +84,26 @@ public class TrainningPlan {
      * @return
      */
     public ListNode trainningPlan(ListNode head) {
+        List<Integer> list = new ArrayList<>();
+        int n = getLength(head, list);
+        System.out.println(n);
+        System.out.println(head);
 
+         for(int i=n-1;i>=0;i--){
+             head.val=list.get(i);
+             head=head.next;
+         }
+         return  head;
+    }
+
+    public int getLength(ListNode head, List<Integer> list) {
+        int length = 0;
+        while (head != null) {
+            list.add(head.val);
+            length += 1;
+            head = head.next;
+        }
+        return length;
     }
 
 }
