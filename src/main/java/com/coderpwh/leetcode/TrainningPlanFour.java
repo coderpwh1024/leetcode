@@ -99,6 +99,9 @@ public class TrainningPlanFour {
      *
      *  [1,1,2,3,4,4]
      *
+     *  1.递归方式
+     *  2.时间复杂度为O(N+M)
+     *
      * @param l1
      * @param l2
      * @return
