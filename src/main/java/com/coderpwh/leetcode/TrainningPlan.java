@@ -84,26 +84,18 @@ public class TrainningPlan {
      * @return
      */
     public ListNode trainningPlan(ListNode head) {
-        List<Integer> list = new ArrayList<>();
-        int n = getLength(head, list);
-        System.out.println(n);
-        System.out.println(head);
 
-         for(int i=n-1;i>=0;i--){
-             head.val=list.get(i);
-             head=head.next;
+        ListNode cur = head;
+        ListNode pre = null;
+
+        while (cur != null) {
+            ListNode temp = cur.next; //  [2,3,4,5] , [3,4,5],[4,5] [5]
+            cur.next = pre;     // null  , [1,2,3,4,5] [2,3,4,5]  [3,4,5]
+            pre = cur;   // [1,2,3,4,5]    [2,3,4,5]  [3,4,5]  [4,5]
+            cur = temp;  // [2,3,4,5]   [3,4,5]  [4,5] [5]
          }
-         return  head;
+        return pre;
     }
 
-    public int getLength(ListNode head, List<Integer> list) {
-        int length = 0;
-        while (head != null) {
-            list.add(head.val);
-            length += 1;
-            head = head.next;
-        }
-        return length;
-    }
 
 }
