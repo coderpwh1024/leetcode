@@ -68,6 +68,10 @@ public class MirrorTree {
 
 
     /***
+     *  1.递归
+     *  2.时间复杂度为O(N)
+     *
+     *
      * 翻转二叉树
      * @param root
      * @return
