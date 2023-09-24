@@ -16,8 +16,16 @@ public class CheckSymmetricTree {
     public static void main(String[] args) {
 
         CheckSymmetricTree tree = new CheckSymmetricTree();
-        tree.checkSymmetricTree();
+
+         // 创建节点
+         TreeNode node = tree.createTreeNode();
+
+         // 对称
+        boolean flag=  tree.checkSymmetricTree(node);
+        System.out.println(flag);
     }
+
+
 
 
     /***
@@ -25,7 +33,6 @@ public class CheckSymmetricTree {
      * @return
      */
     public TreeNode createTreeNode(){
-
         TreeNode node81 = new TreeNode("8");
         TreeNode node91 = new TreeNode("9");
 
@@ -44,6 +51,20 @@ public class CheckSymmetricTree {
 
     public boolean checkSymmetricTree(TreeNode root) {
 
+        return  check(root,root);
+    }
+
+    public  boolean check(TreeNode node ,TreeNode root){
+
+        if(node==null&&root==null){
+            return  true;
+        }
+
+        if(node==null||root==null){
+            return false;
+        }
+
+        return  root.val==node.val&&check(node.left,root.right)&&check(node.right,root.left);
     }
 
 }
