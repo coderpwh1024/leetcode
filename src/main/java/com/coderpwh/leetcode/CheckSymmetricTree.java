@@ -49,6 +49,11 @@ public class CheckSymmetricTree {
     }
 
 
+    /***
+     * 递归方式
+     * @param root
+     * @return
+     */
     public boolean checkSymmetricTree(TreeNode root) {
 
         return  check(root,root);
