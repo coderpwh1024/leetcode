@@ -25,13 +25,16 @@ public class VerifyTreeOrder {
         System.out.println();
         int arr[] = {4, 9, 6, 9, 8};
 
+        int arr2[] = {4, 6, 5, 9, 8};
+
+
         // 校验二叉树
-        Boolean flag = treeOrder.verifyTreeOrder(arr, treeNode);
-        System.out.println(flag);
+  /*      Boolean flag = treeOrder.verifyTreeOrder(arr, treeNode);
+        System.out.println(flag);*/
 
         System.out.println("-------------------------------");
 
-        Boolean recountFlag = treeOrder.verifyTreeOrder(arr);
+        Boolean recountFlag = treeOrder.verifyTreeOrder(arr2);
         System.out.println(recountFlag);
 
     }
