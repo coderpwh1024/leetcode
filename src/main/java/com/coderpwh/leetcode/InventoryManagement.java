@@ -1,5 +1,7 @@
 package com.coderpwh.leetcode;
 
+import java.util.HashMap;
+
 /**
  * 仓库管理员以数组 stock 形式记录商品库存表。stock[i] 表示商品 id，
  * 可能存在重复。请返回库存表中数量大于 stock.length / 2 的商品 id。
@@ -29,18 +31,27 @@ public class InventoryManagement {
      * @return
      */
     public int inventoryManagement(int[] stock) {
-        int max = stock.length / 2;
-        int count = -1;
+        int result = stock.length / 2;
+
+        HashMap<Integer, Integer> map = new HashMap<>();
 
         for (int i = 0; i < stock.length; i++) {
-            int temp = max;
-            max = Math.max(max, stock[i]);
-            if (temp != max) {
-                count = i;
+            if (map.containsKey(stock[i])) {
+                Integer count = map.get(stock[i]);
+                map.put(stock[i], count + 1);
+            } else {
+                map.put(stock[i], 1);
             }
         }
 
-        return count;
+        for (Integer key : map.keySet()) {
+            System.out.println(map.get(key));
+            if (map.get(key) > result) {
+                return key;
+            }
+        }
+
+        return -1;
     }
 
 
