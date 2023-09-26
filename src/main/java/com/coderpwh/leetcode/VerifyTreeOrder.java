@@ -29,6 +29,11 @@ public class VerifyTreeOrder {
         Boolean flag = treeOrder.verifyTreeOrder(arr, treeNode);
         System.out.println(flag);
 
+        System.out.println("-------------------------------");
+
+        Boolean recountFlag = treeOrder.verifyTreeOrder(arr);
+        System.out.println(recountFlag);
+
     }
 
 
@@ -45,6 +50,32 @@ public class VerifyTreeOrder {
 
         TreeNode node = new TreeNode("8", node6, node99);
         return node;
+    }
+
+
+    /***
+     * 翻转
+     * @param postorder
+     * @return
+     */
+    public boolean verifyTreeOrder(int[] postorder) {
+        return recur(postorder, 0, postorder.length - 1);
+    }
+
+    public boolean recur(int[] postorder, int i, int j) {
+        if (i >= j) {
+            return true;
+        }
+        int p = i;
+        while (postorder[p] < postorder[j]) {
+            p++;
+        }
+        int m = p;
+        while (postorder[p] > postorder[j]) {
+            p++;
+        }
+
+        return p == j && recur(postorder, i, m - 1) && recur(postorder, m, j - 1);
     }
 
 
