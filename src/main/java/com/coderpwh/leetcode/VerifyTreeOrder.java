@@ -47,6 +47,13 @@ public class VerifyTreeOrder {
         return node;
     }
 
+
+    /***
+     *  后置排序
+     * @param postorder
+     * @param treeNode
+     * @return
+     */
     public boolean verifyTreeOrder(int[] postorder, TreeNode treeNode) {
         List<Integer> list = new ArrayList<>();
         printByList(treeNode, list);
