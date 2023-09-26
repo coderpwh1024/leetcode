@@ -1,7 +1,8 @@
 package com.coderpwh.leetcode;
 
 /**
- * LCR 128. 库存管理 I
+ * LCR
+ * 128. 库存管理 I
  * <p>
  * 仓库管理员以数组 stock 形式记录商品库存表。stock[i] 表示商品 id，可能存在重复。
  * 原库存表按商品 id 升序排列。
