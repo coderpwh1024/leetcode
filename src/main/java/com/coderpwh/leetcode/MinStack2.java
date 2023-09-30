@@ -53,12 +53,22 @@ public class MinStack2 {
         }
     }
 
-    public int top() {
 
+    /***
+     * 获取栈顶元素
+     * @return
+     */
+    public int top() {
+      return  A.peek();
     }
 
-    public int getMin() {
 
+    /**
+     * 获取堆栈中的最小元素。
+     * @return
+     */
+    public int getMin() {
+        return  B.peek();
     }
 
 
