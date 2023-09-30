@@ -1,6 +1,8 @@
 package com.coderpwh.leetcode;
 
 
+import java.util.Stack;
+
 /***
  *LCR 147. 最小栈
  *
@@ -18,20 +20,37 @@ package com.coderpwh.leetcode;
  */
 public class MinStack2 {
 
-    public static void main(String[] args) {
 
-    }
+    Stack<Integer> A;
+    Stack<Integer> B;
 
     public MinStack2() {
 
+        A = new Stack<>();
+        B = new Stack<>();
     }
 
+
+    /**
+     * 推入堆栈
+     * @param x
+     */
     public void push(int x) {
+        A.add(x);
+        if(B.empty()||B.peek()>=x){
+            B.add(x);
+        }
 
     }
 
-    public void pop() {
 
+    /***
+     * 删除栈顶元素
+     */
+    public void pop() {
+        if(A.pop().equals(B.peek())){
+            B.pop();
+        }
     }
 
     public int top() {
