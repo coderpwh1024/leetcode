@@ -1,5 +1,9 @@
 package com.coderpwh.leetcode;
 
+import sun.reflect.generics.tree.Tree;
+
+import java.util.Stack;
+
 /**
  * @author coderpwh
  * @date 2023/10/8 11:10
@@ -15,6 +19,17 @@ public class TreeNodePrint {
 
         // 递归前序遍历方式
         print.pre(root);
+        System.out.println();
+        print.preByStack(root);
+
+        System.out.println();
+        System.out.println("------------------------");
+        System.out.println();
+
+        // 中序遍历
+        print.mid(root);
+        System.out.println();
+        print.midByStack(root);
 
 
     }
@@ -42,11 +57,69 @@ public class TreeNodePrint {
      * @param root
      */
     public void pre(TreeNode root) {
-
         if (root != null) {
             System.out.print(root.val + " ");
             pre(root.left);
             pre(root.right);
+        }
+    }
+
+
+    /***
+     *  前序遍历非递归方式
+     * @param root
+     */
+    public void preByStack(TreeNode root) {
+
+        Stack<TreeNode> stack = new Stack();
+        TreeNode curr = root;
+        stack.push(curr);
+
+        while (!stack.isEmpty()) {
+            TreeNode pop = stack.pop();
+            System.out.print(pop.val + " ");
+            if (pop.right != null) {
+                stack.push(pop.right);
+            }
+
+            if (pop.left != null) {
+                stack.push(pop.left);
+            }
+        }
+    }
+
+    /***
+     *  递归中序遍历
+     * @param root
+     */
+    public void mid(TreeNode root) {
+        if (root != null) {
+            mid(root.left);
+            System.out.print(root.val + " ");
+            mid(root.right);
+        }
+    }
+
+
+    /***
+     * 非递归中序遍历
+     * @param root
+     */
+    public void midByStack(TreeNode root) {
+
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode cur = root;
+        stack.push(cur);
+
+        while (!stack.isEmpty()) {
+            TreeNode pop = stack.pop();
+            if (pop.left != null) {
+                stack.push(pop.left);
+            }
+            System.out.print(pop.val + " ");
+            if (pop.right != null) {
+                stack.push(pop.right);
+            }
         }
     }
 
