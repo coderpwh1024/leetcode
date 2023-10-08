@@ -106,20 +106,16 @@ public class TreeNodePrint {
      * @param root
      */
     public void midByStack(TreeNode root) {
-
         Stack<TreeNode> stack = new Stack<>();
         TreeNode cur = root;
-        stack.push(cur);
-
-        while (!stack.isEmpty()) {
+        while (!stack.isEmpty() || cur != null) {
+            while (cur != null) {
+                stack.push(cur);
+                cur = cur.left;
+            }
             TreeNode pop = stack.pop();
-            if (pop.left != null) {
-                stack.push(pop.left);
-            }
             System.out.print(pop.val + " ");
-            if (pop.right != null) {
-                stack.push(pop.right);
-            }
+            cur = pop.right;
         }
     }
 
