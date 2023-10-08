@@ -32,6 +32,16 @@ public class TreeNodePrint {
         print.midByStack(root);
 
 
+        System.out.println();
+        System.out.println("------------------------");
+        System.out.println();
+
+        // 后序遍历
+        print.after(root);
+        System.out.println();
+        print.afterByStack(root);
+
+
     }
 
 
@@ -116,6 +126,51 @@ public class TreeNodePrint {
             TreeNode pop = stack.pop();
             System.out.print(pop.val + " ");
             cur = pop.right;
+        }
+    }
+
+
+    /**
+     * 后序遍历递归方式
+     *
+     * @param root
+     */
+    public void after(TreeNode root) {
+        if (root != null) {
+            after(root.left);
+            after(root.right);
+            System.out.print(root.val + " ");
+        }
+    }
+
+
+    /***
+     * 后序遍历(非递归方式)
+     * @param root
+     */
+    public void afterByStack(TreeNode root) {
+        Stack<TreeNode> stack = new Stack<>();
+        Stack<TreeNode> res = new Stack<>();
+
+        TreeNode curr = root;
+        stack.push(curr);
+
+        while (!stack.isEmpty()) {
+            TreeNode pop = stack.pop();
+            res.push(pop);
+
+            if (pop.left != null) {
+                stack.push(pop.left);
+            }
+
+            if (pop.right != null) {
+                stack.push(pop.right);
+            }
+        }
+
+        while (!res.isEmpty()) {
+            TreeNode pop = res.pop();
+            System.out.print(pop.val + " ");
         }
     }
 
