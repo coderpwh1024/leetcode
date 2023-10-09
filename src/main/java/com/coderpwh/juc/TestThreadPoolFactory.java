@@ -1,7 +1,6 @@
 package com.coderpwh.juc;
 
 import java.util.concurrent.Callable;
-import java.util.concurrent.ThreadPoolExecutor;
 
 /**
  * @author coderpwh
@@ -28,7 +27,7 @@ public class TestThreadPoolFactory {
 
 
         // 同步
-        /*ThreadPoolFactory.addTaskAttendanceRecordSubmit(new Callable() {
+        ThreadPoolFactory.addTaskAttendanceRecordSubmit(new Callable() {
             @Override
             public Object call() throws Exception {
                 Long result = factory.printOne(n);
@@ -37,7 +36,7 @@ public class TestThreadPoolFactory {
                 System.out.println(stringResult);
                 return "success";
             }
-        });*/
+        });
 
 
     }
