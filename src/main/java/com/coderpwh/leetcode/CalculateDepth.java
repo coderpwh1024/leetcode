@@ -14,6 +14,10 @@ public class CalculateDepth {
 
         TreeNode root = depth.createNode();
 
+        System.out.println();
+        Integer result = depth.calculateDepth(root);
+
+        System.out.println(result);
     }
 
 
@@ -47,8 +51,18 @@ public class CalculateDepth {
      * @return
      */
     public int calculateDepth(TreeNode root) {
+        int n = 0;
+        pre(root, n);
 
-        return -1;
+        return n;
+    }
+
+    public void pre(TreeNode root, int n) {
+        if (root != null) {
+            n += 1;
+            pre(root.left, n);
+            pre(root.right, n);
+        }
     }
 
 
