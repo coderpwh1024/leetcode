@@ -20,7 +20,8 @@ public class ThreadPoolFactory {
     /***
      * 线程池
      */
-    public static final ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(init_pool_size, max_pool_size, 0, TimeUnit.MILLISECONDS, new LinkedBlockingDeque<>(), new ThreadPoolExecutor.AbortPolicy());
+    public static final ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(init_pool_size, max_pool_size, 0,
+            TimeUnit.MILLISECONDS, new LinkedBlockingDeque<>(), new ThreadPoolExecutor.AbortPolicy());
 
 
     /***
@@ -55,6 +56,8 @@ public class ThreadPoolFactory {
             }
         } catch (Exception e) {
             logger.error("同步线程错误信息为:{}", e.getMessage());
+        } finally {
+            threadPoolExecutor.shutdown();
         }
         return "success";
     }
