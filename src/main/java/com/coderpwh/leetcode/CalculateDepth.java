@@ -12,9 +12,10 @@ public class CalculateDepth {
 
         CalculateDepth depth = new CalculateDepth();
 
+        // 创建二叉树
         TreeNode root = depth.createNode();
 
-        System.out.println();
+        // 计算二叉树的深度
         Integer result = depth.calculateDepth(root);
 
         System.out.println(result);
