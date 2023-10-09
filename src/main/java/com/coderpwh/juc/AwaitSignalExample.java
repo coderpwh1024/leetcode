@@ -2,6 +2,7 @@ package com.coderpwh.juc;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -42,11 +43,16 @@ public class AwaitSignalExample {
     }
 
     public static void main(String[] args) {
-        ExecutorService executorService = Executors.newSingleThreadExecutor();
-
         AwaitSignalExample example = new AwaitSignalExample();
-        executorService.execute(() -> example.after());
-        executorService.execute(() -> example.before());
+
+        ThreadPoolFactory.addTaskAttendanceRecordSubmit(new Runnable() {
+            @Override
+            public void run() {
+                example.after();
+                example.before();
+            }
+        });
+
 
     }
 
