@@ -51,18 +51,14 @@ public class CalculateDepth {
      * @return
      */
     public int calculateDepth(TreeNode root) {
-        int n = 0;
-        pre(root, n);
 
-        return n;
-    }
-
-    public void pre(TreeNode root, int n) {
         if (root != null) {
-            n += 1;
-            pre(root.left, n);
-            pre(root.right, n);
+            int leftDepth = calculateDepth(root.left);
+            int rightDepth = calculateDepth(root.right);
+            return 1 + (leftDepth > rightDepth ? leftDepth : rightDepth);
         }
+
+        return 0;
     }
 
 
