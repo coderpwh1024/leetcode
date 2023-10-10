@@ -43,6 +43,14 @@ public class SockCollocation {
 
     }
 
+
+    /***
+     *  1. 时间复杂度为O(N)
+     *  2. 空间复杂度为O(N)
+     *
+     * @param sockets
+     * @return
+     */
     public int[] sockCollocation(int[] sockets) {
 
         HashMap<Integer, Integer> map = new HashMap<>();
