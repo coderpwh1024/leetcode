@@ -18,8 +18,13 @@ public class IsBalancedTree {
 
         IsBalancedTree tree = new IsBalancedTree();
 
+        // 创建二叉树
         TreeNode root = tree.createNode();
 
+        // 判断是否平衡二叉树
+        Boolean flag = tree.isBalanced(root);
+
+        System.out.println(flag);
 
     }
 
@@ -41,7 +46,23 @@ public class IsBalancedTree {
 
 
     public boolean isBalanced(TreeNode root) {
-
-        return false;
+        if (root == null) {
+            return true;
+        } else {
+            return Math.abs(getMaxDepth(root.left) - getMaxDepth(root.right)) <= 1 && isBalanced(root.left) && isBalanced(root.right);
+        }
     }
+
+
+
+
+    public int getMaxDepth(TreeNode root) {
+        if (root == null) {
+            return 0;
+        } else {
+            return Math.max(getMaxDepth(root.left), getMaxDepth(root.right)) + 1;
+        }
+    }
+
+
 }
