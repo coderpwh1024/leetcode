@@ -45,6 +45,11 @@ public class IsBalancedTree {
     }
 
 
+    /**
+     *  1.时间复杂度为O(N)
+     * @param root
+     * @return
+     */
     public boolean isBalanced(TreeNode root) {
         if (root == null) {
             return true;
