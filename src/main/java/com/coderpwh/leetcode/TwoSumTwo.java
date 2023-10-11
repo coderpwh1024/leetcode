@@ -27,8 +27,9 @@ public class TwoSumTwo {
 
     public static void main(String[] args) {
 
-        int[] price = {3, 9, 12, 15};
-        int target = 18;
+//        int[] price = {3, 9, 12, 15};
+        int[] price = {8, 21, 27, 34, 52, 66};
+        int target = 61;
 
         TwoSumTwo sum = new TwoSumTwo();
         int[] arr = sum.twoSum(price, target);
@@ -39,9 +40,84 @@ public class TwoSumTwo {
             }
         }
 
+        System.out.println();
+        int[] arrs = sum.twoSunByTwoPoint(price, target);
+
+        if (arrs != null && arrs.length > 0) {
+            for (int i = 0; i < arrs.length; i++) {
+                System.out.print(arrs[i] + " ");
+            }
+        }
+
     }
 
 
+    /***
+     *  二分查找
+     * @param price
+     * @param target
+     * @return
+     */
+    public int[] twoSumSearch(int[] price, int target) {
+
+        for (int i = 0; i < price.length; i++) {
+            int low = i + 1;
+            int height = price.length - 1;
+
+            while (low <= height) {
+                int mid = (low + height) / 2 + low;
+                if (price[mid] == target - price[i]) {
+                    return new int[]{price[mid], price[i]};
+                } else if (price[mid] > target - price[i]) {
+                    height = mid - 1;
+                } else {
+                    low = mid + 1;
+                }
+
+            }
+        }
+        return new int[]{-1, -1};
+    }
+
+
+    /***
+     * 1. 时间复杂度为O(N)
+     * 2. 双指针方式
+     * @param price
+     * @param target
+     * @return
+     */
+    public int[] twoSunByTwoPoint(int[] price, int target) {
+
+        int i = 0;
+        int j = price.length - 1;
+
+        while (i < j) {
+            int s = price[i] + price[j];
+
+            if (target > s) {
+                i++;
+            } else if (target < s) {
+                j--;
+            } else {
+                return new int[]{price[i], price[j]};
+            }
+        }
+
+        return new int[0];
+
+    }
+
+
+    /***
+     *
+     * 1. 时间复杂度为O(N^2)
+     * 2. 空间复杂度为O(N)
+     *
+     * @param price
+     * @param target
+     * @return
+     */
     public int[] twoSum(int[] price, int target) {
 
         int[] arr = new int[2];
