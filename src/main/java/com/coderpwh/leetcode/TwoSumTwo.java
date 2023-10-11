@@ -103,7 +103,6 @@ public class TwoSumTwo {
                 return new int[]{price[i], price[j]};
             }
         }
-
         return new int[0];
 
     }
