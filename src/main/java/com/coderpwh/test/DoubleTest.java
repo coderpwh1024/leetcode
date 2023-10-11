@@ -16,7 +16,7 @@ public class DoubleTest {
         System.out.println(str);
         DoubleTest test = new DoubleTest();
 
-//        DoubleTest test2 = new DoubleTest("222");
+        DoubleTest test2 = new DoubleTest("222");
         System.out.println(test.testString);
 
     }
