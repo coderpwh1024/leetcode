@@ -1,5 +1,9 @@
 package com.coderpwh.leetcode;
 
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+
 /**
  * LCR 181. 字符串中的单词反转
  * <p>
@@ -30,11 +34,38 @@ public class ReverseMessage {
 
     public static void main(String[] args) {
 
+        String message = " hello world! ";
+
+//        String message = "a good   example";
+
+//        String message = "the sky is blue";
+
+        ReverseMessage reverse = new ReverseMessage();
+        String result = reverse.reverseMessage(message);
+
+        System.out.println(result);
+
     }
 
     public String reverseMessage(String message) {
+        StringBuilder builder = new StringBuilder();
 
-        return null;
+        if (message != null && message != "") {
+            List<String> list = new ArrayList<>();
+            message = message.trim();
+            String[] arr = message.split("\\s+");
+            for (String str : arr) {
+                list.add(str);
+            }
+            for (int j = list.size() - 1; j >= 0; j--) {
+                if (j == 0) {
+                    builder.append(list.get(j));
+                } else {
+                    builder.append(list.get(j)).append(" ");
+                }
+            }
+        }
+        return builder.toString();
     }
 
 }
