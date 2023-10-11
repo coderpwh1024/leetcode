@@ -26,12 +26,26 @@ public class DynamicPassword {
 
     public static void main(String[] args) {
 
+        /*String str = "s3cur1tyC0d3";
+        int target = 4;*/
+
+        String str = "lrloseumgh";
+        int target = 6;
+
+        DynamicPassword password = new DynamicPassword();
+        String result = password.dynamicPassword(str, target);
+        System.out.println(result);
+
     }
 
 
     public String dynamicPassword(String password, int target) {
+        StringBuilder builder = new StringBuilder();
+        String start = password.substring(0, target);
+        String end = password.substring(target, password.length());
+        builder.append(end).append(start);
 
-        return null;
+        return builder.toString();
     }
 
 }
