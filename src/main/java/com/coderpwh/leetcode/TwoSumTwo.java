@@ -27,12 +27,14 @@ public class TwoSumTwo {
 
     public static void main(String[] args) {
 
-//        int[] price = {3, 9, 12, 15};
-        int[] price = {8, 21, 27, 34, 52, 66};
-        int target = 61;
+        int[] price = {3, 9, 12, 15};
+        int target = 18;
+
+//        int[] price = {8, 21, 27, 34, 52, 66};
+//        int target = 61;
 
         TwoSumTwo sum = new TwoSumTwo();
-        int[] arr = sum.twoSum(price, target);
+        int[] arr = sum.twoSumSearch(price, target);
 
         if (arr != null && arr.length > 0) {
             for (int i = 0; i < arr.length; i++) {
@@ -54,6 +56,10 @@ public class TwoSumTwo {
 
     /***
      *  二分查找
+     *  1. 时间复杂度为O(NLogN)
+     *  2. 空间复杂度为O(1)
+     *  3.
+     *
      * @param price
      * @param target
      * @return
@@ -61,22 +67,22 @@ public class TwoSumTwo {
     public int[] twoSumSearch(int[] price, int target) {
 
         for (int i = 0; i < price.length; i++) {
-            int low = i + 1;
-            int height = price.length - 1;
+            int l = 0;
+            int r = price.length - 1;
 
-            while (low <= height) {
-                int mid = (low + height) / 2 + low;
-                if (price[mid] == target - price[i]) {
-                    return new int[]{price[mid], price[i]};
-                } else if (price[mid] > target - price[i]) {
-                    height = mid - 1;
+            while (l < r) {
+                int mid = (l + r) / 2;
+                if (target - price[i] <= price[mid]) {
+                    r = mid;
                 } else {
-                    low = mid + 1;
+                    l = mid + 1;
                 }
-
+            }
+            if (price[l] == target - price[i]) {
+                return new int[]{price[l], price[i]};
             }
         }
-        return new int[]{-1, -1};
+        return new int[]{};
     }
 
 
@@ -122,7 +128,6 @@ public class TwoSumTwo {
         int[] arr = new int[2];
 
         for (int i = 0; i < price.length; i++) {
-
             for (int j = i + 1; j < price.length; j++) {
                 if (target == price[i] + price[j]) {
                     arr[0] = price[i];
