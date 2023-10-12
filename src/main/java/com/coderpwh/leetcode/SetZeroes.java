@@ -53,6 +53,13 @@ public class SetZeroes {
         zeroes.setZeroes(matrix);
     }
 
+
+    /***
+     *  1.时间复杂度为O(N^M)
+     *  2.空间复杂度为O(N+M)
+     *
+     * @param matrix
+     */
     public void setZeroes(int[][] matrix) {
 
 
@@ -78,8 +85,6 @@ public class SetZeroes {
                 }
             }
         }
-
-
 
 
         for (int i = 0; i < matrix.length; i++) {
