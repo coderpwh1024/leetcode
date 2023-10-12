@@ -52,8 +52,42 @@ public class RotateTwo {
         int[][] matrix = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
 
         RotateTwo rotate = new RotateTwo();
-        rotate.rotate(matrix);
+//        rotate.rotate(matrix);
 
+        rotate.rorates(matrix);
+
+    }
+
+
+
+
+    public void rorates(int[][] matrix) {
+
+        int[][] temp = new int[matrix[0].length][matrix.length];
+
+        int depth = matrix[0].length - 1;
+
+
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+
+                temp[j][depth] = matrix[i][j];
+            }
+            depth--;
+        }
+
+        for (int i = 0; i < temp.length; i++) {
+            for (int j = 0; j < temp[i].length; j++) {
+                matrix[i][j] = temp[i][j];
+            }
+        }
+
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
 
     }
 
