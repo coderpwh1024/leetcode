@@ -30,7 +30,11 @@ public class LowestCommonAncestorTwo {
 
         TreeNode node = common.lowestCommonAncestor(root, pNode, qNode);
 
+        TreeNode treeNode = common.lowestCommonAncestors(root, pNode, qNode);
+
         System.out.println(node.val);
+
+        System.out.println(treeNode.val);
 
     }
 
@@ -80,7 +84,6 @@ public class LowestCommonAncestorTwo {
      */
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
 
-
         TreeNode node = root;
 
         while (true) {
@@ -98,4 +101,24 @@ public class LowestCommonAncestorTwo {
     }
 
 
+    /***
+     *  1. 时间复杂度为O(N)
+     *  2. 空间复杂度为O(1)
+     *  3. 递归方式
+     * @param root
+     * @param p
+     * @param q
+     * @return
+     */
+    public TreeNode lowestCommonAncestors(TreeNode root, TreeNode p, TreeNode q) {
+
+        if (root == null || p == root || q == root) {
+            return root;
+        }
+
+        TreeNode left = lowestCommonAncestor(root.left, p, q);
+        TreeNode right = lowestCommonAncestor(root.right, p, q);
+
+        return left == null ? right : (right == null ? left : root);
+    }
 }
