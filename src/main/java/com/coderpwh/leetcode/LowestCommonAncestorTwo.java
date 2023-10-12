@@ -18,6 +18,31 @@ public class LowestCommonAncestorTwo {
 
         LowestCommonAncestorTwo common = new LowestCommonAncestorTwo();
 
+        // 创建二叉树
+        TreeNode root = common.createTreeNode();
+
+        int p = 5;
+        int q = 1;
+
+        TreeNode pNode = common.getTreeNodeB(p);
+
+        TreeNode qNode = common.getTreeNodeB(q);
+
+        TreeNode node = common.lowestCommonAncestor(root, pNode, qNode);
+
+        System.out.println(node.val);
+
+    }
+
+
+    /***
+     *  获取二叉树
+     * @param n
+     * @return
+     */
+    public TreeNode getTreeNodeB(int n) {
+        TreeNode node = new TreeNode(n + "");
+        return node;
     }
 
 
@@ -46,9 +71,31 @@ public class LowestCommonAncestorTwo {
     }
 
 
+    /***
+     * 最近公共祖先
+     * @param root
+     * @param p
+     * @param q
+     * @return
+     */
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
 
-        return null;
+
+        TreeNode node = root;
+
+        while (true) {
+            if (Integer.valueOf(p.val) > Integer.valueOf(node.val) && Integer.valueOf(q.val) > Integer.valueOf(node.val)) {
+                node = node.right;
+            } else if (Integer.valueOf(p.val) < Integer.valueOf(node.val) && Integer.valueOf(q.val) < Integer.valueOf(node.val)) {
+                node = node.left;
+            } else {
+                break;
+            }
+
+        }
+
+        return node;
     }
+
 
 }
