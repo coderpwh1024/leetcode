@@ -3,6 +3,7 @@ package com.coderpwh.leetcode;
 import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -35,6 +36,7 @@ public class RemoveDuplicateNodes {
         ListNode listNode = remove.createNode();
 
         remove.print(listNode);
+
 
         // 删除重复节点
         ListNode root = remove.removeDuplicateNodes(listNode);
@@ -107,7 +109,6 @@ public class RemoveDuplicateNodes {
                 root.next = root.next.next;
             }
         }
-        root.next = null;
         return head;
     }
 
