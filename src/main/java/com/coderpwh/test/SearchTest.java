@@ -23,6 +23,16 @@ public class SearchTest {
     }
 
 
+    /***
+     * 1. 时间复杂度为O(logN)
+     * 2. 空间复杂度为O(1)
+     *
+     * @param data
+     * @param l
+     * @param r
+     * @param target
+     * @return
+     */
     public static int search(int[] data, int l, int r, int target) {
         while (l < r) {
             int mid = (l + r) / 2;
