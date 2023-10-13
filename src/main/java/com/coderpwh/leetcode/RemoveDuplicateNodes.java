@@ -1,9 +1,6 @@
 package com.coderpwh.leetcode;
 
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
-
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 /**
@@ -85,6 +82,7 @@ public class RemoveDuplicateNodes {
 
     /***
      * 1.时间复杂度为O(N)
+     * 2.空间复杂度为O(1)
      *
      * 删除重复节点值
      * @param head
