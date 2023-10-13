@@ -13,11 +13,17 @@ public class DoubleTest {
 
     public static void main(String[] args) {
 
-        System.out.println(str);
+     /*   System.out.println(str);
         DoubleTest test = new DoubleTest();
 
         DoubleTest test2 = new DoubleTest("222");
-        System.out.println(test.testString);
+        System.out.println(test.testString);*/
+
+        double b=0.6332;
+        System.out.println(b);
+        Double d = 0.6332;
+        System.out.println(d);
+
 
     }
 
