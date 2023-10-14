@@ -1,6 +1,8 @@
 package com.coderpwh.leetcode;
 
 
+import java.util.HashMap;
+
 /***
  * 136. 只出现一次的数字
  *
@@ -27,9 +29,32 @@ package com.coderpwh.leetcode;
 public class SingleNumberTwo {
     public static void main(String[] args) {
 
+         int[] nums={4,1,2,1,1,2};
+
+
+        SingleNumberTwo number = new SingleNumberTwo();
+        Integer result= number.singleNumber(nums);
+        System.out.println(result);
     }
 
     public int singleNumber(int[] nums) {
+
+        HashMap<Integer,Integer> map = new HashMap();
+
+        for(int i=0;i<nums.length;i++){
+            if(map.containsKey(nums[i])){
+                int count =map.get(nums[i])+1;
+                map.put(nums[i],count);
+            }else{
+                map.put(nums[i],1);
+            }
+        }
+
+        for(Integer key:map.keySet()){
+            if(map.get(key)<=1){
+                return  key;
+            }
+        }
 
 
         return -1;
