@@ -28,15 +28,21 @@ import java.util.HashMap;
  */
 public class SingleNumberTwo {
     public static void main(String[] args) {
-
          int[] nums={4,1,2,1,1,2};
-
 
         SingleNumberTwo number = new SingleNumberTwo();
         Integer result= number.singleNumber(nums);
         System.out.println(result);
     }
 
+
+    /***
+     * 1. 时间复杂度为O(N)
+     * 2. 空间复杂度为O(N)
+     * 3.  hash方式
+     * @param nums
+     * @return
+     */
     public int singleNumber(int[] nums) {
 
         HashMap<Integer,Integer> map = new HashMap();
