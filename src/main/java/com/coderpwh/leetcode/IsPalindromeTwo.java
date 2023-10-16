@@ -55,6 +55,9 @@ public class IsPalindromeTwo {
 
     /***
      * 回文链表
+     * 1. 时间复杂度为O(N)
+     * 2. 空间复杂度为O(N)
+     *
      * @param head
      * @return
      */
