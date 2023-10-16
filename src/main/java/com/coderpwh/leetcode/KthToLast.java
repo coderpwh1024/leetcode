@@ -36,6 +36,11 @@ public class KthToLast {
 
     }
 
+
+    /***
+     * 创建节点
+     * @return
+     */
     public ListNode createNode() {
         ListNode node5 = new ListNode(5);
         ListNode node4 = new ListNode(4, node5);
@@ -46,6 +51,14 @@ public class KthToLast {
         return root;
     }
 
+
+    /***
+     * 1. 时间复杂度为O(N)
+     * 2. 空间复杂度为O(1)
+     * @param head
+     * @param k
+     * @return
+     */
     public int kthToLast(ListNode head, int k) {
 
         List<Integer> list = new ArrayList<>();
