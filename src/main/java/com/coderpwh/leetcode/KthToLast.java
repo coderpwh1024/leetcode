@@ -1,5 +1,8 @@
 package com.coderpwh.leetcode;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * 面试题 02.02. 返回倒数第 k 个节点
  * <p>
@@ -23,6 +26,14 @@ public class KthToLast {
 
     public static void main(String[] args) {
 
+        int k = 2;
+        KthToLast toLast = new KthToLast();
+        // 创建节点
+        ListNode node = toLast.createNode();
+
+        Integer result = toLast.kthToLast(node, k);
+        System.out.println(result);
+
     }
 
     public ListNode createNode() {
@@ -37,7 +48,13 @@ public class KthToLast {
 
     public int kthToLast(ListNode head, int k) {
 
-        return -1;
+        List<Integer> list = new ArrayList<>();
 
+        while (head != null) {
+            list.add(head.val);
+            head = head.next;
+        }
+
+        return list.get(list.size() - k);
     }
 }
