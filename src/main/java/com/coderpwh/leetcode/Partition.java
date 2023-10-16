@@ -74,7 +74,10 @@ public class Partition {
 
 
     /***
-     * 删除
+     *  分割链表
+     *  1. 时间复杂度为O(N)
+     *  2. 空间复杂度为O(1)
+     *  3.
      * @param head
      * @param x
      * @return
