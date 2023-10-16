@@ -1,5 +1,8 @@
 package com.coderpwh.leetcode;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * 面试题 02.06. 回文链表
  * <p>
@@ -26,6 +29,13 @@ public class IsPalindromeTwo {
 
     public static void main(String[] args) {
 
+        IsPalindromeTwo palindrome = new IsPalindromeTwo();
+
+        // 创建节点
+        ListNode root = palindrome.createNode();
+
+        boolean result = palindrome.isPalindrome(root);
+        System.out.println(result);
     }
 
 
@@ -43,9 +53,26 @@ public class IsPalindromeTwo {
     }
 
 
+    /***
+     * 回文链表
+     * @param head
+     * @return
+     */
     public boolean isPalindrome(ListNode head) {
+        List<Integer> list = new ArrayList<>();
 
-        return false;
+        while (head != null) {
+            list.add(head.val);
+            head = head.next;
+        }
+
+        for (int i = 0, j = list.size() - 1; i < j; i++, j--) {
+            if (!list.get(i).equals(list.get(j))) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
 
