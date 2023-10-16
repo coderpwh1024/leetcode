@@ -28,11 +28,30 @@ public class Partition {
 
         // 创建链表
         ListNode head = partition.createNode();
+        partition.print(head);
 
         int x = 3;
 
+        System.out.println();
+        System.out.println("------------------------------------");
+        // 分割链表
         ListNode root = partition.partition(head, x);
+        partition.print(root);
 
+
+    }
+
+
+    /***
+     * 打印链表
+     * @param head
+     */
+    public void print(ListNode head) {
+        ListNode node = head;
+        while (node != null) {
+            System.out.print(node.val + " ");
+            node = node.next;
+        }
 
     }
 
