@@ -32,13 +32,20 @@ public class SumOfMultiples {
 
         SumOfMultiples sum = new SumOfMultiples();
 
-        int n = 7;
+        int n = 9;
 
         Integer result = sum.sumOfMultiples(n);
         System.out.println(result);
 
     }
 
+
+    /***
+     * 1. 时间付复杂度为O(N)
+     * 2. 空间复杂度为O(1)
+     * @param n
+     * @return
+     */
     public int sumOfMultiples(int n) {
 
         Integer sum = 0;
