@@ -38,6 +38,12 @@ public class IsFlipedString {
     }
 
 
+    /***
+     * 1. s2拼接2次，包含s1则返回
+     * @param s1
+     * @param s2
+     * @return
+     */
     public boolean isFlipedString(String s1, String s2) {
 
         if (s1.length() != s2.length()) {
