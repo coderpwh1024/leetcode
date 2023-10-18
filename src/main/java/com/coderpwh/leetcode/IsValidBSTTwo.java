@@ -59,6 +59,16 @@ public class IsValidBSTTwo {
         return root;
     }
 
+
+    /***
+     *
+     * 1. 时间复杂度为O(N)
+     * 2. 空间复杂度为O(N)
+     * 3. 二叉树采用中序遍历方式，则是从小到大排序
+     *
+     * @param root
+     * @return
+     */
     public boolean isValidBST(TreeNode root) {
 
         List<Integer> list = new ArrayList<>();
@@ -66,7 +76,7 @@ public class IsValidBSTTwo {
         mid(root, list);
 
         for (int i = 0; i < list.size() - 1; i++) {
-            if (list.get(i) > list.get(i + 1)) {
+            if (list.get(i) >= list.get(i + 1)) {
                 return false;
             }
         }
