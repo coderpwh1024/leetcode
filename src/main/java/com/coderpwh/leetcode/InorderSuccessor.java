@@ -1,5 +1,9 @@
 package com.coderpwh.leetcode;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
+import java.util.LinkedList;
+
 /**
  * 设计一个算法，找出二叉搜索树中指定节点的“下一个”节点（也即中序后继）。
  * <p>
@@ -41,9 +45,12 @@ public class InorderSuccessor {
 
         TreeNode root = order.createNode();
         TreeNode childNode = order.getChildNode(child);
+        System.out.println(childNode.val);
+        System.out.println(root.val);
 
         TreeNode node = order.inorderSuccessor(root, childNode);
         System.out.println(node.val);
+
     }
 
 
@@ -72,7 +79,28 @@ public class InorderSuccessor {
     }
 
     public TreeNode inorderSuccessor(TreeNode root, TreeNode p) {
+
+        Deque<TreeNode> stack = new ArrayDeque<>();
+
+        TreeNode prev = null;
+        TreeNode curr = root;
+
+        while (!stack.isEmpty() || curr != null) {
+            while (curr != null) {
+                stack.push(curr);
+                curr = curr.left;
+            }
+
+            curr = stack.pop();
+
+            if (prev == p) {
+                return curr;
+            }
+            prev = curr;
+            curr = curr.right;
+        }
         return null;
     }
+
 
 }
