@@ -36,7 +36,11 @@ public class SwapNumbers {
     }
 
 
-
+    /***
+     *  启用临时变量
+     * @param numbers
+     * @return
+     */
     public int[] swapNumbers(int[] numbers) {
 
         int temp = numbers[0];
@@ -45,8 +49,13 @@ public class SwapNumbers {
         return numbers;
     }
 
-    public int[] swapNumbersByAdd(int[] numbers) {
 
+    /***
+     *  未启用临时变量
+     * @param numbers
+     * @return
+     */
+    public int[] swapNumbersByAdd(int[] numbers) {
         // 10 -1=9;
         numbers[1] = numbers[1] - numbers[0];
         // 9+1=10
