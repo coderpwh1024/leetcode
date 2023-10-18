@@ -1,5 +1,7 @@
 package com.coderpwh.leetcode;
 
+import sun.reflect.generics.tree.Tree;
+
 /**
  * 面试题 04.04. 检查平衡性
  * <p>
@@ -32,11 +34,42 @@ public class IsBalancedTwo {
 
     public static void main(String[] args) {
 
+        IsBalancedTwo balanced = new IsBalancedTwo();
+
+        // 创建二叉树
+        TreeNode node = balanced.createNode();
+
+        Boolean result = balanced.isBalanced(node);
+        System.out.println(result);
+
+    }
+
+
+    /***
+     * 创建二叉树
+     * @return
+     */
+    public TreeNode createNode() {
+
+        TreeNode node15 = new TreeNode("15");
+
+        TreeNode node9 = new TreeNode("9", node15, null);
+
+        TreeNode node7 = new TreeNode("7");
+
+        TreeNode node20 = new TreeNode("20", null, node7);
+
+        TreeNode root = new TreeNode("3", node9, node20);
+
+        return root;
     }
 
 
     public boolean isBalanced(TreeNode root) {
+
+
         return false;
     }
+
 
 }
