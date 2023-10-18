@@ -39,6 +39,7 @@ public class IsBalancedTwo {
         // 创建二叉树
         TreeNode node = balanced.createNode();
 
+        // 平衡数判断
         Boolean result = balanced.isBalanced(node);
         System.out.println(result);
 
@@ -65,6 +66,14 @@ public class IsBalancedTwo {
     }
 
 
+    /***
+     * 是否是平衡树
+     *
+     * 1. 时间复杂度为O(N)
+     * 2. 空间复杂度为O(1)
+     * @param root
+     * @return
+     */
     public boolean isBalanced(TreeNode root) {
         if (root == null) {
             return true;
@@ -73,6 +82,12 @@ public class IsBalancedTwo {
         }
     }
 
+
+    /***
+     * 获取其最大深度
+     * @param node
+     * @return
+     */
     public int getMaxDepth(TreeNode node) {
         if (node == null) {
             return 0;
