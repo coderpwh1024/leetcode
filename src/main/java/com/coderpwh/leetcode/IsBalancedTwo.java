@@ -66,9 +66,20 @@ public class IsBalancedTwo {
 
 
     public boolean isBalanced(TreeNode root) {
+        if (root == null) {
+            return true;
+        } else {
+            return Math.abs(getMaxDepth(root.left) - getMaxDepth(root.right)) <= 1 && isBalanced(root.left) && isBalanced(root.right);
+        }
+    }
 
+    public int getMaxDepth(TreeNode node) {
+        if (node == null) {
+            return 0;
+        } else {
+            return Math.max(getMaxDepth(node.left), getMaxDepth(node.right)) + 1;
+        }
 
-        return false;
     }
 
 
