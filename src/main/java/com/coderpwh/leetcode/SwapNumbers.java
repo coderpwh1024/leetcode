@@ -1,4 +1,4 @@
-package com.coderpwh.juc;
+package com.coderpwh.leetcode;
 
 /**
  * 面试题 16.01. 交换数字
@@ -27,15 +27,35 @@ public class SwapNumbers {
 
         SwapNumbers numbers = new SwapNumbers();
 
-        int[] arr = {1, 2};
-        int[] result = numbers.swapNumbers(arr);
+        int[] arr = {1, 10};
+        int[] result = numbers.swapNumbersByAdd(arr);
 
         for (int i = 0; i < result.length; i++) {
-            System.out.print(result[i]);
+            System.out.print(result[i] + " ");
         }
     }
 
+
+
     public int[] swapNumbers(int[] numbers) {
 
+        int temp = numbers[0];
+        numbers[0] = numbers[1];
+        numbers[1] = temp;
+        return numbers;
     }
+
+    public int[] swapNumbersByAdd(int[] numbers) {
+
+        // 10 -1=9;
+        numbers[1] = numbers[1] - numbers[0];
+        // 9+1=10
+        numbers[0] = numbers[1] + numbers[0];
+
+        numbers[1] = numbers[0] - numbers[1];
+
+        return numbers;
+    }
+
+
 }
