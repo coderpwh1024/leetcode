@@ -78,6 +78,17 @@ public class InorderSuccessor {
         return root;
     }
 
+
+    /***
+     *  1. 时间复杂度为O(N)
+     *  2. 空间复杂度为O(1)
+     *  3. 采用队列与循环方式遍历二叉树
+     *
+     *
+     * @param root
+     * @param p
+     * @return
+     */
     public TreeNode inorderSuccessor(TreeNode root, TreeNode p) {
 
         Deque<TreeNode> stack = new ArrayDeque<>();
