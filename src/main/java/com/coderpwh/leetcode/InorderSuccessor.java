@@ -35,6 +35,40 @@ public class InorderSuccessor {
 
     public static void main(String[] args) {
 
+        InorderSuccessor order = new InorderSuccessor();
+
+        Integer child = 1;
+
+        TreeNode root = order.createNode();
+        TreeNode childNode = order.getChildNode(child);
+
+        TreeNode node = order.inorderSuccessor(root, childNode);
+        System.out.println(node.val);
+    }
+
+
+    /***
+     * 获取其子节点
+     * @param child
+     * @return
+     */
+    public TreeNode getChildNode(Integer child) {
+        TreeNode node = new TreeNode(child + "");
+        return node;
+    }
+
+
+    /***
+     * 创建节点
+     * @return
+     */
+    public TreeNode createNode() {
+        TreeNode node3 = new TreeNode("3");
+        TreeNode node = new TreeNode("1");
+
+        TreeNode root = new TreeNode("2", node, node3);
+
+        return root;
     }
 
     public TreeNode inorderSuccessor(TreeNode root, TreeNode p) {
