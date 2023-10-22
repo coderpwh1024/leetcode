@@ -36,13 +36,21 @@ public class FindString {
 
     }
 
-    public int findString(String[] words, String s) {
 
+    /***
+     * 1. 时间复杂度为O(N)
+     * 2. 空间复杂度为O(1)
+     *
+     *
+     * @param words
+     * @param s
+     * @return
+     */
+    public int findString(String[] words, String s) {
 
         if(words==null||words.length<=0){
             return  -1;
         }
-
         for(int i=0;i<words.length;i++){
             if(s.equals(words[i])){
                 return  i;
