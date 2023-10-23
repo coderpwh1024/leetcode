@@ -16,6 +16,11 @@ public class WggleSort {
 
     public static void main(String[] args) {
 
+        int[] arr = {5, 3, 1, 2, 3};
+
+        WggleSort wggleSort = new WggleSort();
+        wggleSort.wiggleSort(arr);
+
     }
 
     public void wiggleSort(int[] nums) {
