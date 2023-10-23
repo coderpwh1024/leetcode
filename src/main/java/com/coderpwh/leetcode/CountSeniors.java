@@ -38,11 +38,25 @@ public class CountSeniors {
 
     public static void main(String[] args) {
 
+        String arr[] = {"7868190130M7522", "5303914400F9211", "9273338290F4010"};
+
+        CountSeniors seniors = new CountSeniors();
+
+        int result = seniors.countSeniors(arr);
+        System.out.println(result);
+
     }
 
     public int countSeniors(String[] details) {
 
-
-        return -1;
+        int count = 0;
+        for (int i = 0; i < details.length; i++) {
+            String str = details[i].substring(11, 13);
+            System.out.println(str);
+            if (Integer.valueOf(str) > 60) {
+                count += 1;
+            }
+        }
+        return count;
     }
 }
