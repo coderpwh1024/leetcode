@@ -22,11 +22,39 @@ public class Multiply {
 
     public static void main(String[] args) {
 
+//        int A = 3;
+//        int B = 4;
+
+
+        int A = 4;
+        int B = 6;
+
+        Multiply multiply = new Multiply();
+        int result = multiply.multiply(A, B);
+        System.out.println(result);
+
     }
 
+
+    /***
+     * 1. 时间复杂度为O(N)
+     * 2. 空间复杂度为O(1)
+     * 3. 递归方式
+     *
+     * @param A
+     * @param B
+     * @return
+     */
     public int multiply(int A, int B) {
 
-        return -1;
+        int max = Math.max(A, B);
+        int min = Math.min(A, B);
+
+        if (A == 1 || B == 1) {
+            return A + B - 1;
+        } else {
+            return max + multiply(max, min - 1);
+        }
     }
 
 
