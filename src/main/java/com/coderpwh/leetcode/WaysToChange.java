@@ -37,7 +37,7 @@ public class WaysToChange {
 
 
     public static void main(String[] args) {
-        int n =11;
+        int n = 10;
 
         WaysToChange change = new WaysToChange();
         int result = change.waysToChange(n);
@@ -45,6 +45,15 @@ public class WaysToChange {
 
     }
 
+
+    /***
+     *  1. 时间复杂度为O(N^2)
+     *  2. 空间复杂度为O(N)
+     *  3. 动态规划
+     *
+     * @param n
+     * @return
+     */
     public int waysToChange(int n) {
         int[] nums = {25, 10, 5, 1};
         long[] dp = new long[n + 1];
