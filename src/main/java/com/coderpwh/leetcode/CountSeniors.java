@@ -47,8 +47,16 @@ public class CountSeniors {
 
     }
 
-    public int countSeniors(String[] details) {
 
+    /***
+     *  1. 时间复杂度为O(N)
+     *  2. 空间复杂度为O(1)
+     *  3. 字符串截取
+     *
+     * @param details
+     * @return
+     */
+    public int countSeniors(String[] details) {
         int count = 0;
         for (int i = 0; i < details.length; i++) {
             String str = details[i].substring(11, 13);
