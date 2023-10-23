@@ -22,12 +22,8 @@ public class Multiply {
 
     public static void main(String[] args) {
 
-//        int A = 3;
-//        int B = 4;
-
-
-        int A = 4;
-        int B = 6;
+        int A = 1;
+        int B = 10;
 
         Multiply multiply = new Multiply();
         int result = multiply.multiply(A, B);
