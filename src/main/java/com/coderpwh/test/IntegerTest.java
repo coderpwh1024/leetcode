@@ -12,5 +12,11 @@ public class IntegerTest {
 //        System.out.println(a==b);
 
         System.out.println(a.equals(b));
+
+
+        Long count=1000001L;
+
+        System.out.println(count%200);
+
     }
 }
