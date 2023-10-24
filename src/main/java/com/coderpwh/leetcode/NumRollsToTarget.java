@@ -37,6 +37,15 @@ public class NumRollsToTarget {
 
     public static void main(String[] args) {
 
+        int n = 30;
+        int k = 30;
+        int target = 500;
+
+        NumRollsToTarget rolls = new NumRollsToTarget();
+        int result = rolls.numRollsToTarget(n, k, target);
+        System.out.println(result);
+
+
     }
 
 
