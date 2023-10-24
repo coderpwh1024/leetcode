@@ -49,6 +49,15 @@ public class NumRollsToTarget {
     }
 
 
+    /***
+     *  1. 时间复杂度为O(n*target*k)
+     *  2. 空间复杂度为O(n*target)
+     *
+     * @param n
+     * @param k
+     * @param target
+     * @return
+     */
     public int numRollsToTarget(int n, int k, int target) {
 
         int MOD = 1000000007;
