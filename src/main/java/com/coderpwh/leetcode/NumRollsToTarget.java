@@ -1,5 +1,7 @@
 package com.coderpwh.leetcode;
 
+import com.sun.org.apache.bcel.internal.generic.RET;
+
 /**
  * 1155. 掷骰子等于目标和的方法数
  * 这里有 n 个一样的骰子，每个骰子上都有 k 个面，分别标号为 1 到 k 。
@@ -40,7 +42,21 @@ public class NumRollsToTarget {
 
     public int numRollsToTarget(int n, int k, int target) {
 
-        return -1;
+        int MOD = 1000000007;
+
+        int[][] f = new int[n + 1][target + 1];
+        f[0][0] = 1;
+
+        for (int i = 1; i <= n; i++) {
+            for (int j = 0; j <= target; j++) {
+                for (int x = 1; x <= k; x++) {
+                    if (j - x >= 0) {
+                        f[i][j] = (f[i][j] + f[i - 1][j - x]) % MOD;
+                    }
+                }
+            }
+        }
+        return f[n][target];
     }
 
 }
