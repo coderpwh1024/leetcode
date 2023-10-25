@@ -31,13 +31,18 @@ public class SearchArr {
         int target = 5;
 
         SearchArr search = new SearchArr();
-        search.search(arr, target)
+        int result = search.search(arr, target);
+        System.out.println(result);
 
     }
 
     public int search(int[] arr, int target) {
 
-
+        for (int i = 0; i < arr.length; i++) {
+            if (target == arr[i]) {
+                return i;
+            }
+        }
         return -1;
     }
 }
