@@ -36,6 +36,15 @@ public class SearchArr {
 
     }
 
+
+    /***
+     *  1. 时间复杂度为O(N)
+     *  2. 空间复杂度为O(1)
+     *
+     * @param arr
+     * @param target
+     * @return
+     */
     public int search(int[] arr, int target) {
 
         for (int i = 0; i < arr.length; i++) {
