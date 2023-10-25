@@ -41,6 +41,13 @@ public class SearchMatrixTwo {
     }
 
 
+    /***
+     *  1. 时间复杂度为O(N^2)
+     *  2. 空间复杂度为O(1)
+     * @param matrix
+     * @param target
+     * @return
+     */
     public boolean searchMatrix(int[][] matrix, int target) {
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
