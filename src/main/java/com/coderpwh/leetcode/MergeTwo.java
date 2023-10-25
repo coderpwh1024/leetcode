@@ -39,6 +39,15 @@ public class MergeTwo {
     }
 
 
+    /***
+     *  1. 时间复杂度为O(N)
+     *  2. 空间复杂度为O(1)
+     *
+     * @param A
+     * @param m
+     * @param B
+     * @param n
+     */
     public void merge(int[] A, int m, int[] B, int n) {
 
         for (int i = 0; i != n; i++) {
@@ -46,9 +55,6 @@ public class MergeTwo {
         }
         Arrays.sort(A);
 
-        for (int j = 0; j < A.length; j++) {
-            System.out.print(A[j] + " ");
-        }
 
     }
 }
