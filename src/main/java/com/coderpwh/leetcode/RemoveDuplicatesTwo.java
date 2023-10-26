@@ -24,24 +24,31 @@ public class RemoveDuplicatesTwo {
 
     public static void main(String[] args) {
 
-        int arr[] = {1, 1, 2};
+//        int arr[] = {1, 1, 2};
+        int arr[] = {0, 0, 1, 1, 1, 2, 2, 3, 3, 4};
 
         RemoveDuplicatesTwo removeDuplicatesTwo = new RemoveDuplicatesTwo();
         Integer result = removeDuplicatesTwo.removeDuplicates(arr);
         System.out.println(result);
     }
 
-    public int removeDuplicates(int[] nums) {
 
+    /***
+     *  1. 时间复杂度为O(N)
+     *  2. 空间复杂度为O(1)
+     *  3. 双指针
+     *
+     * @param nums
+     * @return
+     */
+    public int removeDuplicates(int[] nums) {
         if (nums == null || nums.length <= 0) {
             return 0;
         }
-
         int p = 0;
         int q = 1;
 
         while (q < nums.length) {
-
             if (nums[p] != nums[q]) {
                 nums[p + 1] = nums[q];
                 p++;
