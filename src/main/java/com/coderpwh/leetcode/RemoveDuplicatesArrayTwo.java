@@ -56,12 +56,29 @@ public class RemoveDuplicatesArrayTwo {
         int nums[] = {0, 0, 1, 1, 1, 1, 2, 3, 3};
 
         RemoveDuplicatesArrayTwo removeDuplicatesArrayTwo = new RemoveDuplicatesArrayTwo();
-        removeDuplicatesArrayTwo.removeDuplicates(nums);
+        int result = removeDuplicatesArrayTwo.removeDuplicates(nums);
+        System.out.println(result);
     }
 
     public int removeDuplicates(int[] nums) {
 
-        return -1;
+        int n = nums.length;
+
+        if (n <= 2) {
+            return n;
+        }
+        int fast = 2;
+        int slow = 2;
+
+        while (fast < n) {
+
+            if (nums[slow - 2] != nums[fast]) {
+                nums[slow] = nums[fast];
+                slow++;
+            }
+            fast++;
+        }
+        return slow;
     }
 
 }
