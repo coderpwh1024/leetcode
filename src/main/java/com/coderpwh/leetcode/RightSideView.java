@@ -1,5 +1,6 @@
 package com.coderpwh.leetcode;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -34,6 +35,13 @@ public class RightSideView {
         // 创建节点
         TreeNode root = view.createNode();
 
+        List<Integer> list = view.rightSideView(root);
+        if (list != null && list.size() > 0) {
+            for (Integer a : list) {
+                System.out.print(a + " ");
+            }
+        }
+
     }
 
 
@@ -54,9 +62,28 @@ public class RightSideView {
     }
 
 
+    /***
+     * 1. test code 不通过
+     *
+     * @param root
+     * @return
+     */
     public List<Integer> rightSideView(TreeNode root) {
 
-        return null;
+        List<Integer> list = new ArrayList<>();
+
+        if (root != null) {
+            pre(root, list);
+        }
+        return list;
+    }
+
+    public void pre(TreeNode root, List<Integer> list) {
+
+        if (root != null) {
+            list.add(Integer.valueOf(root.val));
+            pre(root.right, list);
+        }
     }
 
 
