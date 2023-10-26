@@ -42,6 +42,14 @@ public class ReverseWords {
         System.out.println(result);
     }
 
+
+    /***
+     * 1. 时间复杂度为O(N)
+     * 2. 空间复杂度为O(1)
+     *
+     * @param s
+     * @return
+     */
     public String reverseWords(String s) {
         if (s == null || s.length() <= 0) {
             return null;
