@@ -1,7 +1,6 @@
 package com.coderpwh.leetcode;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 /**
  * 199. 二叉树的右视图
@@ -35,7 +34,10 @@ public class RightSideView {
         // 创建节点
         TreeNode root = view.createNode();
 
+//        List<Integer> list = view.rightSideView(root);
+
         List<Integer> list = view.rightSideView(root);
+
         if (list != null && list.size() > 0) {
             for (Integer a : list) {
                 System.out.print(a + " ");
@@ -59,6 +61,44 @@ public class RightSideView {
 
         TreeNode root = new TreeNode("1", node2, node3);
         return root;
+    }
+
+
+    public List<Integer> testRightSideView(TreeNode root) {
+
+        Map<Integer, Integer> rightmostValueAtDepth = new HashMap<>();
+        int max_depth = -1;
+
+        Deque<TreeNode> nodeStack = new LinkedList<TreeNode>();
+        Deque<Integer> depthStack = new LinkedList<Integer>();
+        nodeStack.push(root);
+        depthStack.push(0);
+
+        while (!nodeStack.isEmpty()) {
+            TreeNode node = nodeStack.pop();
+            int depth = depthStack.pop();
+
+            if (node != null) {
+                max_depth = Math.max(max_depth, depth);
+
+                if (!rightmostValueAtDepth.containsKey(depth)) {
+                    rightmostValueAtDepth.put(depth, Integer.valueOf(node.val));
+                }
+
+                nodeStack.push(node.left);
+                nodeStack.push(node.right);
+                depthStack.push(depth + 1);
+                depthStack.push(depth + 1);
+            }
+
+        }
+
+        List<Integer> rightView = new ArrayList<>();
+
+        for (int depth = 0; depth < max_depth; depth++) {
+            rightView.add(rightmostValueAtDepth.get(depth));
+        }
+        return rightView;
     }
 
 
