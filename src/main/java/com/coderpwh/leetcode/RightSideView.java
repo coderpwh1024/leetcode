@@ -30,11 +30,34 @@ public class RightSideView {
 
     public static void main(String[] args) {
 
+        RightSideView view = new RightSideView();
+        // 创建节点
+        TreeNode root = view.createNode();
+
     }
+
+
+    /***
+     *  创建根节点
+     * @return
+     */
+    public TreeNode createNode() {
+
+        TreeNode node5 = new TreeNode("5");
+        TreeNode node2 = new TreeNode("2", null, node5);
+
+        TreeNode node4 = new TreeNode("4");
+        TreeNode node3 = new TreeNode("3", null, node4);
+
+        TreeNode root = new TreeNode("1", node2, node3);
+        return root;
+    }
+
 
     public List<Integer> rightSideView(TreeNode root) {
 
-        return  null;
+        return null;
     }
+
 
 }
