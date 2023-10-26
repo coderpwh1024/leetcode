@@ -35,13 +35,29 @@ public class ReverseWords {
 
     public static void main(String[] args) {
 
-        String str = "";
+        String str = "a good   example";
 
         ReverseWords reverseWords = new ReverseWords();
-        reverseWords.reverseWords(str);
+        String result = reverseWords.reverseWords(str);
+        System.out.println(result);
     }
 
     public String reverseWords(String s) {
+        if (s == null || s.length() <= 0) {
+            return null;
+        }
 
+        StringBuilder builder = new StringBuilder();
+        s = s.trim();
+        String str[] = s.split("\\s+");
+        for (int j = str.length - 1; j >= 0; j--) {
+            if (j != 0) {
+                builder.append(str[j]).append(" ");
+            } else {
+                builder.append(str[j]);
+            }
+        }
+
+        return builder.toString();
     }
 }
