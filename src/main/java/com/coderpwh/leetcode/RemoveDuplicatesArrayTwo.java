@@ -60,6 +60,15 @@ public class RemoveDuplicatesArrayTwo {
         System.out.println(result);
     }
 
+
+    /***
+     * 1. 时间复杂度为O(N)
+     * 2. 空间复杂度为O(1)
+     * 3. 双指针
+     *
+     * @param nums
+     * @return
+     */
     public int removeDuplicates(int[] nums) {
 
         int n = nums.length;
