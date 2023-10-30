@@ -62,21 +62,24 @@ public class SearchInsert {
         return nums.length;
     }
 
+
+
     public int searchInsertByTwo(int[] nums, int target) {
+        int n = nums.length;
+        int left = 0;
+        int right = n - 1;
+        int ans = n;
 
-        int i = 0;
-        int j = nums.length - 1;
+        while (left <= right) {
+            int mid = (right - left) / 2 + left;
 
-        while (i < j) {
-            int mid = (i + j) / 2;
-
-            if (nums[mid] >= target) {
-                return mid;
-            }else{
-                i++;
+            if (target <= nums[mid]) {
+                right = mid - 1;
+            } else {
+                left = mid + 1;
             }
         }
-        return nums.length;
+        return ans;
     }
 
 }
