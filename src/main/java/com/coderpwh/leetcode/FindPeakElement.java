@@ -46,8 +46,15 @@ public class FindPeakElement {
         System.out.println(result);
     }
 
-    public int findPeakElement(int[] nums) {
 
+    /***
+     *  1. 时间复杂度为O(logN)
+     *  2. 空间复杂度为O(1)
+     *
+     * @param nums
+     * @return
+     */
+    public int findPeakElement(int[] nums) {
         int i = 0;
         int j = nums.length - 1;
 
@@ -58,8 +65,10 @@ public class FindPeakElement {
             } else {
                 j = mid;
             }
-
         }
         return i;
     }
+
+
+
 }
