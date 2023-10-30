@@ -31,18 +31,49 @@ public class SearchInsert {
 
 
         int[] nums = {1, 3, 5, 6};
-        int target = 5;
+        int target = 7;
 
         SearchInsert search = new SearchInsert();
         int result = search.searchInsert(nums, target);
         System.out.println(result);
+        System.out.println("-----------------------------------");
+        int count = search.searchInsertByTwo(nums, target);
+        System.out.println(count);
+
+
     }
 
+
+    /***
+     * 1. 时间复杂度为O(N)
+     * 2. 空间复杂度为O(1)
+     *
+     * @param nums
+     * @param target
+     * @return
+     */
     public int searchInsert(int[] nums, int target) {
 
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] >= target) {
                 return i;
+            }
+        }
+        return nums.length;
+    }
+
+    public int searchInsertByTwo(int[] nums, int target) {
+
+        int i = 0;
+        int j = nums.length - 1;
+
+        while (i < j) {
+            int mid = (i + j) / 2;
+
+            if (nums[mid] >= target) {
+                return mid;
+            }else{
+                i++;
             }
         }
         return nums.length;
