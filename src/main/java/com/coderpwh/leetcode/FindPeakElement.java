@@ -38,8 +38,8 @@ public class FindPeakElement {
 
     public static void main(String[] args) {
 
-//        int[] arr = {1, 2, 1, 3, 5, 6, 4};
-        int[] arr = {1,2,3,1};
+        int[] arr = {1, 2, 1, 3, 5, 6, 4};
+//        int[] arr = {1, 2, 3, 1};
 
         FindPeakElement find = new FindPeakElement();
         Integer result = find.findPeakElement(arr);
@@ -51,23 +51,15 @@ public class FindPeakElement {
         int i = 0;
         int j = nums.length - 1;
 
-        while (i <= j) {
-
+        while (i < j) {
             int mid = (i + j) / 2;
-
-            if (nums[i] != nums[i + 1]) {
-
-                if (nums[i] < nums[mid]) {
-                    i++;
-                } else if (nums[i] > nums[mid]) {
-                    j--;
-
-                } else {
-                    return mid;
-                }
+            if (nums[mid] < nums[mid + 1]) {
+                i = mid + 1;
+            } else {
+                j = mid;
             }
 
         }
-        return -1;
+        return i;
     }
 }
