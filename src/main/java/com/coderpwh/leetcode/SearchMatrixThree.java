@@ -74,7 +74,9 @@ public class SearchMatrixThree {
 
 
     /**
-     * 二分查找
+     *  1. 时间复杂度为O(logN)
+     *  2. 空间复杂度为O(1)
+     *  3. 二分化查询
      *
      * @param matrix
      * @param target
