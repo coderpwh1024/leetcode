@@ -43,9 +43,23 @@ public class SearchMatrixThree {
         Boolean flag = three.searchMatrix(matrix, target);
         System.out.println(flag);
 
+
+        System.out.println("-------------------------------------------------");
+        Boolean result = three.searchMatrixByTwo(matrix, target);
+        System.out.println(result);
+
+
     }
 
 
+    /***
+     *  1. 时间复杂度为O(N^2)
+     *  2. 空间复杂度为O(1)
+     *
+     * @param matrix
+     * @param target
+     * @return
+     */
     public boolean searchMatrix(int[][] matrix, int target) {
 
         for (int i = 0; i < matrix.length; i++) {
@@ -57,4 +71,36 @@ public class SearchMatrixThree {
         }
         return false;
     }
+
+
+    /**
+     * 二分查找
+     *
+     * @param matrix
+     * @param target
+     * @return
+     */
+    public boolean searchMatrixByTwo(int[][] matrix, int target) {
+
+        int m = matrix.length;
+        int n = matrix[0].length;
+        int low = 0;
+        int high = m * n - 1;
+
+        while (low <= high) {
+            int mid = (high - low) / 2 + low;
+
+            int x = matrix[mid / n][mid % n];
+
+            if (x < target) {
+                low = mid + 1;
+            } else if (x > target) {
+                high = mid - 1;
+            } else {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }
