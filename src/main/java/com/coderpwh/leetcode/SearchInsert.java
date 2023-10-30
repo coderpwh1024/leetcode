@@ -34,11 +34,18 @@ public class SearchInsert {
         int target = 5;
 
         SearchInsert search = new SearchInsert();
-        search.searchInsert(nums, target);
+        int result = search.searchInsert(nums, target);
+        System.out.println(result);
     }
 
     public int searchInsert(int[] nums, int target) {
-        return -1;
+
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] >= target) {
+                return i;
+            }
+        }
+        return nums.length;
     }
 
 }
