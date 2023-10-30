@@ -62,8 +62,14 @@ public class SearchInsert {
         return nums.length;
     }
 
-
-
+    /***
+     *  1. 时间复杂度为O(logN)
+     *  2. 空间复杂度为O(1)
+     *
+     * @param nums
+     * @param target
+     * @return
+     */
     public int searchInsertByTwo(int[] nums, int target) {
         int n = nums.length;
         int left = 0;
@@ -74,6 +80,7 @@ public class SearchInsert {
             int mid = (right - left) / 2 + left;
 
             if (target <= nums[mid]) {
+                ans = mid;
                 right = mid - 1;
             } else {
                 left = mid + 1;
