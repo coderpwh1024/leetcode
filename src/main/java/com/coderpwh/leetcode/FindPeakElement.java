@@ -44,6 +44,12 @@ public class FindPeakElement {
         FindPeakElement find = new FindPeakElement();
         Integer result = find.findPeakElement(arr);
         System.out.println(result);
+
+        System.out.println("-----------------------------------");
+
+        Integer count = find.findPeakElementByTwo(arr);
+        System.out.println(count);
+
     }
 
 
@@ -69,6 +75,25 @@ public class FindPeakElement {
         return i;
     }
 
+
+    /***
+     *  1. 时间复杂度为O(N)
+     *  2. 空间复杂度为O(1)
+     *
+     *
+     * @param nums
+     * @return
+     */
+    public int findPeakElementByTwo(int nums[]) {
+        int index = 0;
+
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] > nums[index]) {
+                index = i;
+            }
+        }
+        return index;
+    }
 
 
 }
