@@ -42,11 +42,11 @@ public class SearchRange {
 
     public static void main(String[] args) {
 
-//        int[] nums = {5, 7, 7, 8, 8, 10};
-//        int target = 8;
+        int[] nums = {5, 7, 7, 8, 8, 10};
+        int target = 8;
 
-        int[] nums = {1};
-        int target = 1;
+//        int[] nums = {1};
+//        int target = 1;
 
         SearchRange searchRange = new SearchRange();
         int[] arr = searchRange.searchRange(nums, target);
@@ -69,23 +69,32 @@ public class SearchRange {
      */
     public int[] searchRange(int[] nums, int target) {
 
-        List<Integer> list = new ArrayList<>();
+        int leftIdx = binarySearch(nums, target, true);
+        int rightIdx = binarySearch(nums, target, false) - 1;
 
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] == target) {
-                list.add(i);
-            }
+        if (leftIdx <= rightIdx && rightIdx < nums.length && nums[leftIdx] == target && nums[rightIdx] == target) {
+            return new int[]{leftIdx, rightIdx};
         }
-
-        if (list != null && list.size() > 0) {
-            int arr[] = new int[list.size()];
-            for (int i = 0; i < list.size(); i++) {
-                arr[i] = list.get(i);
-            }
-            return arr;
-        }
-
         return new int[]{-1, -1};
+    }
+
+
+    public int binarySearch(int[] nums, int target, boolean lower) {
+
+        int left = 0;
+        int right = nums.length - 1;
+        int ans = nums.length;
+
+        while (left <= right) {
+            int mid = (left + right) / 2;
+            if (nums[mid] > target || (lower && nums[mid] >= target)) {
+                right = mid - 1;
+                ans = mid;
+            } else {
+                left = mid + 1;
+            }
+        }
+        return ans;
     }
 
 
