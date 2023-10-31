@@ -79,8 +79,17 @@ public class SearchRange {
     }
 
 
+    /***
+     *  1. 时间复杂度为O(logN)
+     *  2. 空间复杂度为O(1)
+     *  3. 二分查找
+     *
+     * @param nums
+     * @param target
+     * @param lower
+     * @return
+     */
     public int binarySearch(int[] nums, int target, boolean lower) {
-
         int left = 0;
         int right = nums.length - 1;
         int ans = nums.length;
