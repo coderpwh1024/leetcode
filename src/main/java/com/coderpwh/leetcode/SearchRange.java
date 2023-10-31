@@ -1,5 +1,8 @@
 package com.coderpwh.leetcode;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * 34. 在排序数组中查找元素的第一个和最后一个位置
  * <p>
@@ -39,8 +42,11 @@ public class SearchRange {
 
     public static void main(String[] args) {
 
-        int[] nums = {5, 7, 7, 8, 8, 10};
-        int target = 8;
+//        int[] nums = {5, 7, 7, 8, 8, 10};
+//        int target = 8;
+
+        int[] nums = {1};
+        int target = 1;
 
         SearchRange searchRange = new SearchRange();
         int[] arr = searchRange.searchRange(nums, target);
@@ -51,30 +57,35 @@ public class SearchRange {
     }
 
 
+    /***
+     * 1. 时间复杂度为O(N)
+     * 2. 空间复杂度为O(1)
+     *
+     *
+     *
+     * @param nums
+     * @param target
+     * @return
+     */
     public int[] searchRange(int[] nums, int target) {
 
-        int i = 0;
-        int j = nums.length - 1;
+        List<Integer> list = new ArrayList<>();
 
-        int arr[] = {-1, -1};
-
-        while (i <= j) {
-
+        for (int i = 0; i < nums.length; i++) {
             if (nums[i] == target) {
-                arr[0] = i;
-
-            } else {
-                i++;
-            }
-            if (nums[j] == target) {
-                arr[1] = j;
-            } else {
-                j--;
+                list.add(i);
             }
         }
 
+        if (list != null && list.size() > 0) {
+            int arr[] = new int[list.size()];
+            for (int i = 0; i < list.size(); i++) {
+                arr[i] = list.get(i);
+            }
+            return arr;
+        }
 
-        return arr;
+        return new int[]{-1, -1};
     }
 
 
