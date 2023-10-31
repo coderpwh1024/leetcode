@@ -39,11 +39,42 @@ public class SearchRange {
 
     public static void main(String[] args) {
 
+        int[] nums = {5, 7, 7, 8, 8, 10};
+        int target = 8;
+
+        SearchRange searchRange = new SearchRange();
+        int[] arr = searchRange.searchRange(nums, target);
+
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
     }
+
 
     public int[] searchRange(int[] nums, int target) {
 
-        return null;
+        int i = 0;
+        int j = nums.length - 1;
+
+        int arr[] = {-1, -1};
+
+        while (i <= j) {
+
+            if (nums[i] == target) {
+                arr[0] = i;
+
+            } else {
+                i++;
+            }
+            if (nums[j] == target) {
+                arr[1] = j;
+            } else {
+                j--;
+            }
+        }
+
+
+        return arr;
     }
 
 
