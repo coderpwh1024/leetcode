@@ -6,7 +6,7 @@ package com.coderpwh.test;
  */
 public class IntegerTest {
     public static void main(String[] args) {
-        Integer a=100000;
+       /* Integer a=100000;
         Integer b=100000;
 
 //        System.out.println(a==b);
@@ -16,7 +16,12 @@ public class IntegerTest {
 
         Long count=1000001L;
 
-        System.out.println(count%200);
+        System.out.println(count%200);*/
+
+       /* Integer a = 200;
+        Integer b = 200;
+        System.out.println(a==b);*/
+
 
     }
 }
