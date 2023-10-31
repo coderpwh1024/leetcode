@@ -22,11 +22,24 @@ public class MaxSubArrayTwo {
 
     public static void main(String[] args) {
 
+
+        int[] arr = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
+
+        MaxSubArrayTwo max = new MaxSubArrayTwo();
+        Integer result = max.maxSubArray(arr);
+        System.out.println(result);
+
     }
 
     public int maxSubArray(int[] nums) {
+        int pre = 0;
+        int maxAns = nums[0];
 
-        return -1;
+        for (int i = 0; i < nums.length; i++) {
+            pre = Math.max(pre + nums[i], nums[i]);
+            maxAns = Math.max(maxAns, pre);
+        }
+        return maxAns;
     }
 
 }
