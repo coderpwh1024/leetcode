@@ -23,11 +23,19 @@ public class ConvertInteger {
 
     public static void main(String[] args) {
 
+          int A=29;
+          int B=15;
+
+        ConvertInteger convertInteger = new ConvertInteger();
+        int result =  convertInteger.convertInteger(A,B);
+        System.out.println(result);
+
     }
 
     public int convertInteger(int A, int B) {
+        int diff = A ^ B;
 
-        return  -1;
+        return Integer.bitCount(diff);
     }
 
 
