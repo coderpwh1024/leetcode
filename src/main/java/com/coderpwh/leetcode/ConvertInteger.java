@@ -32,6 +32,15 @@ public class ConvertInteger {
 
     }
 
+
+    /***
+     * 1. 时间复杂度为O(1)
+     * 2. 空间复杂度为O(1)
+     *
+     * @param A
+     * @param B
+     * @return
+     */
     public int convertInteger(int A, int B) {
         int diff = A ^ B;
 
