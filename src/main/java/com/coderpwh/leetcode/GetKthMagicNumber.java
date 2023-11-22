@@ -19,6 +19,12 @@ public class GetKthMagicNumber {
 
     public static void main(String[] args) {
 
+        int k = 5;
+
+        GetKthMagicNumber number = new GetKthMagicNumber();
+        int result = number.getKthMagicNumber(k);
+        System.out.println(result);
+
     }
 
     public int getKthMagicNumber(int k) {
