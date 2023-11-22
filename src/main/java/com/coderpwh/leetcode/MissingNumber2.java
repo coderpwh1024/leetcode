@@ -1,6 +1,8 @@
 package com.coderpwh.leetcode;
 
 
+import java.util.Arrays;
+
 /***
  * 面试题 17.04. 消失的数字
  * 提示
@@ -36,6 +38,15 @@ public class MissingNumber2 {
 
     public int missingNumber(int[] nums) {
 
+        Arrays.sort(nums);
+
+        for(int i=0;i<nums.length;i++){
+            if(nums[i]==i){
+                continue;
+            }else{
+                return i;
+            }
+        }
         return -1;
     }
 
