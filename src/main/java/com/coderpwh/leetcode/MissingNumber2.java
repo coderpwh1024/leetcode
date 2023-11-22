@@ -2,6 +2,8 @@ package com.coderpwh.leetcode;
 
 
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 /***
  * 面试题 17.04. 消失的数字
@@ -38,16 +40,22 @@ public class MissingNumber2 {
 
     public int missingNumber(int[] nums) {
 
-        Arrays.sort(nums);
+        Set<Integer> set = new HashSet<>();
 
-        for(int i=0;i<nums.length;i++){
-            if(nums[i]==i){
-                continue;
-            }else{
-                return i;
+        int n=nums.length;
+        for(int i=0;i<n;i++){
+            set.add(nums[i]);
+        }
+
+        int result =-1;
+
+        for(int i=0;i<=n;i++){
+            if(!set.contains(i)){
+                result=i;
+                break;
             }
         }
-        return -1;
+        return result;
     }
 
 }
