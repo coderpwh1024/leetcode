@@ -38,6 +38,15 @@ public class MissingNumber2 {
 
     }
 
+
+    /***
+     *  1. 时间复杂度为O(N)
+     *  2. 空间复杂度为O(N)
+     *  3. 采用hash方式实现
+     *
+     * @param nums
+     * @return
+     */
     public int missingNumber(int[] nums) {
 
         Set<Integer> set = new HashSet<>();
