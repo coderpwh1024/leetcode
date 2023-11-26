@@ -49,7 +49,7 @@ public class GetKthMagicNumber {
             for (int factor : arr) {
                 long next = cuur * factor;
                 if (seen.add(next)) {
-                    heap.offer(next)
+                    heap.offer(next);
                 }
             }
         }
