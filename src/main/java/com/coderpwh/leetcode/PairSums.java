@@ -23,6 +23,12 @@ public class PairSums {
 
     public static void main(String[] args) {
 
+          int nums[]={5,6,5};
+          int target=11;
+
+        PairSums  sum = new PairSums();
+         List<List<Integer>> list = sum.pairSums(nums,target);
+
     }
 
     public List<List<Integer>> pairSums(int[] nums, int target) {
