@@ -21,7 +21,7 @@ public class StringTest {
 */
 
 
-        List<String> list = new ArrayList<>();
+       /* List<String> list = new ArrayList<>();
         list.add("a");
         list.add("b");
         list.add("c");
@@ -39,6 +39,24 @@ public class StringTest {
         System.out.println(arr.length);
         for(int i=0;i<arr.length;i++){
             System.out.println(arr[i]);
+        }
+*/
+
+
+        String str = "B";
+
+        List<String> list = new ArrayList<>();
+        list.add("A");
+        list.add("B");
+        list.add("C");
+        list.add("D");
+
+        for (String s : list) {
+            if (str.charAt(0) >= s.charAt(0)) {
+                continue;
+            } else {
+                System.out.println(s);
+            }
         }
 
 
