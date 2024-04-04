@@ -1,5 +1,8 @@
 package com.coderpwh.view;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * 1. 字符串拆分成数组 如 "ab&&2" 通过 &&做分隔符，分割得到字符串数组["ab",2]
  * <p>
@@ -16,6 +19,35 @@ public class StringTest {
 
         String result = getStringResult(arr, str);
         System.out.println(result);
+
+        System.out.println("---------------------------------");
+
+        String strArray ="ab&&2";
+
+        getStringArrayResult(strArray,str);
+
+    }
+
+
+
+    public static String[] getStringArrayResult(String arr,String str){
+
+        if(arr.length()<=0){
+            return  null;
+        }
+
+        List<Integer> list = new ArrayList<>();
+
+
+         char[] ch = arr.toCharArray();
+
+         for(int i=0;i<ch.length;i++){
+
+         }
+
+         return  null;
+
+
 
 
     }
