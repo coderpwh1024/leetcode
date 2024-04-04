@@ -44,6 +44,13 @@ public class SplitWordsBySeparator {
     }
 
 
+    /***
+     *  1. 时间复杂度为O(N*M)
+     *  2. 空间复杂度为O(N)
+     * @param words
+     * @param separator
+     * @return
+     */
     public List<String> splitWordsBySeparator(List<String> words, char separator) {
         List<String> res = new ArrayList<String>();
         for (String word : words) {
