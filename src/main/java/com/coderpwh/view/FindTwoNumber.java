@@ -26,6 +26,9 @@ public class FindTwoNumber {
     }
 
 
+
+
+
     /***
      * 时间复杂度 O(N^2),两层for循环
      * @param list
