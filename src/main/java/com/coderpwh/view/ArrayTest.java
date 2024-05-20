@@ -14,21 +14,50 @@ public class ArrayTest {
 //        Integer[] arr = {2, 5, 4, 3, 1, 6, 8, 9};
 
 
-        Integer[] arr = {1, 2, 3, 4, 5};
+        int[] arr = {1, 2, 3, 4, 5};
 
         ArrayTest arrayTest = new ArrayTest();
+
+      /*
+
         List<Integer> result = arrayTest.exchange(arr);
 
 
         for (int i = 0; i < result.size(); i++) {
             System.out.print(result.get(i) + " ");
         }
+          */
+
+        int[] result = arrayTest.trainingPlan(arr);
+
+        for (int i = 0; i < result.length; i++) {
+            System.out.print(result[i] + " ");
+        }
 
 
     }
 
 
+    public int[] trainingPlan(int[] actions) {
 
+        int i = 0;
+        int j = actions.length - 1;
+        int temp;
+
+        while (i < j) {
+            while (i < j && (actions[i] & 1) == 1) {
+                i++;
+            }
+            while (i < j && (actions[j] & 1) == 0) {
+                j--;
+            }
+            temp = actions[i];
+            actions[i] = actions[j];
+            actions[j] = temp;
+        }
+        return actions;
+
+    }
 
 
     /***
