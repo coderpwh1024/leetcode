@@ -45,12 +45,22 @@ public class ArrayTest {
         int temp;
 
         while (i < j) {
-            while (i < j && (actions[i] & 1) == 1) {
+    /*        while (i < j && (actions[i] & 1) == 1) {
                 i++;
             }
             while (i < j && (actions[j] & 1) == 0) {
                 j--;
+            }*/
+
+            while(i<j&&(actions[i]%2==1)){
+                i++;
             }
+
+            while(i<j&&(actions[j]%2==0)){
+                j--;
+            }
+
+
             temp = actions[i];
             actions[i] = actions[j];
             actions[j] = temp;
