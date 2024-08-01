@@ -50,6 +50,7 @@ public class MergeArray {
 
     /***
      *  双指针
+     *   1. 时间复杂度为O(M+N)
      * @param nums1
      * @param m
      * @param nums2
