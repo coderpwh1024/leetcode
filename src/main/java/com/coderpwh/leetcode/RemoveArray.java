@@ -6,9 +6,9 @@ public class RemoveArray {
     public static void main(String[] args) {
 
 
-        int nums[] = {};
+        int nums[] = {0, 1, 2, 2, 3, 0, 4, 2};
 
-        int val = 0;
+        int val = 2;
 
 
         RemoveArray removeArray = new RemoveArray();
@@ -21,8 +21,15 @@ public class RemoveArray {
 
     public int removeElement(int[] nums, int val) {
 
+        int count = 0;
+        for (int i = 0; i < nums.length; i++) {
 
-        return  -1;
+            if(nums[i]==val){
+                count+=1;
+            }
+        }
+
+        return nums.length-count;
     }
 
 }
