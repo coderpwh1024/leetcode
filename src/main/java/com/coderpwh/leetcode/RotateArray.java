@@ -10,11 +10,11 @@ public class RotateArray {
 
 
         RotateArray rotateArray = new RotateArray();
-        rotateArray.rotate(nums,k);
+        rotateArray.rotate(nums, k);
 
 
-        for(int i=0;i<nums.length;i++){
-            System.out.print(nums[i]+" ");
+        for (int i = 0; i < nums.length; i++) {
+            System.out.print(nums[i] + " ");
         }
 
     }
@@ -22,10 +22,26 @@ public class RotateArray {
 
     /***
      *
+     *
+     *   -1 ,-100,3 99
+     *   99 -1,-100,3
+     *
      * @param nums
      * @param k
      */
     public void rotate(int[] nums, int k) {
 
+
+
+         int j =1;
+         int temp = nums[nums.length-1];
+         for(int i=1;i<nums.length;i++){
+             nums[j]=nums[i];
+             j++;
+         }
+         nums[0]=temp;
+
     }
+
+
 }
