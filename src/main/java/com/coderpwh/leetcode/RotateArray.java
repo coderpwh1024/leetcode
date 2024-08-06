@@ -32,12 +32,10 @@ public class RotateArray {
     public void rotate(int[] nums, int k) {
 
 
-
          int j =1;
          int temp = nums[nums.length-1];
-         for(int i=1;i<nums.length;i++){
-             nums[j]=nums[i];
-             j++;
+         for(int i=nums.length-1;i>=1;){
+             nums[i]=nums[i--];
          }
          nums[0]=temp;
 
