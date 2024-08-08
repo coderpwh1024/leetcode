@@ -6,8 +6,12 @@ public class TwoSumArray {
     public static void main(String[] args) {
 
 
-        int[] nums = {2, 7, 11, 15};
-        int target = 9;
+//        int[] nums = {2, 7, 11, 15};
+//        int target = 9;
+
+
+        int[] nums = {3, 3};
+        int target = 6;
 
         TwoSumArray twoSumArray = new TwoSumArray();
         int result[] = twoSumArray.twoSum(nums, target);
@@ -32,13 +36,14 @@ public class TwoSumArray {
         int[] arr = new int[2];
 
         for (int i = 0; i < nums.length; i++) {
-            for (int j = 1; j < nums.length - 1; j++) {
-                if (nums[i] + nums[j] == target) {
-                    arr[0] = nums[i];
-                    arr[1] = nums[j];
+            for (int j = 1; j <=nums.length - 1; j++) {
+                if (nums[i] + nums[j] == target && i != j) {
+                    arr[0] = i;
+                    arr[1] = j;
+                    System.out.println("j:"+j);
                 }
             }
         }
-        return  arr;
+        return arr;
     }
 }
