@@ -1,5 +1,8 @@
 package com.coderpwh.leetcode;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class TwoSumArray {
 
 
@@ -9,6 +12,19 @@ public class TwoSumArray {
 //        int[] nums = {2, 7, 11, 15};
 //        int target = 9;
 
+
+
+        Integer a =1;
+
+        Integer b = 1;
+
+        boolean resultOne = a.equals(b);
+
+        System.out.println(resultOne);
+
+
+
+         Map<String,Object> map = new HashMap<>();
 
         int[] nums = {3, 3};
         int target = 6;
