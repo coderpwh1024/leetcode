@@ -1,11 +1,13 @@
 package com.coderpwh.test;
 
 import java.time.DayOfWeek;
+import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.TemporalAdjusters;
+import java.util.Date;
 import java.util.Locale;
 
 public class DateTest {
@@ -46,12 +48,19 @@ public class DateTest {
 
         DateTimeFormatter usFormatter = DateTimeFormatter.ofPattern("E, MMMM/dd/yyyy HH:mm", Locale.US);
         System.out.println(usFormatter.format(zdt));
-        System.out.println("----------------------------------------------------------------------------");
+        System.out.println("-----------------------------LocalTime与Date相互转换-------------------------------------");
 
 
+        LocalDateTime localDateTime = LocalDateTime.now();
+        ZonedDateTime zonedDateTime = localDateTime.atZone(ZoneId.systemDefault());
+        Date date = Date.from(zonedDateTime.toInstant());
+        System.out.println("date:" + date);
 
 
-
+        Date date2 = new Date();
+        Instant instant = date2.toInstant();
+        LocalDateTime localDateTime2 = instant.atZone(ZoneId.systemDefault()).toLocalDateTime();
+        System.out.println(localDateTime2);
 
 
     }
