@@ -2,6 +2,8 @@ package com.coderpwh.test;
 
 import java.time.DayOfWeek;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.time.temporal.TemporalAdjusters;
 
 public class DateTest {
@@ -20,6 +22,15 @@ public class DateTest {
         System.out.println("当月第三周星期五:" + now.with(TemporalAdjusters.dayOfWeekInMonth(3, DayOfWeek.FRIDAY)));
         System.out.println("上周一:" + now.with(TemporalAdjusters.previous(DayOfWeek.MONDAY)));
         System.out.println("下周日:" + now.with(TemporalAdjusters.next(DayOfWeek.SUNDAY)));
+
+
+        System.out.println("----------------------------------------------------------------------------");
+
+        ZonedDateTime zbj = ZonedDateTime.now(ZoneId.of("Asia/Shanghai"));
+        // 转换为纽约时间:
+        ZonedDateTime zny = zbj.withZoneSameInstant(ZoneId.of("America/New_York"));
+        System.out.println(zbj);
+        System.out.println(zny);
 
 
     }
