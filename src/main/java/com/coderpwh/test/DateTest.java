@@ -63,6 +63,17 @@ public class DateTest {
         System.out.println(localDateTime2);
 
 
+        String str = "[username]是你在地球认识的好伙伴";
+
+        String name = "张三";
+
+
+        if (str != null && str.contains("[username]")) {
+            String result = str.replace("[username]", name);
+            System.out.println(result);
+        }
+
+
     }
 
 }
