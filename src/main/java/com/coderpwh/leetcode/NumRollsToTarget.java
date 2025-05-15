@@ -1,7 +1,5 @@
 package com.coderpwh.leetcode;
 
-import com.sun.org.apache.bcel.internal.generic.RET;
-
 /**
  * 1155. 掷骰子等于目标和的方法数
  * 这里有 n 个一样的骰子，每个骰子上都有 k 个面，分别标号为 1 到 k 。
