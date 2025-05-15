@@ -1,8 +1,6 @@
 package com.coderpwh.juc;
 
 import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 /**
  * @author coderpwh
@@ -12,10 +10,7 @@ public class CountdownLatchExample {
 
     public static void main(String[] args) {
         int totalThread = 50;
-
         CountDownLatch countDownLatch = new CountDownLatch(totalThread);
-
-//        ExecutorService executorService = Executors.newCachedThreadPool();
 
         try {
             for (int i = 0; i < totalThread; i++) {

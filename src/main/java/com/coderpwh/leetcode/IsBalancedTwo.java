@@ -1,6 +1,5 @@
 package com.coderpwh.leetcode;
 
-import sun.reflect.generics.tree.Tree;
 
 /**
  * 面试题 04.04. 检查平衡性
