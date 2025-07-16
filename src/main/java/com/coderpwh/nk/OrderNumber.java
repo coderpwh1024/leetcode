@@ -68,13 +68,9 @@ public class OrderNumber {
 
 
     /***
-     *
      * 1.时间复杂度为O(N^2)
      *
      * 2.空间复杂度O(N) list
-     *
-     *
-     *
      * @param n
      */
     public static void print(int n) {
