@@ -41,20 +41,28 @@ public class ProductExceptSelf {
     public static void main(String[] args) {
 
         ProductExceptSelf product = new ProductExceptSelf();
-//        int[] nums = {1, 2, 3, 4};
+        int[] nums = {1, 2, 3, 4};
 
-        int [] nums = {-1,1,0,-3,3};
+//        int[] nums = {-1, 1, 0, -3, 3};
 
-       int[] result =   product.productExceptSelf(nums);
-       if(result.length>0){
-           for(int i=0;i<result.length;i++){
-               System.out.print(result[i]+" ");
-           }
-       }
+        int[] result = product.productExceptSelf(nums);
+        if (result.length > 0) {
+            for (int i = 0; i < result.length; i++) {
+                System.out.print(result[i] + " ");
+            }
+        }
     }
 
 
-    public int[] productExceptSelf(int[] nums) {
+    /***
+     * 1. 时间复杂度为O(n^2)
+     * 2. 空间复杂度为O(n)
+     *
+     *
+     * @param nums
+     * @return
+     */
+    /*public int[] productExceptSelf(int[] nums) {
         int[] result = new int[nums.length];
 
         for(int i=0;i<nums.length;i++){
@@ -69,9 +77,34 @@ public class ProductExceptSelf {
             result[i] = temp;
         }
        return  result;
+    }*/
+    public int[] productExceptSelf(int nums[]) {
+
+        int length = nums.length;
+
+        int[] L = new int[length];
+        int[] R = new int[length];
+
+        int[] answer = new int[length];
+
+        L[0] = 1;
+
+        for (int i = 1; i < length; i++) {
+            L[i] = nums[i - 1] * L[i - 1];
+        }
+
+        R[length - 1] = 1;
+
+        for (int i = length - 2; i >= 0; i--) {
+            R[i] = nums[i + 1] * R[i + 1];
+        }
+
+        for (int i = 0; i < length; i++) {
+            answer[i] = L[i] * R[i];
+        }
+
+        return answer;
     }
-
-
 
 
 }
