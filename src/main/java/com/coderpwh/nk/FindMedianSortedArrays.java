@@ -45,6 +45,14 @@ public class FindMedianSortedArrays {
     }
 
 
+    /***
+     *
+     * 1. 时间复杂度为O(N)
+     * 2. 空间复杂度为O(N)
+     * @param nums1
+     * @param nums2
+     * @return
+     */
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
 
         List<Integer> list = new ArrayList<>();
