@@ -1,6 +1,7 @@
 package com.coderpwh.test;
 
 import java.math.BigDecimal;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @author coderpwh
@@ -37,6 +38,10 @@ public class IntegerTest {
         System.out.println(result);*/
 
 
+        int a = 1;
+        AtomicInteger atomicInteger = new AtomicInteger(a);
+        atomicInteger.incrementAndGet();
+        System.out.println(atomicInteger.get());
 
 
     }
